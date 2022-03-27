@@ -1,11 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import React from "react";
 
-
 export default function Header() {
-
-
-
   return (
     <header className="main-header-area">
       <div className="header-middle py-30">
@@ -23,14 +20,10 @@ export default function Header() {
                 <div className="header-right">
                   <ul>
                     <li>
-                      <a href="login.html">
-                        Нэвтрэх
-                      </a>
+                      <a href="/auth/login">Нэвтрэх</a>
                     </li>
                     <li className="Cont1">
-                      <a href="#">
-                        Холбоо барих
-                      </a>
+                      <a href="#">Холбоо барих</a>
                     </li>
                   </ul>
                 </div>
@@ -47,13 +40,20 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="header-sticky py-4 py-lg-0" style={{ background: '#242424' }}>
+      <div
+        className="header-sticky py-4 py-lg-0"
+        style={{ background: "#242424" }}
+      >
         <div className="container">
           <div className="header-nav position-relative">
             <div className="row align-items-center">
               <div className="col-lg-3 col-6">
                 <a href="#" className="header-logo">
-                  <img src="assets/images/logo/logo.svg" alt="Header Logo" style={{ padding: 0 }} />
+                  <img
+                    src="assets/images/logo/logo.svg"
+                    alt="Header Logo"
+                    style={{ padding: 0 }}
+                  />
                 </a>
               </div>
               <div className="col-lg-6 d-none d-lg-block">
@@ -61,14 +61,10 @@ export default function Header() {
                   <nav className="main-nav">
                     <ul>
                       <li>
-                        <a href="#">
-                          Таньд санал болгох
-                        </a>
+                        <a href="#">Таньд санал болгох</a>
                       </li>
                       <li>
-                        <a href="#">
-                          Хамтран ажилах
-                        </a>
+                        <a href="#">Хамтран ажилах</a>
                       </li>
                     </ul>
                   </nav>
@@ -78,14 +74,10 @@ export default function Header() {
                 <div className="header-right">
                   <ul>
                     <li>
-                      <a href="#">
-                        Нэвтрэх
-                      </a>
+                      <a href="#">Нэвтрэх</a>
                     </li>
                     <li className="Cont1">
-                      <a href="#">
-                        Холбоо барих
-                      </a>
+                      <a href="#">Холбоо барих</a>
                     </li>
                   </ul>
                 </div>
@@ -95,6 +87,5 @@ export default function Header() {
         </div>
       </div>
     </header>
-
-  )
+  );
 }
