@@ -6,7 +6,7 @@ import styles from "../styles/Home.module.css";
 export default function Home() {
   return (
     <Layout>
-      <div className="slider-area">
+      <div className="slider-area mt-24">
         <div className="swiper-container main-slider swiper-arrow with-bg_white">
           <div className="swiper-wrapper">
             <div className="swiper-slide animation-style-01">

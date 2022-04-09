@@ -1,271 +1,68 @@
-  import { Form, Input } from "antd";
-  import Link from "next/link";
-  import react from "react";
-  import styled from "styled-components";
+import React from "react";
+import { Form, Input } from "antd";
 
-  export default function LoginPage() {
-    return (
-      <StyledContainer className="product-area">
-        <body>
-          <div className="container" id="container">
-            <form action="#">
-              <div className="logo">
-                <img src="../assets/images/logo/logo.svg" alt="Inner Image" />
-              </div>
-              <div className="social-container">
-                {" "}
-                <a href="#" className="social">
-                  <i className="fab fa-facebook-f" />
-                </a>
-                <a href="#" className="social">
-                  <i className="fa fa-instagram" />
-                </a>
-                <a href="#" className="social">
-                  <i className="fa fa-twitter" />
-                </a>
-              </div>
-              <span />
-              <Form layout="vertical">
-                <Form.Item>
-                  <Input type="email" placeHolder="Цахим шуудан" />
-                </Form.Item>
-                <Form.Item>
-                  <Input placeholder="Нууц үг" />
-                </Form.Item>
-              </Form>
-              <p>
-                <a href="#">Нууц үгээ мартсан уу?</a>
+export default function AuthLogin() {
+  return (
+    <div className="w-full h-full lg:grid grid-cols-10">
+      <div className="col-span-6  h-screen bg-gray-500 hidden lg:block">
+        <img
+          alt="bg"
+          className="w-full bg-cover object-cover h-screen"
+          src="/assets/images/banner/2-1-570x500.jpg"
+        />
+      </div>
+      <div className="col-span-4  h-screen bg-white flex justify-center mx-auto items-center">
+        <div className="w-96 h-[500px] flex flex-col  items-center rounded-lg">
+          <Form
+            className="text-black sm:space-y-4 space-y-2  flex flex-col items-center"
+            action=""
+            layout="vertical"
+          >
+            <a href="#">
+              <img
+                className="h-20"
+                alt="logo"
+                src="/assets/images/logo/logo.svg"
+              />
+            </a>
+            <div className="flex justify-start w-full py-2">
+              <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-4xl flex text-left">
+                Нэвтрэх
               </p>
-              <button>Нэвртэх</button>
-              <p>
-                <a href="register" className="c5">
-                  Бүртгүүлэх?
-                </a>
-              </p>
-            </form>
-          </div>
-        </body>
-      </StyledContainer>
-    );
-  }
-  const StyledContainer = styled.div`
-    * {
-      box-sizing: border-box;
-    }
-    .c5 {
-      padding: 10px 15px;
-      margin-left: 80%;
-      font-weight: 600;
-      color: #659688;
-    }
-
-    .ant-input-suffix {
-      position: absolute;
-      margin-top: 15px;
-      margin-left: 10px;
-    }
-
-    body {
-      background: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      font-family: "Montserrat", sans-serif;
-      height: 100vh;
-      margin: -20px 0 50px;
-    }
-
-    h1 {
-      font-size: 72px;
-      background: -webkit-linear-gradient(
-        rgb(233, 122, 52, 1),
-        rgb(154, 51, 190, 1)
-      );
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    p {
-      font-size: 14px;
-      font-weight: 100;
-      line-height: 20px;
-      letter-spacing: 0.5px;
-      margin: 15px 0 15px;
-    }
-
-    span {
-      font-size: 12px;
-    }
-
-    a {
-      color: #333;
-      font-size: 14px;
-      text-decoration: none;
-      margin: 15px 0;
-    }
-
-    .logo {
-      width: 135px;
-    }
-
-    .social-container {
-      margin: 20px 0;
-    }
-
-    .social-container a {
-      border: 1px solid #dddddd;
-      background: rgb(154, 51, 190);
-      background: linear-gradient(
-        90deg,
-        rgba(233, 122, 52, 1) 0%,
-        rgba(154, 51, 190, 1) 100%
-      );
-      border-radius: 50%;
-      color: white;
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 5px;
-      height: 40px;
-      width: 40px;
-    }
-
-    button {
-      border-radius: 20px;
-      border: 1px solid red;
-      background: rgb(154, 51, 190);
-      background: linear-gradient(
-        90deg,
-        rgba(233, 122, 52, 1) 0%,
-        rgba(154, 51, 190, 1) 100%
-      );
-      color: #ffffff;
-      font-size: 12px;
-      font-weight: bold;
-      padding: 12px 45px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      transition: transform 80ms ease-in;
-    }
-
-    button:active {
-      transform: scale(0.95);
-    }
-
-    button:focus {
-      outline: none;
-    }
-
-    button.ghost {
-      background-color: transparent;
-      border-color: #ffffff;
-    }
-
-    form {
-      background-color: #ffffff;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      width: 100%;
-      padding: 0 0;
-      height: 100%;
-      text-align: center;
-    }
-
-    input {
-      background-color: #eee;
-      border: none;
-      padding: 12px 15px;
-      margin: 8px 0;
-      width: 100%;
-    }
-
-    .container {
-      background-color: #fff;
-      box-shadow: 0 14px 28px rgba(255, 255, 255, 0.25),
-        0 10px 10px rgba(255, 255, 255, 0.22);
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      max-width: 100%;
-      min-height: 500px;
-    }
-
-    .form-container {
-      position: absolute;
-      top: 0;
-      height: 100%;
-      transition: all 0.6s ease-in-out;
-    }
-
-    .sign-in-container {
-      left: 0;
-      width: 50%;
-      z-index: 2;
-    }
-
-    .container.right-panel-active .sign-in-container {
-      transform: translateX(100%);
-    }
-
-    .sign-up-container {
-      left: 0;
-      width: 50%;
-      opacity: 0;
-      z-index: 1;
-    }
-
-    .container.right-panel-active .sign-up-container {
-      transform: translateX(100%);
-      opacity: 1;
-      z-index: 5;
-      animation: show 0.6s;
-    }
-
-    @keyframes show {
-      0%,
-      49.99% {
-        opacity: 0;
-        z-index: 1;
-      }
-
-      50%,
-      100% {
-        opacity: 1;
-        z-index: 5;
-      }
-    }
-    @media (min-width: 800px) {
-      body {
-        background-color: white;
-      }
-      .container {
-        background-color: white;
-        box-shadow: 0 14px 28px rgba(255, 255, 255, 0.25),
-          0 10px 10px rgba(255, 255, 255, 0.22);
-        box-shadow: 20px 20px 20px rgb(255, 255, 255, 0.3);
-        box-shadow: 10px 10px 20px rgb(0, 0, 0, 0.5);
-        padding: 80px 0px;
-        position: relative;
-        overflow: hidden;
-        overflow: hidden;
-        width: 30%;
-        max-width: 100%;
-        min-height: 500px;
-      }
-
-      form {
-        background-color: white;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        width: 100%;
-        padding: 0 0;
-        height: 100%;
-        text-align: center;
-      }
-    }
-  `;
+            </div>
+            <Form.Item>
+              <Input
+                className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2]"
+                type="number"
+                placeHolder="Утасны дугаар"
+              />
+            </Form.Item>
+            <Form.Item>
+              <Input
+                className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2]"
+                type="password"
+                placeholder="Нууц үг"
+              />
+            </Form.Item>
+            <div className="flex justify-end w-full py-1">
+              <a href="#">
+                <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34]">
+                  Нууц үгээ мартсан уу?
+                </p>
+              </a>
+            </div>
+            <button className="sm:w-80 w-64 py-2 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none">
+              Нэвртэх
+            </button>
+            <a
+              href="#"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-sm"
+            >
+              Та бүртгүүлээгүй юу? Бүртгүүлэх
+            </a>
+          </Form>
+        </div>
+      </div>
+    </div>
+  );
+}

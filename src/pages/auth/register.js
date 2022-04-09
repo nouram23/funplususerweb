@@ -1,178 +1,69 @@
+import React from "react";
 import { Form, Input } from "antd";
-import Link from "next/link";
-import react from "react";
-import styled from "styled-components";
 
-export default function LoginPage() {
+export default function AuthRegister() {
   return (
-    <StyledContainer className="product-area">
-      <body>
-        <div className="container10">
-          <form action="#">
-            <h1>Log In</h1>
-            <span />
-            <Form layout="vertical">
-              <Form.Item>
-                <Input type="email" placeHolder="Цахим шуудан" />
-              </Form.Item>
-              <Form.Item>
-                <Input.Password placeholder="Нууц үг" />
-              </Form.Item>
-            </Form>
-            <p>
-              <a href="#">Нууц үгээ мартсан уу?</a>
-            </p>
-            <button>Нэвртэх</button>
-            <p className="space1">
-              <a href="#">Нууц үгээ мартсан уу?</a>
-            </p>
-            <div className="social-container10">
-              {" "}
-              <a href="#" className="social">
-                <i className="fab fa-facebook-f" />
-              </a>
-              <a href="#" className="social">
-                <i className="fa fa-instagram" />
-              </a>
-              <a href="#" className="social">
-                <i className="fa fa-twitter" />
-              </a>
+    <div className="w-full h-full lg:grid grid-cols-10">
+      <div className="col-span-6  h-screen bg-gray-500 hidden lg:block">
+        <img
+          alt="bg"
+          className="w-full bg-cover object-center h-screen"
+          src="/assets/images/banner/2-1-570x500.jpg"
+        />
+      </div>
+      <div className="col-span-4  h-screen bg-white flex justify-center items-center">
+        <div className="w-96 h-[500px] flex flex-col  items-center rounded-lg">
+          <Form
+            className="text-black sm:space-y-4 space-y-2  flex flex-col items-center"
+            action=""
+            layout="vertical"
+          >
+            <a href="#">
+              <img
+                className="h-20"
+                alt="logo"
+                src="/assets/images/logo/logo.svg"
+              />
+            </a>
+            <div className="flex justify-start w-full py-2">
+              <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-4xl flex text-left">
+                Бүртгүүлэх
+              </p>
             </div>
-            <h5>
-              <a href="#">Та бүртгүүлээгүй юу? Бүртгүүлэх</a>
-            </h5>
-          </form>
+            <Form.Item>
+              <Input
+                className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2]"
+                type="text"
+                placeHolder="Нэр"
+              />
+            </Form.Item>
+            <Form.Item>
+              <Input
+                className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2]"
+                type="number"
+                placeHolder="Утасны дугаар"
+              />
+            </Form.Item>
+            <Form.Item>
+              <Input
+                className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2]"
+                type="password"
+                placeholder="Нууц үг"
+              />
+            </Form.Item>
+
+            <button className="sm:w-80 w-64 py-2 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none">
+              Бүртгүүлэх
+            </button>
+            <a
+              href="#"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-sm"
+            >
+              Нэвртэх бол энд дарна уу?
+            </a>
+          </Form>
         </div>
-      </body>
-    </StyledContainer>
+      </div>
+    </div>
   );
 }
-const StyledContainer = styled.div`
-  * {
-    box-sizing: border-box;
-  }
-  .space1 {
-    margin-top: 40%;
-  }
-  .ant-input-suffix {
-    position: absolute;
-  }
-  body {
-    background: #24253c;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-family: "Montserrat", sans-serif;
-    color: #818495;
-    height: 100vh;
-    margin: -20px 0 0px;
-  }
-
-  h1 {
-    font-size: 72px;
-    background: -webkit-linear-gradient(
-      rgb(233, 122, 52, 1),
-      rgb(154, 51, 190, 1)
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: left;
-    float: left;
-  }
-
-  p {
-    font-size: 14px;
-    font-weight: 100;
-    line-height: 20px;
-    letter-spacing: 0.5px;
-    margin: 15px 0 15px;
-  }
-
-  .social-container10 {
-    margin: 0px 0;
-  }
-
-  .social-container10 a {
-    border: 1px solid #dddddd;
-    background: rgb(154, 51, 190);
-    background: linear-gradient(
-      90deg,
-      rgba(233, 122, 52, 1) 0%,
-      rgba(154, 51, 190, 1) 100%
-    );
-    color: white;
-    font-size: 1.2em;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px 5px;
-    height: 40px;
-    width: 40px;
-  }
-
-  button {
-    background: rgb(154, 51, 190);
-    background: linear-gradient(
-      90deg,
-      rgba(233, 122, 52, 1) 0%,
-      rgba(154, 51, 190, 1) 100%
-    );
-    border-radius: 40px;
-    width: 70%;
-    border: 1px solid red;
-    color: #ffffff;
-    font-size: 12px;
-    font-weight: bold;
-    padding: 12px 45px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: transform 80ms ease-in;
-  }
-
-  button:active {
-    transform: scale(0.95);
-  }
-
-  button:focus {
-    outline: none;
-  }
-
-  button.ghost {
-    background-color: transparent;
-    border-color: #ffffff;
-  }
-
-  form {
-    background-color: #24253c;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    padding: 0 0;
-    height: 100%;
-  }
-
-  input {
-    background-color: #eee;
-    padding: 12px 15px;
-    margin: 8px 0;
-    width: 100%;
-  }
-  Form.Item input {
-    width: 90%;
-  }
-  .container10 {
-    background-color: black;
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    max-width: 100%;
-    min-height: 400px;
-  }
-  .container10 h2 {
-    float: left;
-    font-size: 40px;
-  }
-`;
