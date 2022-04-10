@@ -1,5 +1,6 @@
 import React from "react";
-import { Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
+import Link from "next/link";
 
 export default function AuthRegister() {
   return (
@@ -32,35 +33,35 @@ export default function AuthRegister() {
             </div>
             <Form.Item>
               <Input
-                className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2]"
+                className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1 placeholder:text-slate-500 ring-[#9d32c2]"
                 type="text"
                 placeHolder="Нэр"
               />
             </Form.Item>
             <Form.Item>
               <Input
-                className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2]"
+                className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1 placeholder:text-slate-500 ring-[#9d32c2]"
                 type="number"
                 placeHolder="Утасны дугаар"
               />
             </Form.Item>
             <Form.Item>
               <Input
-                className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2]"
+                className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1  placeholder:text-slate-500 ring-[#9d32c2]"
                 type="password"
                 placeholder="Нууц үг"
               />
             </Form.Item>
 
-            <button className="sm:w-80 w-64 py-2 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none">
+            <Button className="sm:w-80 w-64 h-10 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none">
               Бүртгүүлэх
-            </button>
-            <a
-              href="#"
+            </Button>
+            <Link
+              href="/auth/login"
               className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-sm"
             >
               Нэвртэх бол энд дарна уу?
-            </a>
+            </Link>
           </Form>
         </div>
       </div>

@@ -4,18 +4,18 @@ export default function Footer() {
   return (
     <>
       <div className="text-white bg-[#242424]">
-        <div className="flex justify-around flex-wrap xl:justify-evenly items-start lg:flex-row flex-col  lg:max-w-7xl w-4/5 mx-auto lg:py-24 py-4 sm:pl-0 pl-10">
+        <div className="flex justify-between items-start lg:flex-row flex-col  lg:max-w-7xl w-4/5 mx-auto lg:py-24 py-4 sm:pl-0 pl-10">
           <div className=" ">
             <a href="index.html">
               <img
-                className="h-20"
+                className="sm:h-20 h-16"
                 src="assets/images/logo/logo.svg"
                 alt="Logo"
               />
             </a>
 
-            <ul className="flex text-xs space-x-4 mt-4">
-              <li className="rounded-full h-8 w-8 leading-8 text-center ring-1 ring-white bg-gradient-to-r from-[#9d32c2] to-[#e97a34]">
+            <ul className="flex text-xs sm:space-x-4 space-x-2 mt-4 ">
+              <li className="rounded-full h-8 w-8 leading-8 text-center border-none bg-gradient-to-r from-[#9d32c2] to-[#e97a34]">
                 <a
                   className="  hover:text-white "
                   href="#"
@@ -29,7 +29,7 @@ export default function Footer() {
                   <i className="fa fa-facebook" />
                 </a>
               </li>
-              <li className="rounded-full h-8 w-8 leading-8 text-center ring-1 ring-white bg-gradient-to-r from-[#9d32c2] to-[#e97a34]">
+              <li className="rounded-full h-8 w-8 leading-8 text-center border-none bg-gradient-to-r from-[#9d32c2] to-[#e97a34]">
                 <a
                   className="  hover:text-white "
                   href="#"
@@ -43,7 +43,7 @@ export default function Footer() {
                   <i className="fa fa-twitter" />
                 </a>
               </li>
-              <li className="rounded-full h-8 w-8 leading-8 text-center ring-1 ring-white bg-gradient-to-r from-[#9d32c2] to-[#e97a34] ">
+              <li className="rounded-full h-8 w-8 leading-8 text-center border-none bg-gradient-to-r from-[#9d32c2] to-[#e97a34] ">
                 <a
                   className="  hover:text-white "
                   href="#"
@@ -57,7 +57,7 @@ export default function Footer() {
                   <i className="fa fa-pinterest" />
                 </a>
               </li>
-              <li className="rounded-full h-8 w-8 leading-8 text-center ring-1 ring-white bg-gradient-to-r from-[#9d32c2] to-[#e97a34]">
+              <li className="rounded-full h-8 w-8 leading-8 text-center border-none bg-gradient-to-r from-[#9d32c2] to-[#e97a34]">
                 <a
                   className="  hover:text-white "
                   href="#"

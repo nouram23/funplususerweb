@@ -1,5 +1,6 @@
 import React from "react";
-import { Form, Input } from "antd";
+import { Button, Form, Input } from "antd";
+import Link from "next/link";
 
 export default function AuthLogin() {
   return (
@@ -11,7 +12,7 @@ export default function AuthLogin() {
           src="/assets/images/banner/2-1-570x500.jpg"
         />
       </div>
-      <div className="col-span-4  h-screen bg-white flex justify-center mx-auto items-center">
+      <div className="col-span-4  h-screen w-full bg-white flex justify-center mx-auto items-center">
         <div className="w-96 h-[500px] flex flex-col  items-center rounded-lg">
           <Form
             className="text-black sm:space-y-4 space-y-2  flex flex-col items-center"
@@ -45,21 +46,21 @@ export default function AuthLogin() {
               />
             </Form.Item>
             <div className="flex justify-end w-full py-1">
-              <a href="#">
+              <a href="/auth/passwordForget">
                 <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34]">
                   Нууц үгээ мартсан уу?
                 </p>
               </a>
             </div>
-            <button className="sm:w-80 w-64 py-2 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none">
+            <Button className="sm:w-80 w-64 h-10 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none">
               Нэвртэх
-            </button>
-            <a
-              href="#"
-              className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-sm"
+            </Button>
+            <Link
+              href="/auth/register"
+              className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34]  text-sm"
             >
               Та бүртгүүлээгүй юу? Бүртгүүлэх
-            </a>
+            </Link>
           </Form>
         </div>
       </div>
