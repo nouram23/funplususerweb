@@ -156,7 +156,7 @@ export default function Home() {
               }}
             />
             <ServiceItem
-              item={{
+              longText={{
                 icon: "assets/images/product/medium-size/1-4.svg",
                 count: 10,
                 name: "Swinming Pool",
