@@ -2,7 +2,7 @@ import Merchant from "components/Menchart";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import React from "react";
-import Item from "./item";
+import Item from "components/Item";
 
 export default function Service() {
   return (
@@ -150,7 +150,7 @@ const List = ({ list }) => {
   return (
     <li className="mx-2 my-2">
       <button
-        className="py-1 sm:px-4 px-2 rounded-full ring-1 ring-[#9d32c2] hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34]"
+        className="py-1 focus:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] sm:px-4 px-2 rounded-full ring-1 ring-[#9d32c2] hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34]"
         href="#"
       >
         {list?.name}

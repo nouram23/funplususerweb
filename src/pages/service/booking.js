@@ -4,14 +4,14 @@ import Footer from "components/Footer";
 import React from "react";
 import { Carousel, Calendar, Select, Row, Col, Tabs, Menu, Button } from "antd";
 import Product from "components/Product";
+import Layout from "components/Layout";
 const { TabPane } = Tabs;
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
 export default function Service() {
   return (
-    <>
-      <Header />
+    <Layout>
       <div className="md:mt-24 mt-20 bg-[#1a1a1a] ">
         <div className="max-w-screen-2xl mx-auto ">
           <div className="pl-40 flex h-12 mx-auto font-bold items-center ">
@@ -314,8 +314,6 @@ export default function Service() {
           </div>
         </div>
       </div>
-      <Merchant />
-      <Footer />
-    </>
+    </Layout>
   );
 }
