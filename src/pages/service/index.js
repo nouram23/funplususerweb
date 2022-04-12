@@ -2,7 +2,6 @@ import Merchant from "components/Menchart";
 import Header from "components/Header";
 import Footer from "components/Footer";
 import React from "react";
-
 import Item from "./item";
 
 export default function Service() {
