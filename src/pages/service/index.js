@@ -3,6 +3,7 @@ import Header from "components/Header";
 import Footer from "components/Footer";
 import React from "react";
 import Item from "components/Item";
+import Link from "next/link";
 
 export default function Service() {
   return (
@@ -149,12 +150,11 @@ export default function Service() {
 const List = ({ list }) => {
   return (
     <li className="mx-2 my-2">
-      <button
-        className="py-1 focus:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] sm:px-4 px-2 rounded-full ring-1 ring-[#9d32c2] hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34]"
-        href="#"
-      >
-        {list?.name}
-      </button>
+      <Link href="/">
+        <button className="py-1 sm:px-4 px-2 rounded-full ring-1 ring-[#9d32c2] hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34]">
+          {list?.name}
+        </button>
+      </Link>
     </li>
   );
 };
