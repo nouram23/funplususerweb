@@ -1,15 +1,18 @@
-import Merchant from "components/Menchart";
-import Header from "components/Header";
-import Footer from "components/Footer";
 import React from "react";
 import { Carousel, Calendar, Select, Row, Col, Tabs, Menu, Button } from "antd";
 import Product from "components/Product";
 import Layout from "components/Layout";
+import TimeTable from "components/TimeTable";
+import TableMenu from "components/TableMenu";
+import vipTimeTable from "components/vipTimeTable";
+
 const { TabPane } = Tabs;
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
 
 export default function Service() {
+  const [index, setIndex] = React.useState(0);
+  const onClick = (e) => {
+    setIndex(e.key);
+  };
   return (
     <Layout>
       <div className="md:mt-24 mt-20 bg-[#1a1a1a] ">
@@ -107,7 +110,7 @@ export default function Service() {
                 залуус чөлөөт цагаа зөв боловсон өнгрүүлэхээр боллоо.
                 Агааржуулалтын систем, цэмбэ, плаж, палк, сандал
               </p>
-              <div className="flex justify-center">
+              <div className="flex justify-between">
                 <div className="max-w-sm">
                   <Calendar
                     fullscreen={false}
@@ -160,156 +163,35 @@ export default function Service() {
                     }}
                   />
                 </div>
+                <div className="space-y-4">
+                  <TableMenu
+                    action={{
+                      menuClick: onClick,
+                      subKey: 1,
+                      title: "Энгийн ширээ",
+                      tables: {
+                        table1: "TABLE 1",
+                        table2: "TABLE 2",
+                        table3: "TABLE 3",
+                      },
+                    }}
+                  />
+                  <TableMenu
+                    action={{
+                      menuClick: onClick,
+                      subKey: 2,
+                      title: "VIP ширээ",
+                      tables: {
+                        table1: "VIP TABLE 1",
+                        table2: "VIP TABLE 2",
+                        table3: "VIP TABLE 3",
+                      },
+                    }}
+                  />
+                </div>
               </div>
-              <div className="my-6">
-                <Menu
-                  style={{ width: 700 }}
-                  defaultSelectedKeys={["1"]}
-                  mode="inline"
-                >
-                  <SubMenu title="Table 1">
-                    <MenuItemGroup>
-                      <Row>
-                        <Col span={6}>
-                          <Menu.Item key="1">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              12:30-13:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                        <Col span={6}>
-                          <Menu.Item key="2">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              12:30-13:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                        <Col span={6}>
-                          <Menu.Item key="3">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              12:30-13:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                        <Col span={6}>
-                          <Menu.Item key="4">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              14:30-15:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                      </Row>
-                    </MenuItemGroup>
-                    <MenuItemGroup>
-                      <Row>
-                        <Col span={6}>
-                          <Menu.Item key="5">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              17:30-18:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                        <Col span={6}>
-                          <Menu.Item key="6">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              12:30-13:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                        <Col span={6}>
-                          <Menu.Item key="7">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              12:30-13:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                        <Col span={6}>
-                          <Menu.Item key="8">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              18:30-19:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                      </Row>
-                    </MenuItemGroup>
-                  </SubMenu>
-                </Menu>
-              </div>
-              {/* Second Table */}
-              <div className="my-7">
-                <Menu
-                  style={{ width: 700 }}
-                  defaultSelectedKeys={["1"]}
-                  mode="inline"
-                >
-                  <SubMenu title="VIP room Table 1">
-                    <MenuItemGroup>
-                      <Row>
-                        <Col span={6}>
-                          <Menu.Item key="1">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              12:30-13:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                        <Col span={6}>
-                          <Menu.Item key="2">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              12:30-13:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                        <Col span={6}>
-                          <Menu.Item key="3">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              12:30-13:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                        <Col span={6}>
-                          <Menu.Item key="4">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              14:30-15:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                      </Row>
-                    </MenuItemGroup>
-                    <MenuItemGroup>
-                      <Row>
-                        <Col span={6}>
-                          <Menu.Item key="5">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              17:30-18:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                        <Col span={6}>
-                          <Menu.Item key="6">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              12:30-13:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                        <Col span={6}>
-                          <Menu.Item key="7">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              12:30-13:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                        <Col span={6}>
-                          <Menu.Item key="8">
-                            <Button className="border-none hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:text-white rounded-full text-black font-semibold bg-slate-50 h-10 w-32">
-                              18:30-19:30
-                            </Button>
-                          </Menu.Item>
-                        </Col>
-                      </Row>
-                    </MenuItemGroup>
-                  </SubMenu>
-                </Menu>
-              </div>
+              <TimeTable index={{ table: index }} />
+              <vipTimeTable />
             </div>
           </div>
         </div>

@@ -1,14 +1,11 @@
-import Merchant from "components/Menchart";
-import Header from "components/Header";
-import Footer from "components/Footer";
+import Layout from "components/Layout";
 import React from "react";
 import Item from "components/Item";
 import Link from "next/link";
 
 export default function Service() {
   return (
-    <>
-      <Header />
+    <Layout>
       <div>
         <div className="md:mt-24 mt-20 bg-[#1a1a1a] ">
           <div className="mx-auto max-w-screen-2xl">
@@ -141,9 +138,7 @@ export default function Service() {
           </div>
         </div>
       </div>
-      <Merchant />
-      <Footer />
-    </>
+    </Layout>
   );
 }
 
