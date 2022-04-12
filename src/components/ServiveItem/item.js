@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 /* eslint-disable @next/next/no-img-element */
 export default function ServiceItem({ item, isComingSoon, longText }) {
   if (longText) {
@@ -14,15 +16,18 @@ export default function ServiceItem({ item, isComingSoon, longText }) {
           </div>
         </div>
         <div className="  flex justify-between  mt-2 px-2">
-          <a href="product.html">
-            <h3 className="md:text-lg text-xs font-medium">{longText?.name}</h3>
-          </a>
-          <a
-            className="font-black md:text-lg text-xs md:px-3  px-2 leading-5 ring-1 ring-[#9d32c2] rounded-lg hover:bg-white hover:text-[#9d32c2]"
-            href="product.html"
-          >
-            <i className="fa fa-arrow-right" />
-          </a>
+          <Link href="/service">
+            <a>
+              <h3 className="md:text-lg text-xs font-medium">
+                {longText?.name}
+              </h3>
+            </a>
+          </Link>
+          <Link href="/service">
+            <a className="font-black md:text-lg text-xs md:px-3  px-2 leading-5 ring-1 ring-[#9d32c2] rounded-lg hover:bg-white hover:text-[#9d32c2]">
+              <i className="fa fa-arrow-right" />
+            </a>
+          </Link>
         </div>
       </div>
     );
@@ -54,15 +59,16 @@ export default function ServiceItem({ item, isComingSoon, longText }) {
         </div>
       </div>
       <div className="  flex justify-between  mt-2 px-2">
-        <a href="product.html">
-          <h3 className="md:text-lg font-medium">{item?.name}</h3>
-        </a>
-        <a
-          className="font-black md:text-lg text-xs md:px-3  px-2 leading-5 ring-1 ring-[#9d32c2] rounded-lg hover:bg-white hover:text-[#9d32c2]"
-          href="product.html"
-        >
-          <i className="fa fa-arrow-right" />
-        </a>
+        <Link href="/service">
+          <a>
+            <h3 className="md:text-lg font-medium">{item?.name}</h3>
+          </a>
+        </Link>
+        <Link href="/service">
+          <a className="font-black md:text-lg text-xs md:px-3  px-2 leading-5 ring-1 ring-[#9d32c2] rounded-lg hover:bg-white hover:text-[#9d32c2]">
+            <i className="fa fa-arrow-right" />
+          </a>
+        </Link>
       </div>
     </div>
   );
