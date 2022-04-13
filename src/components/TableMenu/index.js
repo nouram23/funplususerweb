@@ -6,11 +6,11 @@ const SubMenu = Menu.SubMenu;
 export default function TableMenu({ action }) {
   return (
     <div>
-      <Menu className="w-[281px] " selectable={true} selectedKeys mode="inline">
+      <Menu className="" selectable={true} selectedKeys mode="inline">
         <SubMenu title={action?.title}>
           <Select
             onChange={action?.optionClick}
-            style={{ width: 140 }}
+            style={{ width: "50%" }}
             defaultValue="Энгийн өрөө"
           >
             <Option value={0}>Ширээ 1</Option>
@@ -20,7 +20,7 @@ export default function TableMenu({ action }) {
           </Select>
           <Select
             onChange={action?.optionClickVip}
-            style={{ width: 140 }}
+            style={{ width: "50%" }}
             defaultValue="VIP өрөө"
           >
             <Option value={0}>VIP Ширээ 1</Option>

@@ -1,7 +1,7 @@
 export default function Merchant() {
   return (
     <>
-      <div className="md:h-96 h-72 w-full flex flex-col justify-center items-center relative">
+      <div className="md:h-96 h-72 w-full flex flex-col justify-center items-center relative ">
         <img
           className="absolute left-0 top-0 h-full w-full"
           src="assets/images/slider/bg/2-1.jpg"

@@ -32,7 +32,7 @@ export default function VipTimeTable({ index }) {
       <div className="text-blue-500 flex justify-center font-bold text-2xl my-6">
         VIP Ширээ {`${tableNum}`}
       </div>
-      <div className="flex flex-wrap w-full">
+      <div className="flex flex-wrap  mx-auto  md:max-w-4xl ss:max-w-2xl max-w-sm">
         <TableButton
           time={{
             availableTime: vipTables[index?.table].time1,

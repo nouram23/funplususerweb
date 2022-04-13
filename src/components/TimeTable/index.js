@@ -35,7 +35,7 @@ export default function TimeTable({ index }) {
       <div className="text-blue-500 flex justify-center font-bold text-2xl my-6">
         Ширээ {`${tableNum}`}
       </div>
-      <div className="flex flex-wrap w-full">
+      <div className="flex flex-wrap  mx-auto   md:max-w-4xl ss:max-w-2xl max-w-sm">
         <TableButton
           time={{
             availableTime: tables[index?.table].time1,
