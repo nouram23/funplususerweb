@@ -25,7 +25,7 @@ export default function Header() {
           <a href="#" className="">
             <img
               className="sm:h-14 h-8"
-              src="assets/images/logo/logo.svg"
+              src="/assets/images/logo/logo.svg"
               alt="Header Logo"
             />
           </a>
