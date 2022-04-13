@@ -26,7 +26,7 @@ export default function AuthLogin() {
                 src="/assets/images/logo/logo.svg"
               />
             </a>
-            <div className="flex justify-start w-full py-2">
+            <div className=" flex justify-start w-full py-2">
               <p className="text-gradient text-4xl flex text-left">Нэвтрэх</p>
             </div>
             <Form.Item>
@@ -50,9 +50,11 @@ export default function AuthLogin() {
                 </a>
               </Link>
             </div>
-            <Button className="sm:w-80 w-64 h-10 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none">
-              Нэвртэх
-            </Button>
+            <Link href={"/profile"}>
+              <Button className="hover:text-white sm:w-80 w-64 h-10 rounded-xl pl-2 font-light hover:bg-gradient-to-l from-[#e97a34] to-[#9d32c2] bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none">
+                Нэвртэх
+              </Button>
+            </Link>
             <Link href="/auth/register" className="text-gradient  text-sm">
               Та бүртгүүлээгүй юу? Бүртгүүлэх
             </Link>
