@@ -1,17 +1,19 @@
 import React from "react";
-import { Carousel, Calendar, Select, Row, Col, Tabs, Menu, Button } from "antd";
+import { Carousel, Calendar, Select, Row, Col } from "antd";
 import Product from "components/Product";
 import Layout from "components/Layout";
 import TimeTable from "components/TimeTable";
 import TableMenu from "components/TableMenu";
-import vipTimeTable from "components/vipTimeTable";
-
-const { TabPane } = Tabs;
+import VipTimeTable from "components/VipTimeTable";
 
 export default function Service() {
-  const [index, setIndex] = React.useState(0);
+  const [index, setIndex] = React.useState(-1);
   const onClick = (e) => {
-    setIndex(e.key);
+    setIndex(e);
+  };
+  const [indexVip, setIndexVip] = React.useState(-1);
+  const onVipClick = (e) => {
+    setIndexVip(e);
   };
   return (
     <Layout>
@@ -153,35 +155,20 @@ export default function Service() {
                     }}
                   />
                 </div>
-                <div className="space-y-4">
+                <div className="w-[300px]">
                   <TableMenu
                     action={{
-                      menuClick: onClick,
-                      subKey: 1,
-                      title: "Энгийн ширээ",
-                      tables: {
-                        table1: "TABLE 1",
-                        table2: "TABLE 2",
-                        table3: "TABLE 3",
-                      },
-                    }}
-                  />
-                  <TableMenu
-                    action={{
-                      menuClick: onClick,
-                      subKey: 2,
-                      title: "VIP ширээ",
-                      tables: {
-                        table1: "VIP TABLE 1",
-                        table2: "VIP TABLE 2",
-                        table3: "VIP TABLE 3",
-                      },
+                      optionClick: onClick,
+                      optionClickVip: onVipClick,
+                      title: "Цагаа сонгох",
                     }}
                   />
                 </div>
               </div>
-              <TimeTable index={{ table: index }} />
-              <vipTimeTable />
+              {index != -1 ? <TimeTable index={{ table: index }} /> : null}
+              {indexVip != -1 ? (
+                <VipTimeTable index={{ table: indexVip }} />
+              ) : null}
             </div>
           </div>
         </div>

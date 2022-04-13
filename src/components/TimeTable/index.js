@@ -1,5 +1,8 @@
 import React from "react";
 import TableButton from "components/TimeTableButton";
+import { Select } from "antd";
+
+const { Option } = Select;
 
 export default function TimeTable({ index }) {
   let tableNum = parseInt(index?.table) + 1;
@@ -30,7 +33,7 @@ export default function TimeTable({ index }) {
   return (
     <div>
       <div className="text-blue-500 flex justify-center font-bold text-2xl my-6">
-        TABLE {`${tableNum}`}
+        Ширээ {`${tableNum}`}
       </div>
       <div className="flex flex-wrap w-full">
         <TableButton

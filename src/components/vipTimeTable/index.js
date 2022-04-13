@@ -1,7 +1,7 @@
 import React from "react";
 import TableButton from "components/TimeTableButton";
 
-export default function vipTimeTable({ index }) {
+export default function VipTimeTable({ index }) {
   let tableNum = parseInt(index?.table) + 1;
   const vipTables = [
     {
@@ -30,7 +30,7 @@ export default function vipTimeTable({ index }) {
   return (
     <div>
       <div className="text-blue-500 flex justify-center font-bold text-2xl my-6">
-        VIP TABLE {`${tableNum}`}
+        VIP Ширээ {`${tableNum}`}
       </div>
       <div className="flex flex-wrap w-full">
         <TableButton

@@ -1,21 +1,33 @@
-import { Menu } from "antd";
+import { Menu, Select } from "antd";
 import React from "react";
+const { Option } = Select;
 
 const SubMenu = Menu.SubMenu;
 export default function TableMenu({ action }) {
   return (
     <div>
-      <Menu selectable={true} selectedKeys style={{ width: 200 }} mode="inline">
-        <SubMenu key={action?.subKey} title={action?.title}>
-          <Menu.Item onClick={action?.menuClick} key={0}>
-            {action?.tables.table1}
-          </Menu.Item>
-          <Menu.Item onClick={action?.menuClick} key={1}>
-            {action?.tables.table2}
-          </Menu.Item>
-          <Menu.Item onClick={action?.menuClick} key={2}>
-            {action?.tables.table3}
-          </Menu.Item>
+      <Menu className="w-[281px] " selectable={true} selectedKeys mode="inline">
+        <SubMenu title={action?.title}>
+          <Select
+            onChange={action?.optionClick}
+            style={{ width: 140 }}
+            defaultValue="Энгийн өрөө"
+          >
+            <Option value={0}>Ширээ 1</Option>
+            <Option value={1}>Ширээ 2</Option>
+            <Option value={2}>Ширээ 3</Option>
+            <Option value={-1}>Болих</Option>
+          </Select>
+          <Select
+            onChange={action?.optionClickVip}
+            style={{ width: 140 }}
+            defaultValue="VIP өрөө"
+          >
+            <Option value={0}>VIP Ширээ 1</Option>
+            <Option value={1}>VIP Ширээ 2</Option>
+            <Option value={2}>VIP Ширээ 3</Option>
+            <Option value={-1}>Болих</Option>
+          </Select>
         </SubMenu>
       </Menu>
     </div>
