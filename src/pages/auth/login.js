@@ -44,9 +44,11 @@ export default function AuthLogin() {
               />
             </Form.Item>
             <div className="flex justify-end w-full py-1">
-              <a href="/auth/passwordForget">
-                <p className="text-gradient">Нууц үгээ мартсан уу?</p>
-              </a>
+              <Link href="/auth/passwordForget">
+                <a>
+                  <p className="text-gradient">Нууц үгээ мартсан уу?</p>
+                </a>
+              </Link>
             </div>
             <Button className="sm:w-80 w-64 h-10 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none">
               Нэвртэх

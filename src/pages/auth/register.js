@@ -1,8 +1,21 @@
 import React from "react";
-import { Button, Form, Input } from "antd";
+import { Modal, Button, Form, Input, InputNumber } from "antd";
 import Link from "next/link";
 
 export default function AuthRegister() {
+  const [isModalVisible, setIsModalVisible] = React.useState(false);
+
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const handleSinUp = () => {
+    setIsModalVisible(false);
+  };
+  const handleCancel = () => {
+    setIsModalVisible(false);
+  };
+
   return (
     <div className="w-full h-full lg:grid grid-cols-10">
       <div className="col-span-6  h-screen bg-gray-500 hidden lg:block">
@@ -53,7 +66,10 @@ export default function AuthRegister() {
               />
             </Form.Item>
 
-            <Button className="sm:w-80 w-64 h-10 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none">
+            <Button
+              onClick={showModal}
+              className="sm:w-80 w-64 h-10 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none"
+            >
               Бүртгүүлэх
             </Button>
             <Link
@@ -63,6 +79,28 @@ export default function AuthRegister() {
               Нэвртэх бол энд дарна уу?
             </Link>
           </Form>
+          <div className="">
+            {" "}
+            <Modal
+              className=""
+              visible={isModalVisible}
+              style={{ top: "30%" }}
+              onOk={handleSinUp}
+              footer={[
+                <Button
+                  key="sign up"
+                  className="w-full rounded-lg bg-gradient h-10"
+                  onClick={handleSinUp}
+                >
+                  Бүртгүүлэх
+                </Button>,
+              ]}
+            >
+              <div>
+                <Input className="w-96" type="number" addonBefore={"+976"} />
+              </div>
+            </Modal>
+          </div>
         </div>
       </div>
     </div>
