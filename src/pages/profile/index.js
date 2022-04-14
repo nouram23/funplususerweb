@@ -8,16 +8,16 @@ export default function Profile() {
     <div>
       <ProHeader />
       <div className="bg-[#1a1a1a] h-screen mt-24 pt-16">
-        <div className="rounded-lg  max-w-screen-xl mx-auto bg-[#212121] py-12 ">
-          <div className="flex justify-between px-7">
+        <div className="rounded-lg  max-w-screen-lg mx-auto bg-[#212121] py-12 ">
+          <div className="flex justify-between mb-7 pl-28 pr-20">
             <h1 className=" font-bold text-xl">Миний мэдээлэл</h1>
             <Link href={"/profile/update"}>
-              <i className="fa-solid fa-pen-to-square cursor-pointer text-2xl"></i>
+              <i className="fa-solid fa-pen-to-square cursor-pointer text-2xl hover:text-pink-500"></i>
             </Link>
           </div>
-          <div className="flex items-center">
-            <i className="fa-solid fa-user-large  mx-6 text-3xl"></i>
-            <div className="grid grid-cols-3 gap-2">
+          <div className="flex items-center justify-evenly">
+            <i className="fa-solid fa-user-large  text-5xl"></i>
+            <div className="grid grid-cols-3 gap-3">
               <div className="col-span-1">
                 <p className="text-[#a2a2a2]">Нэр</p>
                 <p className="font-bold">Erdene-Uul</p>
@@ -44,7 +44,7 @@ export default function Profile() {
               </div>
             </div>
             <Link href="/auth/passwordForget">
-              <p className="text-pink-500 text-sm ml-4 cursor-pointer">
+              <p className="text-pink-500 text-sm ml-4 cursor-pointer ">
                 Нууц үг солих
               </p>
             </Link>

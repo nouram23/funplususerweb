@@ -50,7 +50,7 @@ export default function AuthLogin() {
                 </a>
               </Link>
             </div>
-            <Link href={"/profile"}>
+            <Link href={"/"}>
               <Button className="hover:text-white sm:w-80 w-64 h-10 rounded-xl pl-2 font-light hover:bg-gradient-to-l from-[#e97a34] to-[#9d32c2] bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none">
                 Нэвртэх
               </Button>

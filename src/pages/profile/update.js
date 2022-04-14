@@ -3,6 +3,7 @@ import Merchant from "components/Merchant";
 import Footer from "components/Footer";
 import React from "react";
 import { Form, Input, Button, Radio } from "antd";
+import Link from "next/link";
 
 export default function Update() {
   const [value, setValue] = React.useState(1);
@@ -43,10 +44,11 @@ export default function Update() {
                 <Radio value={2}>Female</Radio>
               </Radio.Group>
             </Form.Item>
-
-            <Button className="ml-72 rounded-xl bg-gradient hover:bg-gradient-to-r from-[#e97a34] hover:to-[#9d32c2] hover:text-white">
-              Хадгалах
-            </Button>
+            <Link href={"/profile"}>
+              <Button className="ml-72 rounded-xl bg-gradient hover:bg-gradient-to-r from-[#e97a34] hover:to-[#9d32c2] hover:text-white">
+                Хадгалах
+              </Button>
+            </Link>
           </Form>
         </div>
       </div>
