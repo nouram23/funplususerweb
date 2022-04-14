@@ -7,29 +7,19 @@ import { Drawer, Button } from "antd";
 export default function Header() {
   return (
     <div className="bg-[#242424] w-full h-24  fixed left-0 top-0 z-20 ">
-      <div className="max-w-screen-2xl h-full flex justify-evenly items-center sm:text-lg text-sm mx-auto">
-        <ul className=" lg:flex space-x-5 hidden">
-          <li>
-            <a className="hover:text-[#9d32c2]" href="#">
-              Таньд санал болгох
-            </a>
-          </li>
-          <li>
-            <a className="hover:text-[#9d32c2]" href="#">
-              Хамтран ажилах
-            </a>
-          </li>
-        </ul>
-
+      <div className="max-w-screen-xl h-full flex justify-between   items-center sm:text-lg text-sm mx-auto">
         <div className="focus:outline-none">
-          <a href="#" className="">
-            <img
-              className="sm:h-14 h-8"
-              src="/assets/images/logo/logo.svg"
-              alt="Header Logo"
-            />
-          </a>
+          <Link href="/">
+            <a className="">
+              <img
+                className="sm:h-14 h-8"
+                src="/assets/images/logo/logo.svg"
+                alt="Header Logo"
+              />
+            </a>
+          </Link>
         </div>
+
         <div className="sm:flex hidden">
           <ul className=" flex flex-row items-baseline space-x-4 ">
             <li>

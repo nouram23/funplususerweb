@@ -129,89 +129,112 @@ export default function Home() {
       </div> */}
       <div className="md:mt-24 mt-20 bg-[#1a1a1a] ">
         <div className="md:max-w-7xl  max-w-xl mx-auto py-10">
-          <h1 className="md:text-4xl text-lg font-semibold text-center mb-10">
-            МАНАЙХТАЙ ХАМТРАГЧ
-          </h1>
-
           <div className="flex justify-center flex-wrap mx-auto ">
             <ServiceItem
               item={{
                 icon: "assets/images/product/medium-size/1-1.svg",
                 count: 10,
-                name: "Billiard",
+                name: "Биллиард",
               }}
             />
             <ServiceItem
               item={{
                 icon: "assets/images/product/medium-size/1-2.svg",
                 count: 10,
-                name: "Barber",
+                name: "Үсчин",
               }}
             />
             <ServiceItem
               item={{
                 icon: "assets/images/product/medium-size/1-3.svg",
                 count: 10,
-                name: "Basketball",
+                name: "Заал",
               }}
             />
             <ServiceItem
               longText={{
                 icon: "assets/images/product/medium-size/1-4.svg",
                 count: 10,
-                name: "Swinming Pool",
+                name: "Усан бассейн",
               }}
             />
             <ServiceItem
               item={{
                 icon: "assets/images/product/medium-size/1-5.svg",
                 count: 10,
-                name: "Beauty",
+                name: "Гоо сайхан",
               }}
             />
             <ServiceItem
               item={{
                 icon: "assets/images/product/medium-size/1-6.svg",
                 count: 10,
-                name: "Bowling",
+                name: "Боулинг",
               }}
             />
             <ServiceItem
-              item={{
+              longText={{
                 icon: "assets/images/product/medium-size/1-7.svg",
                 count: 10,
-                name: "Maze",
+                name: "Сэтгэл судлаач",
               }}
             />
             <ServiceItem
               item={{
                 icon: "assets/images/product/medium-size/1-8.svg",
                 count: 10,
-                name: "Paintball",
+                name: "Экстрем спорт",
               }}
             />
             <ServiceItem
               item={{
                 icon: "assets/images/product/medium-size/1-9.svg",
                 count: 10,
-                name: "Photography",
+                name: "Кароеке",
               }}
             />
             <ServiceItem
               item={{
                 icon: "assets/images/product/medium-size/1-10.svg",
                 count: 10,
-                name: "Ping Pong",
+                name: "Маникюр",
+              }}
+            />
+            <ServiceItem
+              longText={{
+                icon: "assets/images/product/medium-size/1-11.svg",
+                count: 10,
+                name: "Энтертаймент төв",
               }}
             />
             <ServiceItem
               item={{
-                icon: "assets/images/product/medium-size/1-11.svg",
+                icon: "assets/images/product/medium-size/1-12.svg",
                 count: 10,
-                name: "Restaurent",
+                name: "Пейнтбол",
               }}
             />
-
+            <ServiceItem
+              item={{
+                icon: "assets/images/product/medium-size/1-13.svg",
+                count: 10,
+                name: "Зургийн студи",
+              }}
+            />
+            <ServiceItem
+              item={{
+                icon: "assets/images/product/medium-size/1-14.svg",
+                count: 10,
+                name: "Теннис",
+              }}
+            />
+            <ServiceItem
+              item={{
+                icon: "assets/images/product/medium-size/1-15.svg",
+                count: 10,
+                name: "Ресторан",
+              }}
+            />
             <ServiceItem isComingSoon={true} />
           </div>
         </div>

@@ -45,6 +45,7 @@ class MyDocument extends Document {
             type="image/x-icon"
             href="/assets/images/Logo.ico"
           />
+
           <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
           <link rel="stylesheet" href="/assets/css/Pe-icon-7-stroke.css" />
           <link rel="stylesheet" href="/assets/css/animate.min.css" />
@@ -52,6 +53,10 @@ class MyDocument extends Document {
           <link rel="stylesheet" href="/assets/css/nice-select.css" />
           <link rel="stylesheet" href="/assets/css/magnific-popup.min.css" />
           <link rel="stylesheet" href="/assets/css/ion.rangeSlider.min.css" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+          />
           {this.props.styleTags}
         </Head>
         <body>

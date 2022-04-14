@@ -10,75 +10,75 @@ export default function Service() {
         <div className="md:mt-24 mt-20 bg-[#1a1a1a] ">
           <div className="mx-auto max-w-screen-2xl">
             <div className=" flex  sm:p-10 p-4">
-              <ul className=" md:text-base text-sm font-light flex mx-auto justify-center flex-wrap md:px-10 sm:px-6 px-3 sm:pt-0 pt-4">
+              <ul className="max-w-screen-xl md:text-base text-sm font-light flex mx-auto justify-center flex-wrap sm:pt-0 pt-4">
                 <List
                   list={{
-                    name: "Barber",
+                    name: "Үсчин",
                   }}
                 />
                 <List
                   list={{
-                    name: "Basketball",
+                    name: "Заал",
                   }}
                 />
                 <List
                   list={{
-                    name: "Beauty",
+                    name: "Гоо сайхан",
                   }}
                 />
                 <List
                   list={{
-                    name: "Billiard",
+                    name: "Биллиард",
                   }}
                 />
                 <List
                   list={{
-                    name: "Bowling",
+                    name: "Боулинг",
                   }}
                 />
                 <List
                   list={{
-                    name: "Coach",
+                    name: "Сэтгэл судлаач",
                   }}
                 />
                 <List
                   list={{
-                    name: "Extereme",
+                    name: "Экстрем спорт",
                   }}
                 />
                 <List
                   list={{
-                    name: "Karaoke",
+                    name: "Караоке",
                   }}
                 />
                 <List
                   list={{
-                    name: "Manicure",
+                    name: "Маниюкр",
                   }}
                 />
                 <List
                   list={{
-                    name: "Maze",
+                    name: "Энтертаймент төв",
                   }}
                 />
                 <List
                   list={{
-                    name: "Paintball",
+                    name: "Пейнтбол",
                   }}
                 />
                 <List
                   list={{
-                    name: "Photography",
+                    name: "Зургийн студи",
                   }}
                 />
                 <List
                   list={{
-                    name: "PingPong",
+                    name: "Теннис",
                   }}
                 />
                 <List
                   list={{
-                    name: "Restourant",
+                    name: "Ресторан",
                   }}
                 />
               </ul>

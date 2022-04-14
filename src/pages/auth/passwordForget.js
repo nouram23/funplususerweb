@@ -5,14 +5,14 @@ import Link from "next/link";
 export default function AuthRegister() {
   return (
     <div className="w-full h-full lg:grid grid-cols-10">
-      <div className="col-span-6  h-screen bg-gray-500 hidden lg:block">
+      <div className="col-span-6  h-screen  hidden lg:block">
         <img
           alt="bg"
           className="w-full bg-cover object-center h-screen"
           src="/assets/images/banner/2-1-570x500.jpg"
         />
       </div>
-      <div className="col-span-4  h-screen bg-white flex justify-center items-center">
+      <div className="col-span-4  h-screen  flex justify-center items-center">
         <div className="w-96 h-[500px] flex flex-col  items-center rounded-lg">
           <a href="#">
             <img
@@ -21,9 +21,9 @@ export default function AuthRegister() {
               src="/assets/images/logo/logo.svg"
             />
           </a>
-          <Tabs className="text-[#9d32c2] hover:text-[#e97a34] ">
+          <Tabs className="text-[#9d32c2]  ">
             <Tabs.TabPane
-              className="text-[#9d32c2] hover:text-[#e97a34]"
+              className="text-[#9d32c2] "
               tab="Нууц үг сэргээх"
               key="password_forget"
               tabKey="password_forget"
@@ -46,40 +46,36 @@ export default function AuthRegister() {
 
 const PasswordForgetForm = () => {
   return (
-    <Form
-      className="text-black  flex flex-col items-center"
-      action=""
-      layout="vertical"
-    >
+    <Form className="  flex flex-col items-center" action="" layout="vertical">
       <Form.Item>
         <Input
-          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2] placeholder:text-slate-500"
+          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2]   "
           type="number"
           placeHolder="Утасны дугаар"
         />
       </Form.Item>
       <Form.Item>
         <Input
-          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2] placeholder:text-slate-500"
+          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2]   "
           type="number"
           placeHolder="Баталгаажуулах код"
         />
       </Form.Item>
       <Form.Item>
         <Input
-          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2] placeholder:text-slate-500"
+          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2]   "
           type="number"
           placeHolder="Нууц үг"
         />
       </Form.Item>
-      <Button className="sm:w-72 w-64 h-10 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none">
+      <Button className="sm:w-72 w-64 h-10 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] ">
         Сэргээх
       </Button>
-      <Link
-        href="#"
-        className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-sm"
-      >
-        Нэвртэх бол энд дарна уу?
+      <Link href="login">
+        <a className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-sm mt-2">
+          {" "}
+          Нэвртэх бол энд дарна уу?
+        </a>
       </Link>
     </Form>
   );
@@ -87,40 +83,36 @@ const PasswordForgetForm = () => {
 
 const PasswordChangeForm = () => {
   return (
-    <Form
-      className="text-black   flex flex-col items-center"
-      action=""
-      layout="vertical"
-    >
+    <Form className=" flex flex-col items-center" action="" layout="vertical">
       <Form.Item>
         <Input
-          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1 placeholder:text-slate-500 ring-[#9d32c2]"
+          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1    ring-[#9d32c2]"
           type="number"
           placeHolder="Нууц үг"
         />
       </Form.Item>
       <Form.Item>
         <Input
-          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1 placeholder:text-slate-500 ring-[#9d32c2]"
+          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1    ring-[#9d32c2]"
           type="number"
           placeHolder="Шинэ нууц үг"
         />
       </Form.Item>
       <Form.Item>
         <Input
-          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1 placeholder:text-slate-500 ring-[#9d32c2]"
+          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1    ring-[#9d32c2]"
           type="number"
           placeHolder="Шинэ нууц үг давтан оруулах"
         />
       </Form.Item>
-      <Button className="sm:w-72 w-64 h-10 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none">
+      <Button className="sm:w-72 w-64 h-10 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34]">
         Солих
       </Button>
-      <Link
-        href="#"
-        className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-sm"
-      >
-        Нэвртэх бол энд дарна уу?
+      <Link href="login">
+        <a className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-sm mt-2">
+          {" "}
+          Нэвртэх бол энд дарна уу?
+        </a>
       </Link>
     </Form>
   );
