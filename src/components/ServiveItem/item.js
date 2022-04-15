@@ -6,7 +6,7 @@ export default function ServiceItem({ item, isComingSoon, longText }) {
   if (longText) {
     return (
       <Link href="/service">
-        <div className=" md:w-56 md:h-[275px] w-36  h-48 bg-[#212121] md:p-4 p-2  md:rounded-3xl rounded-2xl hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] md:mx-3 md:my-3 mx-1 my-2">
+        <div className=" md:w-56 md:h-[275px] w-36  h-48 bg-[#212121] md:p-4 p-2  md:rounded-3xl rounded-2xl hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] md:mx-3 md:my-3 xs:mx-4 xs:my-4  mx-1 my-2">
           <div className="md:w-48 md:h-52  w-32 h-36  bg-[#4A4A4A] flex items-center justify-center relative md:rounded-3xl rounded-2xl hover:bg-[#ffb9ea]">
             <img
               className="md:h-36 h-20"
@@ -32,7 +32,7 @@ export default function ServiceItem({ item, isComingSoon, longText }) {
   }
   if (isComingSoon) {
     return (
-      <div className="md:w-56 md:h-[275px] w-36 h-40 bg-[#212121] md:p-4 p-2  rounded-3xl hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] md:mx-3 md:my-3 mx-1 my-2">
+      <div className="md:w-56 md:h-[275px] w-36 h-40 bg-[#212121] md:p-4 p-2  rounded-3xl hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] md:mx-3 md:my-3 xs:mx-4 xs:my-4  mx-1 my-2">
         <div className=" md:w-48 md:h-52  w-32 h-36  bg-[#4A4A4A]  flex items-center justify-center relative rounded-3xl hover:bg-[#ffb9ea]">
           <img
             className="md:h-36 h-20"
@@ -46,7 +46,7 @@ export default function ServiceItem({ item, isComingSoon, longText }) {
 
   return (
     <Link href="/service">
-      <div className=" md:w-56 md:h-[275px] w-36  h-48 bg-[#212121] md:p-4 p-2  md:rounded-3xl rounded-2xl hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] md:mx-3 md:my-3 mx-1 my-2">
+      <div className=" md:w-56 md:h-[275px] w-36  h-48 bg-[#212121] md:p-4 p-2  md:rounded-3xl rounded-2xl hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] md:mx-3 md:my-3 xs:mx-4 xs:my-4 mx-1 my-2">
         <div className="md:w-48 md:h-52  w-32 h-36  bg-[#4A4A4A] flex items-center justify-center relative md:rounded-3xl rounded-2xl hover:bg-[#ffb9ea]">
           <img
             className="md:h-36 h-20"

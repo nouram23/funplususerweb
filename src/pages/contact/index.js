@@ -1,5 +1,5 @@
 import Layout from "components/Layout";
-import { Button, Form, Input, Tabs } from "antd";
+import { Button, Card, Form, Input, Tabs } from "antd";
 import Link from "next/link";
 const { TextArea } = Input;
 
@@ -10,9 +10,9 @@ export default function Contact() {
   return (
     <>
       <Layout>
-        <div className="md:mt-24 mt-20 bg-[#1a1a1a] font-Roboto ">
-          <div className=" max-w-7xl mx-auto flex flex-col min-h-screen md:py-56 py-40 ">
-            <div className="flex flex-col items-center md:space-y-12 space-y-8 text-center">
+        <div className="md:mt-24 mt-14 bg-[#1a1a1a] font-Roboto ">
+          <div className=" max-w-7xl mx-auto flex flex-col min-h-screen md:py-56 sm:py-40 py-10">
+            <div className="flex flex-col items-center  md:space-y-12 space-y-8 text-center">
               {" "}
               <h1 className="md:text-6xl text-3xl ">Холбоо барих</h1>
               <p
@@ -24,8 +24,8 @@ export default function Contact() {
                 байна.
               </p>
             </div>
-            <div className=" flex justify-between items-baseline lg:flex-row flex-col lg:px-20 mx-auto md:mt-80 mt-20">
-              <div className=" border border-white/10  lg:p-20 p-10 mx-auto rounded-2xl">
+            <div className=" max-w-screen-2xl flex items-baseline justify-between lg:flex-row flex-col lg:px-20  md:mt-80 ss:mt-20 mt-10">
+              <div className=" border border-white/10  lg:p-20 ss:p-10 p-4 mx-auto rounded-2xl">
                 <Tabs className="">
                   <Tabs.TabPane
                     className=" "
@@ -42,10 +42,7 @@ export default function Contact() {
               </div>
               <div className="flex flex-col mt-10 space-y-6 mx-auto px-10">
                 <div>
-                  <h1 className="hidden text-4xl mb-10 font-semibold">
-                    Холбоо барих
-                  </h1>
-                  <p className="md:text-xl text-base max-w-sm ">
+                  <p className="md:text-xl text-base  max-w-sm ">
                     Та энэхүү формыг бөглөөд илгээхэд, манай баг тантай эргээд
                     холбогдох болно.
                   </p>

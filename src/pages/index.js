@@ -127,7 +127,7 @@ export default function Home() {
           <div className="swiper-button-next" />
         </div>
       </div> */}
-      <div className="md:mt-24 mt-20 bg-[#1a1a1a] ">
+      <div className="md:mt-24 mt-14  bg-[#1a1a1a] ">
         <div className="md:max-w-7xl  max-w-xl mx-auto py-10">
           <div className="flex justify-center flex-wrap mx-auto ">
             <ServiceItem
@@ -180,7 +180,7 @@ export default function Home() {
               }}
             />
             <ServiceItem
-              item={{
+              longText={{
                 icon: "assets/images/product/medium-size/1-8.svg",
                 count: 10,
                 name: "Экстрем спорт",
@@ -215,7 +215,7 @@ export default function Home() {
               }}
             />
             <ServiceItem
-              item={{
+              longText={{
                 icon: "assets/images/product/medium-size/1-13.svg",
                 count: 10,
                 name: "Зургийн студи",
