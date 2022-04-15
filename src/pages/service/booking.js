@@ -25,7 +25,7 @@ export default function Booking() {
   };
   return (
     <Layout>
-      <div className="mt-24 bg-[#1a1a1a] ">
+      <div className="md:mt-24 mt-14  bg-[#1a1a1a] ">
         <div className="max-w-screen-2xl  mx-auto lg:px-10 py-10 px-2">
           <div className="pl-40 flex h-12 mx-auto font-bold items-center ">
             Нүүр Хуудас-Бүтээгдэхүүн-Billiard

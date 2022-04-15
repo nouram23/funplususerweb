@@ -12,7 +12,7 @@ export default function AuthLogin() {
           src="/assets/images/banner/2-1-570x500.jpg"
         />
       </div>
-      <div className="col-span-4  h-screen w-full bg-white flex justify-center mx-auto items-center">
+      <div className="col-span-4  h-screen w-full  flex justify-center mx-auto items-center">
         <div className="w-96 h-[500px] flex flex-col  items-center rounded-lg">
           <Form
             className="text-black sm:space-y-4 space-y-2  flex flex-col items-center"
@@ -55,8 +55,11 @@ export default function AuthLogin() {
                 Нэвртэх
               </Button>
             </Link>
-            <Link href="/auth/register" className="text-gradient  text-sm">
-              Та бүртгүүлээгүй юу? Бүртгүүлэх
+            <Link href="/auth/register">
+              <a className="text-gradient  hover:bg-white text-sm">
+                {" "}
+                Бүртгүүлэх
+              </a>
             </Link>
           </Form>
         </div>

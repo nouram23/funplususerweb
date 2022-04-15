@@ -1,3 +1,5 @@
+const defaultTheme = require("tailwindcss/defaultTheme");
+
 module.exports = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx}",
@@ -22,7 +24,11 @@ module.exports = {
         // => @media (min-width: 1280px) { ... }
 
         "2xl": "1536px",
+        ...defaultTheme.screens,
         // => @media (min-width: 1536px) { ... }
+      },
+      fontFamily: {
+        Roboto: "Roboto",
       },
     },
   },

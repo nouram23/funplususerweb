@@ -13,7 +13,7 @@ export default function Product({ items }) {
         <p className="sm:text-base font-bold text-xs  sm:leading-5 leading-4">
           {items?.desc}
         </p>
-        <p className="text-[10px] 2xl:my-1"> {items?.title}</p>
+        <p className="sm:text-sm text-[10px] 2xl:my-1"> {items?.title}</p>
       </div>
     </div>
   );
