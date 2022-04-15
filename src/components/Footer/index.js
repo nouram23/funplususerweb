@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -118,9 +119,9 @@ export default function Footer() {
                 </a>
               </li>
               <li>
-                <a className="hover:text-[#9d32c2]" href="#">
+                <Link href="/serviceCondition" className="hover:text-[#9d32c2]">
                   Үйлчилгээний нөхцөл
-                </a>
+                </Link>
               </li>
               <li>
                 <a className="hover:text-[#9d32c2]" href="#">
