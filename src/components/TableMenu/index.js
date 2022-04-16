@@ -6,7 +6,7 @@ const SubMenu = Menu.SubMenu;
 export default function TableMenu({ action }) {
   return (
     <div>
-      <Menu className="" selectable={true} selectedKeys mode="inline">
+      <Menu className="w-[270px]" selectable={true} selectedKeys mode="inline">
         <SubMenu title={action?.title}>
           <Select
             onChange={action?.optionClick}
