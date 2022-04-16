@@ -3,32 +3,34 @@ import Layout from "components/Layout";
 export default function serviceCondition() {
   return (
     <Layout>
-      <div className="mt-24 py-16 bg-[#1a1a1a]">
-        <div className=" bg-[#212121] flex flex-col flex-wrap max-w-7xl mx-auto space-y-3 p-20 border rounded-2xl border-white/10">
-          <h1 className="flex justify-center mt-6 font-bold text-2xl">
+      <div className="md:mt-24 mt-14 md:py-16 bg-[#1a1a1a]">
+        <div className=" bg-[#212121] flex flex-col flex-wrap xl:max-w-7xl max-w-4xl   mx-auto space-y-3 md:p-20 ss:p-10 p-6 border rounded-2xl border-white/10 ">
+          <h1 className="flex justify-center mt-6 font-bold sm:text-2xl text-xl">
             ҮЙЛЧИЛГЭЭНИЙ НӨХЦӨЛ
           </h1>
           <div>
-            <li className="font-bold text-xl my-4">ЕРӨНХИЙ НӨХЦӨЛ</li>
-            <div className="flex flex-wrap max-w-5xl mx-auto space-y-4">
-              <li className="text-lg">
+            <h1 className="font-bold sm:text-xl text-lg my-6">
+              ЕРӨНХИЙ НӨХЦӨЛ
+            </h1>
+            <div className="flex flex-wrap max-w-5xl mx-auto space-y-4 sm:text-lg ">
+              <li className="">
                 FUN+ аппликэйшн болон <a href="#">www.funplus.mn</a> веб сайт нь
                 ФАН ЮҮНИТИ ХХК-ийн албан ёсний аппликэйшн болон веб бөгөөд
                 энэхүү нөхцөл нь уг апп болон вебээр үүлчлүүлэх, бараа
                 бүтээгдэхүүн, үйлчилгээний цаг захиалахтай холбоотой үүсэх
                 харилцааг зохицуулахад оршино.
               </li>
-              <li className="text-lg">
+              <li className="">
                 Энэхүү нөхцөл нь хэрэглэгч урьдчилсан цаг захиалга хийх
                 аппликэйшн болон веб-ээр үүлчлүүлхээс өмнө хүлээн зөвшөөрч
                 баталгаажуулсаны үндсэн дээр хэрэгжинэ.
               </li>
-              <li className="text-lg">
+              <li className="">
                 Энэхүү үйлчилгээний нөхцлын хэрэгжилтийн нөхцөлд ФАН ЮҮНИТИ ХХК
                 цаашид FUN+ гэх /хэрэглэгч/ цаашид захиалагч гэх/ хамтран хяналт
                 тавина.
               </li>
-              <li className="text-lg">
+              <li className="">
                 Хэрэглэгчдийн дунд явагдаж буй бүх хэлэлцээр ФАН ЮҮНИТИ ХХК
                 оролцоогүйгээр явагддаг болно. ФАН ЮҮНИТИ ХХК нь үйлчилгээ, цаг
                 захиалгын үйлчилгээгээр хангадаг болно.
@@ -36,18 +38,18 @@ export default function serviceCondition() {
             </div>
           </div>
           <div>
-            <li className="font-bold text-xl my-4">ҮЙЛ АЖИЛЛАГАА</li>
-            <div className="flex flex-wrap max-w-5xl mx-auto space-y-4">
-              <li className="text-lg">
+            <h1 className="font-bold sm:text-xl text-lg my-4">ҮЙЛ АЖИЛЛАГАА</h1>
+            <div className="flex flex-wrap max-w-5xl mx-auto space-y-4 sm:text-lg ">
+              <li className="">
                 FUN+ аппликэйшн болон www.funplus.mn веб нь ФАН ЮНИТИ ХХК-ийн
                 өмч бөгөөд энэхүү аппликэйшний лого, нэр бусад загварыг хуулах,
                 олшруулах, дуурайх, өөр бусад ямар ч зүйлд ашиглахийг хориглоно.
               </li>
-              <li className="text-lg">
+              <li className="">
                 Үйлчилгээний мэдээлэл, үнийн өөрчлөлт, хямдрал урамшууллын үнэн
                 зөв мэдээллийг компани бүрэн хариуцна.
               </li>
-              <li className="text-lg">
+              <li className="">
                 Захиалагч нь аппликэйшн болон веб-ийн талаар санал гомдол, шинэ
                 санал, шүүмж зэргийг веб-ийн журмийн дагуу илгээх, илэрхийлэх
                 эрхтэй.
@@ -55,50 +57,52 @@ export default function serviceCondition() {
             </div>
           </div>
           <div>
-            <li className="font-bold text-xl my-4">ХЭРЭГЛЭГЧИЙН БҮРТГЭЛ</li>
-            <div className="flex flex-wrap max-w-5xl mx-auto space-y-4">
-              <li className="text-lg">
+            <h1 className="font-bold sm:text-xl text-lg my-4">
+              ХЭРЭГЛЭГЧИЙН БҮРТГЭЛ
+            </h1>
+            <div className="flex flex-wrap max-w-5xl mx-auto space-y-4 sm:text-lg">
+              <li className="">
                 FUN+ аппликэйшн болон www.funplus.mn вебээр үйлчлүүлэхдээ
                 хэрэглэгч заавал бүртгүүлэн байна. Дэлгэрэнгүй мэдээлэл авах,
                 цаг захиалга өгөхийг хүссэн ямар ч хэрэглэгч аппликэйшнд и-мэйл
                 хаяг, утасны дугаар болон бусад шаардлагатай мэдээллүүдийг
                 бөглөнө.
               </li>
-              <li className="text-lg">
+              <li className="">
                 Захиалагчийн мэдээллийн бүрэн бүтэн болон үнэн зөв байдлийг
                 байгууллага цаг тухай бүрд шалгаж байх ба хэрэглэгчийн
                 мэдээллийн нууцлалыг байгууллага бүрэн хамгаалана.
               </li>
-              <li className="text-lg">
+              <li className="">
                 Захиалагчийн мэдээллийн үнэн зөв бодит байдалд, захиалагч бүрэн
                 хариуцлага хүлээнэ.
               </li>
-              <li className="text-lg">
+              <li className="">
                 Нэг хэрэглэгч нэг л утасны дугаараар бүтгүүлэх боломжтой.
                 Ашиглагдсан утасны дугаар дахин өөр бүртгэлд ашиглагдахгүй.
               </li>
             </div>
           </div>
           <div>
-            <li className="font-bold text-xl my-4">ТӨЛБӨР ТООЦОО</li>
-            <div className="flex flex-wrap max-w-5xl mx-auto space-y-4">
-              <li className="text-lg">
+            <h1 className="font-bold text-xl my-4">ТӨЛБӨР ТООЦОО</h1>
+            <div className="flex flex-wrap max-w-5xl mx-auto space-y-4 sm:text-lg">
+              <li className="">
                 FUN+ аппликэйшн болон www.funplus.mn вебээс цаг захиалахдаа
                 үйлчилгээний төлбөрийг 100% төлсний дараа цаг захиалга
                 баталгаажна.
               </li>
-              <li className="text-lg">
+              <li className="">
                 Төлбөр дутуу төлөгдсөн тохиолдолд цаг захиалга баталгаажихгүй.
               </li>
-              <li className="text-lg">
+              <li className="">
                 Захиалсан цагаа цуцлах тохиолдолд, захиалсан цагаасаа 3н цагийн
                 өмнө цуцлах хүсэлт аппликэйшн болон веб-ээс илгээнэ. Буцаалтаас
                 үнийн дүнгийн 5% шимтгэл тооцно.
               </li>
-              <li className="text-lg">
+              <li className="">
                 Төлбөрийг E-Commerce үйлчилгээг ашиглан хийнэ.
               </li>
-              <li className="text-lg">
+              <li className="">
                 Интернэт доголдол, банкны үйл ажиллагаа, цахилгааны саатал,
                 хэхэглэгчийн буруутай алдаатай үйл ажиллагаанаас төлбөрийн
                 асуудал гарсан тохиолдолд ФАН ЮҮНИТИ ХХК хариуцах боломжгүй.
@@ -106,47 +110,47 @@ export default function serviceCondition() {
             </div>
           </div>
           <div>
-            <li className="font-bold text-xl my-4">ЗАХИАЛГА</li>
-            <div className="flex flex-wrap max-w-5xl mx-auto space-y-4">
-              <li className="text-lg">
+            <li className="font-bold sm:text-xl text-lg my-4">ЗАХИАЛГА</li>
+            <div className="flex flex-wrap max-w-5xl mx-auto space-y-4 sm:text-lg">
+              <li className="">
                 Төлбөр төлөгдсөн захиалга шууд захиалгын листэд орно.
               </li>
-              <li className="text-lg">
+              <li className="">
                 Хэрэглэгч хамгийн багадаа 3 цагийн өмнө, хамгийн эхдээ 7
                 хоногийн өмнө захиалгаа өгнө.
               </li>
-              <li className="text-lg">
+              <li className="">
                 FUN+ аппликэйшн болон www.funplus.mn веб нь 24/7 цаг захиалга
                 хүлээн авна.
               </li>
-              <li className="text-lg">
+              <li className="">
                 Захиалагч захиалсан цагтаа очход захиалгыг бэлтгээгүй байх
                 тохиолдолд мерчант хариуцлага хүлээнэ.
               </li>
-              <li className="text-lg">
+              <li>
                 Захиалагч захиалсан цагаасаа 30 минутаас илүү хоцорсон
                 тохиолдолд захиалга цуцлагдаж, төлбөрийг буцаах боломжгүй байна.
               </li>
             </div>
           </div>
           <div>
-            <li className="font-bold text-xl my-4">БАТАЛГААЖУУЛАЛТ</li>
+            <h1 className="font-bold text-xl my-4">БАТАЛГААЖУУЛАЛТ</h1>
             <div className="flex flex-wrap max-w-5xl mx-auto space-y-4">
-              <li className="text-lg">
+              <li className="sm:text-lg">
                 Цаг захиалсан баталгаажуулалт нь веб болон аппликэйшний захиалга
                 хэсэгт орно.
               </li>
             </div>
           </div>
           <div>
-            <li className="font-bold text-xl my-4">БУСАД ЗААЛТ</li>
-            <div className="flex flex-wrap max-w-5xl mx-auto space-y-4">
-              <li className="text-lg">
+            <h1 className="font-bold text-xl my-4">БУСАД ЗААЛТ</h1>
+            <div className="flex flex-wrap max-w-5xl mx-auto space-y-4 sm:text-lg">
+              <li className="">
                 Захиалгын мэдээлэл болон төлбөрийн талаар ямар нэгэн асуудал
                 эсвэл тодруулга гарвал веб сайтийн оператор хэрэглэгчийн утас
                 эсвэл аппликэйшний хүсэлт илгээх хэсгээр холбогдож болно.
               </li>
-              <li className="text-lg">
+              <li className="">
                 Хэрэглэгчээс гарсан гомдол, маргаантай асуудлыг үйлчилгээний
                 нөхцөл болон Монгол улсын холбогдох хуйл тогтоомж, дүрэм журмын
                 дагуу шийдвэрлэнэ.

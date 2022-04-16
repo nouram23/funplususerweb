@@ -19,28 +19,31 @@ export default function AuthLogin() {
             action=""
             layout="vertical"
           >
-            <a href="#">
-              <img
-                className="h-20"
-                alt="logo"
-                src="/assets/images/logo/logo.svg"
-              />
-            </a>
+            <Link href="/">
+              <a>
+                <img
+                  className="h-20"
+                  alt="logo"
+                  src="/assets/images/logo/logo.svg"
+                />
+              </a>
+            </Link>
+
             <div className=" flex justify-start w-full py-2">
               <p className="text-gradient text-4xl flex text-left">Нэвтрэх</p>
             </div>
-            <Form.Item>
+            <Form.Item label="Утасны дугаар" className="text-[#9d32c2]">
               <Input
                 className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2] placeholder:text-slate-500"
                 type="number"
-                placeHolder="Утасны дугаар"
+                placeHolder="99999999"
               />
             </Form.Item>
-            <Form.Item>
+            <Form.Item label="Нууц үг">
               <Input
                 className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2] placeholder:text-slate-500"
                 type="password"
-                placeholder="Нууц үг"
+                placeholder="password"
               />
             </Form.Item>
             <div className="flex justify-end w-full py-1">
@@ -51,7 +54,10 @@ export default function AuthLogin() {
               </Link>
             </div>
             <Link href={"/"}>
-              <Button className="hover:text-white sm:w-80 w-64 h-10 rounded-xl pl-2 font-light hover:bg-gradient-to-l from-[#e97a34] to-[#9d32c2] bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none">
+              <Button
+                type="primary"
+                className="hover:text-white sm:w-80 w-64 h-10 rounded-xl pl-2 font-light hover:bg-gradient-to-l from-[#e97a34] to-[#9d32c2] bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none"
+              >
                 Нэвртэх
               </Button>
             </Link>

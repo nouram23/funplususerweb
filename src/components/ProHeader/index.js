@@ -39,9 +39,9 @@ export default function Header() {
             </li>
             <li className="">
               <a href="#">
-                <button className="py-1 sm:px-4 px-2 rounded-full bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:from-[#e97a34] hover:to-[#9d32c2]  ">
+                <Button className="py-1 sm:px-4 px-2 rounded-full bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:from-[#e97a34] hover:to-[#9d32c2]  ">
                   Гарах
-                </button>
+                </Button>
               </a>
             </li>
           </ul>
@@ -107,9 +107,9 @@ const Sidebar = () => {
             </li>
             <li className="">
               <a href="#">
-                <button className="py-1 sm:px-4 px-2 rounded-full bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:from-[#e97a34] hover:to-[#9d32c2]  ">
+                <Button className="py-1 sm:px-4 px-2 rounded-full bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:from-[#e97a34] hover:to-[#9d32c2]  ">
                   Гарах
-                </button>
+                </Button>
               </a>
             </li>
           </ul>

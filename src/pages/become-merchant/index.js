@@ -30,7 +30,7 @@ export default function BecomeMerchant() {
             </p>
           </div>
           <div className=" max-w-screen-2xl flex flex-col lg:px-20  md:mt-80 ss:mt-20 mt-10">
-            <div className=" border border-white/10  lg:p-20 ss:p-10 p-4 mx-auto rounded-2xl shadow-md shadow-white">
+            <div className=" border border-white/10  lg:p-20 ss:p-10 p-4 mx-auto rounded-2xl ">
               <Form
                 className="  flex flex-col items-center"
                 action=""

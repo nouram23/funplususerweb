@@ -30,9 +30,9 @@ export default function Header() {
             <li className="">
               <Link href="/contact">
                 <a>
-                  <button className="py-1 sm:px-4 px-2 rounded-full bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:from-[#e97a34] hover:to-[#9d32c2]  ">
+                  <Button className="py-1 sm:px-4 px-2 rounded-full bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:from-[#e97a34] hover:to-[#9d32c2]  ">
                     Холбоо барих
-                  </button>
+                  </Button>
                 </a>
               </Link>
             </li>
@@ -61,7 +61,6 @@ const Sidebar = () => {
     <>
       <Button
         className="md:hidden text-2xl fixed top-2 right-3 border-none text-[#9d32c2] hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34]"
-        type="primary"
         onClick={showDrawer}
       >
         <i className="fa-solid fa-bars"></i>
@@ -87,8 +86,7 @@ const Sidebar = () => {
               </a>
             </li>
             <li>
-              <Link href="/become_merchant">
-                {" "}
+              <Link href="/become-merchant">
                 <a className="hover:text-[#9d32c2]">Хамтран ажилах</a>
               </Link>
             </li>
@@ -103,9 +101,9 @@ const Sidebar = () => {
             <li className="">
               <Link href="/contact">
                 <a>
-                  <button className="py-1 sm:px-4 px-2 rounded-full bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:from-[#e97a34] hover:to-[#9d32c2]  ">
+                  <Button className="py-1 sm:px-4 px-2 rounded-full bg-gradient-to-r from-[#9d32c2] to-[#e97a34] hover:from-[#e97a34] hover:to-[#9d32c2]  ">
                     Холбоо барих
-                  </button>
+                  </Button>
                 </a>
               </Link>
             </li>

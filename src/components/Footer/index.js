@@ -6,13 +6,15 @@ export default function Footer() {
       <div className="text-white bg-[#242424]">
         <div className="flex justify-evenly  md:text-left  text-center md:items-start items-center md:flex-row flex-col  lg:max-w-7xl w-11/12 mx-auto lg:py-24 sm:py-14 py-4 ">
           <div className=" ">
-            <a href="index.html">
-              <img
-                className="lg:h-20 h-16"
-                src="/assets/images/logo/logo.svg"
-                alt="Logo"
-              />
-            </a>
+            <Link href="/">
+              <a>
+                <img
+                  className="lg:h-20 h-16"
+                  src="/assets/images/logo/logo.svg"
+                  alt="Logo"
+                />
+              </a>
+            </Link>
 
             <ul className="flex text-xs lg:space-x-4 space-x-2 mt-4 ">
               <li className="rounded-full h-8 w-8 leading-8 text-center border-none bg-gradient-to-r from-[#9d32c2] to-[#e97a34]">

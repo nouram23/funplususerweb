@@ -35,37 +35,39 @@ export default function AuthRegister() {
             action=""
             layout="vertical"
           >
-            <a href="#">
-              <img
-                className="h-20"
-                alt="logo"
-                src="/assets/images/logo/logo.svg"
-              />
-            </a>
+            <Link href="/">
+              <a>
+                <img
+                  className="h-20"
+                  alt="logo"
+                  src="/assets/images/logo/logo.svg"
+                />
+              </a>
+            </Link>
             <div className="flex justify-start w-full py-2">
               <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-4xl flex text-left">
                 Бүртгүүлэх
               </p>
             </div>
-            <Form.Item>
+            <Form.Item label="Нэр">
               <Input
                 className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1  ring-[#9d32c2]"
                 type="text"
-                placeHolder="Нэр"
+                placeHolder="BAT "
               />
             </Form.Item>
-            <Form.Item>
+            <Form.Item label="Утасны дугаар">
               <Input
                 className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1  ring-[#9d32c2]"
                 type="number"
-                placeHolder="Утасны дугаар"
+                placeHolder="99999999"
               />
             </Form.Item>
-            <Form.Item>
+            <Form.Item label="Нууц үг">
               <Input
                 className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1   ring-[#9d32c2]"
                 type="password"
-                placeholder="Нууц үг"
+                placeholder="PASSWORD"
               />
             </Form.Item>
 
@@ -94,6 +96,7 @@ export default function AuthRegister() {
               onCancel={handleCancel}
               footer={[
                 <Button
+                  type="primary"
                   key="sign up"
                   className="w-full rounded-lg bg-gradient h-10"
                   onClick={handleSignUp}

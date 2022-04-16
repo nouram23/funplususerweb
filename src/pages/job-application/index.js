@@ -48,7 +48,7 @@ export default function JobApplication() {
               {" "}
               <h1 className="md:text-6xl text-3xl ">Нээлттэй ажлын байрууд</h1>
             </div>
-            <div className=" border border-white/10  lg:p-20 ss:p-10 p-4 mx-auto rounded-2xl shadow-md shadow-white mt-28 space-y-8 ">
+            <div className=" border border-white/10  lg:p-20 ss:p-10 p-4 mx-auto rounded-2xl  mt-28 space-y-8 ">
               <Card onClick={showModal} className="rounded-xl">
                 <h1>Designer</h1>
               </Card>
@@ -76,6 +76,7 @@ export default function JobApplication() {
             onCancel={handleCancel}
             footer={[
               <Button
+                type="primary"
                 key="sent"
                 className="w-full rounded-lg bg-gradient h-10"
                 onClick={handleSent}
