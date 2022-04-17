@@ -2,7 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
+input:-internal-autofill-selected {
+  background-color: black !important;
+  color:white !important;
+}
 
 html,
 body {

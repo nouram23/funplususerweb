@@ -14,3 +14,10 @@ const Utils = {
 }
 
 export default Utils;
+
+export const mn_mobile_regex = /[8|9][0|3|5|6|8|9][0-9][0-9][0-9][0-9][0-9][0-9]/;
+export const password_regex = {
+    digit: /(?=.*\d)/,
+    lowercase: /(?=.*[a-z])/,
+    special_character: /(?=.*[\W])/,
+}

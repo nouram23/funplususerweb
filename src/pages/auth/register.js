@@ -59,8 +59,8 @@ export default function AuthRegister() {
                 Бүртгүүлэх
               </p>
             </div>
-            <Form.Item name="name">
-              <label className="block text-[#9d32c2]">Нэр</label>
+            <Form.Item name="name" label="Нэр">
+              {/* <label className="block text-[#9d32c2]">Нэр</label> */}
               <Input
                 required
                 className=" py-2 px-3   "
@@ -68,9 +68,9 @@ export default function AuthRegister() {
                 placeHolder="Johnny Depp"
               />
             </Form.Item>
-            <Form.Item name="phone">
+            <Form.Item name="phone" label="Утасны дугаар">
               <div>
-                <label className="block text-[#9d32c2]">Утасны дугаар</label>
+                {/* <label className="block text-[#9d32c2]">Утасны дугаар</label> */}
                 <Input
                   required
                   className=" py-2    px-3   "
@@ -79,9 +79,9 @@ export default function AuthRegister() {
                 />
               </div>
             </Form.Item>
-            <Form.Item name="password">
+            <Form.Item name="password" label="Нууц ү">
               <div>
-                <label className="block text-[#9d32c2]">Нууц үг</label>
+                {/* <label className="block text-[#9d32c2]">Нууц үг</label> */}
                 <Input.Password
                   required
                   className=" py-2    px-3 "
