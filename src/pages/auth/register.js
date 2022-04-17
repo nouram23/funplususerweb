@@ -3,6 +3,7 @@ import { Modal, Button, Form, Input, Checkbox } from "antd";
 import Link from "next/link";
 import OtpInput from "react-otp-input";
 import CheckableTag from "antd/lib/tag/CheckableTag";
+import FormItemLabel from "antd/lib/form/FormItemLabel";
 
 export default function AuthRegister() {
   const [isModalVisible, setIsModalVisible] = React.useState(false);
@@ -31,7 +32,7 @@ export default function AuthRegister() {
 
   return (
     <div className="w-full h-full lg:grid grid-cols-10 ">
-      <div className="col-span-6  h-screen bg-gray-500 hidden lg:block">
+      <div className="col-span-6  h-screen  hidden lg:block">
         <img
           alt="bg"
           className="w-full bg-cover object-center h-screen"
@@ -39,61 +40,67 @@ export default function AuthRegister() {
         />
       </div>
       <div className="col-span-4  h-screen flex justify-center items-center">
-        <div className="w-96 h-[500px] flex flex-col  items-center rounded-lg">
+        <div className="w-80  ">
           <Form
             onFinish={onFinish}
-            className=" sm:space-y-4 space-y-2  flex flex-col items-center"
+            className="w-full  ss:px-0 px-4"
             action=""
             layout="vertical"
           >
             <Link href="/">
               <a>
                 <img
-                  className="h-20"
+                  className="ss:h-20 h-14"
                   alt="logo"
                   src="/assets/images/logo/logo.svg"
                 />
               </a>
             </Link>
             <div className="flex justify-start w-full py-2">
-              <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-4xl flex text-left">
+              <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] ss:text-4xl text-3xl  ">
                 Бүртгүүлэх
               </p>
             </div>
-            <Form.Item name="name" label="Нэр">
+            <Form.Item name="name">
+              <label className="block text-[#9d32c2]">Нэр</label>
               <Input
                 required
-                className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1  ring-[#9d32c2]"
+                className=" py-2 px-3   "
                 type="text"
-                placeHolder="BAT "
+                placeHolder="Johnny Depp"
               />
             </Form.Item>
-            <Form.Item name="phone" label="Утасны дугаар">
-              <Input
-                required
-                className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1  ring-[#9d32c2]"
-                type="number"
-                placeHolder="99999999"
-              />
+            <Form.Item name="phone">
+              <div>
+                <label className="block text-[#9d32c2]">Утасны дугаар</label>
+                <Input
+                  required
+                  className=" py-2    px-3   "
+                  type="number"
+                  placeHolder="99119911"
+                />
+              </div>
             </Form.Item>
-            <Form.Item name="password" label="Нууц үг">
-              <Input.Password
-                required
-                className="sm:w-80 w-64 py-2 rounded-xl px-3 ring-1   ring-[#9d32c2]"
-                placeholder="*****"
-              />
+            <Form.Item name="password">
+              <div>
+                <label className="block text-[#9d32c2]">Нууц үг</label>
+                <Input.Password
+                  required
+                  className=" py-2    px-3 "
+                  placeholder="*****"
+                />
+              </div>
             </Form.Item>
 
             <Button
               onClick={showModal}
               htmlType="submit"
-              className="sm:w-80 w-64 h-10 rounded-xl pl-2  bg-gradient "
+              className="w-full pl-2  bg-gradient mb-1"
             >
               Бүртгүүлэх
             </Button>
             <Link href="/auth/login">
-              <a className="text-transparent bg-clip-text bg-gradient text-sm">
-                {" "}
+              <a className="text-transparent bg-clip-text bg-gradient text-sm ">
                 Нэвртэх бол энд дарна уу?
               </a>
             </Link>
@@ -111,7 +118,7 @@ export default function AuthRegister() {
                 <Button
                   type="primary"
                   key="sign up"
-                  className="w-full rounded-lg bg-gradient h-10"
+                  className="w-full  bg-gradient h-10"
                   onClick={handleSignUp}
                   disabled={!checked}
                 >
@@ -122,7 +129,7 @@ export default function AuthRegister() {
               <div className="space-y-4 flex- flex-col justify-center items-center">
                 {state ? (
                   <div>
-                    <p className="text-sm font-bold flex justify-center my-3">
+                    <p className="xs:text-sm text-xs font-bold flex justify-center my-3">
                       Таны дугаарт илгээсэн 4 оронтой тоог оруулна уу!
                     </p>
                     <OtpInput
@@ -143,18 +150,27 @@ export default function AuthRegister() {
                 ) : (
                   <div>
                     <Input
-                      value={phone}
-                      type="number"
+                      defaultValue={phone}
                       placeholder={phone}
+                      type="number"
                       addonBefore={"+976"}
                     />
-                    <div className="flex flex-col space-y-4 mt-3">
-                      <p className="text-sm ">
-                        Үйлчилгээний нөхцөлтэй танилцаж, зөвшөөрснөөр
-                        үйлчилгээтэй холбоотой харилцаанд оролцох эрх, үүрэг,
-                        хариуцлагыг хүлээхээр талууд тохиролцсонд тооцогдоно
-                      </p>
-                      <Checkbox onChange={onChange}>Зөвшөөрч байна</Checkbox>
+                    <div className="flex justify-between  mt-3">
+                      <Checkbox
+                        className="xs:text-sm text-xs"
+                        onChange={onChange}
+                      >
+                        Зөвшөөрч байна
+                      </Checkbox>
+                      <Link href="/serviceCondition">
+                        <a
+                          className="xs:text-sm text-xs text-[#9d32c2]"
+                          target="_blank"
+                          type="link"
+                        >
+                          Үйлчилгээний нөхцөл
+                        </a>
+                      </Link>
                     </div>
                   </div>
                 )}

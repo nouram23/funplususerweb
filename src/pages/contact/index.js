@@ -25,7 +25,7 @@ export default function Contact() {
               </p>
             </div>
             <div className=" max-w-screen-2xl flex items-baseline justify-between lg:flex-row flex-col lg:px-20  md:mt-80 ss:mt-20 mt-10">
-              <div className=" border border-white/10  lg:p-20 ss:p-10 p-4 mx-auto rounded-2xl">
+              <div className=" border w-full max-w-md  border-white/10  lg:p-20 ss:p-10 p-4 mx-auto rounded-2xl">
                 <Tabs className="">
                   <Tabs.TabPane
                     className=" "
@@ -62,37 +62,29 @@ export default function Contact() {
 }
 const Requestt = () => {
   return (
-    <Form className="  flex flex-col items-center" action="" layout="vertical">
+    <Form className="" action="" layout="vertical">
       <Form.Item>
-        <Input
-          className="sm:w-80 w-64 py-2 rounded-xl px-3   "
-          type="text"
-          placeHolder="Нэр"
-        />
+        <Input className="   py-2     px-3   " type="text" placeHolder="Нэр" />
       </Form.Item>
       <Form.Item>
         <Input
-          className="sm:w-80 w-64 py-2 rounded-xl px-3   "
+          className="   py-2     px-3   "
           type="number"
           placeHolder="Утасны дугаар"
         />
       </Form.Item>
       <Form.Item>
-        <Input
-          className="sm:w-80 w-64 py-2 rounded-xl px-3   "
-          type="email"
-          placeHolder="Имэйл хаяг"
-        />
+        <Input className="py-2 px-3x" type="email" placeHolder="Имэйл хаяг" />
       </Form.Item>
       <Form.Item>
         <TextArea
-          className="sm:w-80 w-64 py-2 rounded-xl   "
+          className="   py-2       "
           maxLength={200}
           autoSize={{ minRows: 10, maxRows: 15 }}
           placeHolder="Агуулга"
         />
       </Form.Item>
-      <Button className="sm:w-80 w-64 h-10 rounded-xl pl-2 font-light bg-gradient ">
+      <Button className=" w-full  h-10 pl-2 font-light bg-gradient ">
         Илгээх
       </Button>
     </Form>
@@ -101,37 +93,33 @@ const Requestt = () => {
 
 const Complaint = () => {
   return (
-    <Form className="  flex flex-col items-center" action="" layout="vertical">
+    <Form className=" " action="" layout="vertical">
       <Form.Item>
-        <Input
-          className="sm:w-80 w-64 py-2 rounded-xl px-3   "
-          type="text"
-          placeHolder="Нэр"
-        />
+        <Input className="   py-2 px-3 " type="text" placeHolder="Нэр" />
       </Form.Item>
       <Form.Item>
         <Input
-          className="sm:w-80 w-64 py-2 rounded-xl px-3   "
+          className="   py-2     px-3   "
           type="number"
           placeHolder="Утасны дугаар"
         />
       </Form.Item>
       <Form.Item>
         <Input
-          className="sm:w-80 w-64 py-2 rounded-xl px-3   "
+          className="   py-2     px-3   "
           type="email"
           placeHolder="Имэйл хаяг"
         />
       </Form.Item>
       <Form.Item>
         <TextArea
-          className="sm:w-80 w-64 py-2 rounded-xl   "
+          className="   py-2       "
           maxLength={200}
           autoSize={{ minRows: 10, maxRows: 15 }}
           placeHolder="Агуулга"
         />
       </Form.Item>
-      <Button className="sm:w-80 w-64 h-10 rounded-xl pl-2 font-light bg-gradient ">
+      <Button className="w-full   h-10     pl-2 font-light bg-gradient ">
         Илгээх
       </Button>
     </Form>

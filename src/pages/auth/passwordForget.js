@@ -12,8 +12,8 @@ export default function AuthRegister() {
           src="/assets/images/banner/2-1-570x500.jpg"
         />
       </div>
-      <div className="col-span-4  h-screen  flex justify-center items-center">
-        <div className="w-96 h-[500px] flex flex-col  items-center rounded-lg">
+      <div className="col-span-4 h-screen flex justify-center items-center">
+        <div className="w-80 xs:px-0 px-3">
           <Link href="/">
             <a>
               <img
@@ -23,13 +23,13 @@ export default function AuthRegister() {
               />
             </a>
           </Link>
-          <Tabs className="text-[#9d32c2]  ">
+          <Tabs>
             <Tabs.TabPane
-              className="text-[#9d32c2] "
               tab="Нууц үг сэргээх"
               key="password_forget"
               tabKey="password_forget"
             >
+              {" "}
               <PasswordForgetForm />
             </Tabs.TabPane>
             <Tabs.TabPane
@@ -48,33 +48,38 @@ export default function AuthRegister() {
 
 const PasswordForgetForm = () => {
   return (
-    <Form className="  flex flex-col items-center" action="" layout="vertical">
-      <Form.Item label="Утасны дугаар">
-        <Input
-          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2]   "
-          type="number"
-          placeHolder="99999999"
-        />
+    <Form className="w-full" action="" layout="vertical">
+      <Form.Item className="">
+        <div>
+          <label className="block text-[#9d32c2]">Утасны дугаар</label>
+          <Input
+            className=" py-2  px-3  "
+            type="number"
+            placeHolder="99119911"
+          />
+        </div>
       </Form.Item>
-      <Form.Item label="Баталгаажуулах код">
-        <Input
-          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2]   "
-          type="number"
-          placeHolder="12456"
-        />
+      <Form.Item className="">
+        <div>
+          <label className="block text-[#9d32c2]">Баталгаажуулах код</label>
+          <Input className=" py-2 px-3 " placeHolder="1234" />
+        </div>
       </Form.Item>
-      <Form.Item label="Нууц үг">
-        <Input
-          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1 ring-[#9d32c2]   "
-          type="number"
-          placeHolder="password"
-        />
+      <Form.Item className="">
+        <div>
+          <label className="block text-[#9d32c2]">Нууц үг</label>
+          <Input.Password
+            className=" py-2  px-3    "
+            type="number"
+            placeHolder="password"
+          />
+        </div>
       </Form.Item>
-      <Button className="sm:w-72 w-64 h-10 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] ">
+      <Button className="pl-2 w-full font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] mb-1">
         Сэргээх
       </Button>
       <Link href="login">
-        <a className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-sm mt-2">
+        <a className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-sm">
           {" "}
           Нэвртэх бол энд дарна уу?
         </a>
@@ -85,33 +90,44 @@ const PasswordForgetForm = () => {
 
 const PasswordChangeForm = () => {
   return (
-    <Form className=" flex flex-col items-center" action="" layout="vertical">
-      <Form.Item label="Нууц үг">
-        <Input
-          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1    ring-[#9d32c2]"
-          type="number"
-          placeHolder="Password"
-        />
+    <Form className="w-full" action="" layout="vertical">
+      <Form.Item className="">
+        <div>
+          <label className="block text-[#9d32c2]">Нууц үг</label>
+          <Input.Password
+            className=" px-3  py-2 "
+            type="number"
+            placeHolder="Password"
+          />
+        </div>
       </Form.Item>
-      <Form.Item label="Шинэ нууц үг">
-        <Input
-          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1    ring-[#9d32c2]"
-          type="number"
-          placeHolder="New password"
-        />
+      <Form.Item className="">
+        <div>
+          <label className="block text-[#9d32c2]">Шинэ нууц үг</label>
+          <Input.Password
+            className="px-3 py-2 "
+            type="number"
+            placeHolder="New password"
+          />
+        </div>
       </Form.Item>
-      <Form.Item label="Шинэ нууц үг давтан оруулах">
-        <Input
-          className="sm:w-72 w-64 py-2 rounded-xl px-3 ring-1    ring-[#9d32c2]"
-          type="number"
-          placeHolder="Confirm password"
-        />
+      <Form.Item className="">
+        <div>
+          <label className="block text-[#9d32c2]">
+            Шинэ нууц үг давтан оруулах
+          </label>
+          <Input.Password
+            className="py-2 px-3 "
+            type="number"
+            placeHolder="Confirm password"
+          />
+        </div>
       </Form.Item>
-      <Button className="sm:w-72 w-64 h-10 rounded-xl pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34]">
+      <Button className="w-full  pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] mb-1">
         Солих
       </Button>
       <Link href="login">
-        <a className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-sm mt-2">
+        <a className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-sm ">
           {" "}
           Нэвртэх бол энд дарна уу?
         </a>
