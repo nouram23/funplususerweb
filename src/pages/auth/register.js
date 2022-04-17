@@ -2,8 +2,6 @@ import React from "react";
 import { Modal, Button, Form, Input, Checkbox } from "antd";
 import Link from "next/link";
 import OtpInput from "react-otp-input";
-import CheckableTag from "antd/lib/tag/CheckableTag";
-import FormItemLabel from "antd/lib/form/FormItemLabel";
 
 export default function AuthRegister() {
   const [isModalVisible, setIsModalVisible] = React.useState(false);
@@ -26,7 +24,7 @@ export default function AuthRegister() {
   function onChange(e) {
     setChecked(e.target.checked);
   }
-  const onFinish = (e) => {
+  const onFinish = async (e) => {
     setPhone(e.phone);
   };
 

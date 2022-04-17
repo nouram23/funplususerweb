@@ -5,7 +5,7 @@ import withError from "backend/middlewares/error";
 import withSession from "backend/middlewares/session";
 const httpProxyMiddleware = require("next-http-proxy-middleware");
 
-const BACKEND = process.env.BACKEND || "http://localhost:5000";
+const BACKEND = process.env.BACKEND || "http://192.168.1.105:5000";
 
 async function handler(req, res) {
   api_middleware(req, res);
