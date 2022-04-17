@@ -60,7 +60,7 @@ const Sidebar = () => {
   return (
     <>
       <Button
-        className="md:hidden text-2xl fixed top-2 right-3 border-none text-[#9d32c2] hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34]"
+        className="md:hidden text-2xl fixed top-2 right-3 border-none text-[#9d32c2]"
         onClick={showDrawer}
       >
         <i className="fa-solid fa-bars"></i>
