@@ -5,7 +5,7 @@ import OtpInput from "react-otp-input";
 
 export default function AuthRegister() {
   const [isModalVisible, setIsModalVisible] = React.useState(false);
-  const [otp, setOtp] = React.useState("");
+  const [otp, setOtp] = React.useState();
   const [checked, setChecked] = React.useState(false);
   const [phone, setPhone] = React.useState();
   const [state, setState] = React.useState(false);
@@ -13,7 +13,7 @@ export default function AuthRegister() {
   const showModal = (e) => {
     setIsModalVisible(true);
   };
-  const handleChange = (otp) => setOtp({ otp });
+  const handleChange = (otp) => setOtp(otp);
 
   const handleSignUp = () => {
     setState(!state);
@@ -93,14 +93,12 @@ export default function AuthRegister() {
             <Button
               onClick={showModal}
               htmlType="submit"
-              className="w-full pl-2  bg-gradient mb-1"
+              className="w-full pl-2 h-10  bg-gradient mb-1"
             >
               Бүртгүүлэх
             </Button>
             <Link href="/auth/login">
-              <a className="text-transparent bg-clip-text bg-gradient text-sm ">
-                Нэвртэх бол энд дарна уу?
-              </a>
+              <a className="text-[#9d32c2]">Нэвртэх бол энд дарна уу?</a>
             </Link>
           </Form>
           <div className="">
@@ -134,8 +132,14 @@ export default function AuthRegister() {
                       containerStyle={{
                         display: "flex",
                         justifyContent: "center",
+                        color: "black",
                       }}
-                      inputStyle={{ width: 30, height: 30 }}
+                      inputStyle={{
+                        width: 40,
+                        height: 40,
+                        borderRadius: "10px",
+                        border: "none",
+                      }}
                       value={otp}
                       onChange={handleChange}
                       numInputs={4}
@@ -158,7 +162,7 @@ export default function AuthRegister() {
                         className="xs:text-sm text-xs"
                         onChange={onChange}
                       >
-                        Зөвшөөрч байна
+                        Би зөвшөөрч байна
                       </Checkbox>
                       <Link href="/serviceCondition">
                         <a
@@ -166,7 +170,7 @@ export default function AuthRegister() {
                           target="_blank"
                           type="link"
                         >
-                          Үйлчилгээний нөхцөл
+                          Үйлчилгээний нөхцөл харах
                         </a>
                       </Link>
                     </div>

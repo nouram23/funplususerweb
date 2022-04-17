@@ -79,10 +79,7 @@ const PasswordForgetForm = () => {
         Сэргээх
       </Button>
       <Link href="login">
-        <a className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-sm">
-          {" "}
-          Нэвртэх бол энд дарна уу?
-        </a>
+        <a className="text-[#9d32c2] text-sm"> Нэвртэх бол энд дарна уу?</a>
       </Link>
     </Form>
   );
@@ -127,10 +124,7 @@ const PasswordChangeForm = () => {
         Солих
       </Button>
       <Link href="login">
-        <a className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-sm ">
-          {" "}
-          Нэвртэх бол энд дарна уу?
-        </a>
+        <a className="text-[#9d32c2] text-sm "> Нэвртэх бол энд дарна уу?</a>
       </Link>
     </Form>
   );

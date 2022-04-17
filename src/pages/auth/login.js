@@ -53,7 +53,7 @@ export default function AuthLogin() {
             <div className="flex justify-end  py-1">
               <Link href="/auth/passwordForget">
                 <a>
-                  <p className="text-gradient">Нууц үгээ мартсан уу?</p>
+                  <p className="text-[#9d32c2]">Нууц үгээ мартсан уу?</p>
                 </a>
               </Link>
             </div>
@@ -66,7 +66,7 @@ export default function AuthLogin() {
               </Button>
             </Link>
             <Link href="/auth/register">
-              <a className="text-gradient  text-sm"> Бүртгүүлэх</a>
+              <a className="text-[#9d32c2]  text-sm"> Бүртгүүлэх</a>
             </Link>
           </Form>
         </div>
