@@ -24,7 +24,7 @@ const nonJsonErrorHandler = {
 const errorHandler = async (error, isServer) => {
   if (error.response && error.response.status === 401) {
     if (!isServer) {
-      location.href = "/auth/login";
+      // location.href = "/auth/login";
     }
 
     // message.error()

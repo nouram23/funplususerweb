@@ -61,7 +61,7 @@ const LoginForm = () => {
     >
       {
         ({ isSubmitting }) => (
-          <Form className="w-full  ss:px-0 px-3" action="" layout="vertical">
+          <Form className="w-full  ss:px-0 px-3" layout="vertical">
             <Link href="/">
               <a>
                 <img
