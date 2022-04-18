@@ -42,13 +42,12 @@ const LoginForm = () => {
     try {
 
       await AuthAPI.login(values)
-
+      router.push("/")
     } catch (err) {
       console.log(err);
-      message.error("Таны нууц үг эсвэл утас буруу байна!")
+      message.error(err?.message)
       return;
     }
-    router.push("/")
   }
 
   return (

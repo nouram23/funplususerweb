@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from "react";
 import { Modal, Button, Form, Input, Checkbox } from "antd";
 import Link from "next/link";
@@ -39,68 +40,7 @@ export default function AuthRegister() {
       </div>
       <div className="col-span-4  h-screen flex justify-center items-center">
         <div className="w-80  ">
-          <Form
-            onFinish={onFinish}
-            className="w-full  ss:px-0 px-4"
-            action=""
-            layout="vertical"
-          >
-            <Link href="/">
-              <a>
-                <img
-                  className="ss:h-20 h-14"
-                  alt="logo"
-                  src="/assets/images/logo/logo.svg"
-                />
-              </a>
-            </Link>
-            <div className="flex justify-start w-full py-2">
-              <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] ss:text-4xl text-3xl  ">
-                Бүртгүүлэх
-              </p>
-            </div>
-            <Form.Item name="name" label="Нэр">
-              {/* <label className="block text-[#9d32c2]">Нэр</label> */}
-              <Input
-                required
-                className=" py-2 px-3   "
-                type="text"
-                placeHolder="Johnny Depp"
-              />
-            </Form.Item>
-            <Form.Item name="phone" label="Утасны дугаар">
-              <div>
-                {/* <label className="block text-[#9d32c2]">Утасны дугаар</label> */}
-                <Input
-                  required
-                  className=" py-2    px-3   "
-                  type="number"
-                  placeHolder="99119911"
-                />
-              </div>
-            </Form.Item>
-            <Form.Item name="password" label="Нууц ү">
-              <div>
-                {/* <label className="block text-[#9d32c2]">Нууц үг</label> */}
-                <Input.Password
-                  required
-                  className=" py-2    px-3 "
-                  placeholder="*****"
-                />
-              </div>
-            </Form.Item>
 
-            <Button
-              onClick={showModal}
-              htmlType="submit"
-              className="w-full pl-2 h-10  bg-gradient mb-1"
-            >
-              Бүртгүүлэх
-            </Button>
-            <Link href="/auth/login">
-              <a className="text-[#9d32c2]">Нэвртэх бол энд дарна уу?</a>
-            </Link>
-          </Form>
           <div className="">
             {" "}
             <Modal
@@ -183,4 +123,73 @@ export default function AuthRegister() {
       </div>
     </div>
   );
+}
+
+
+export const SubmitForm = ({ onSubmit }) => {
+
+  return (
+    <Form
+      onFinish={onFinish}
+      className="w-full  ss:px-0 px-4"
+      action=""
+      layout="vertical"
+    >
+      <Link href="/">
+        <a>
+          <img
+            className="ss:h-20 h-14"
+            alt="logo"
+            src="/assets/images/logo/logo.svg"
+          />
+        </a>
+      </Link>
+      <div className="flex justify-start w-full py-2">
+        <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] ss:text-4xl text-3xl  ">
+          Бүртгүүлэх
+        </p>
+      </div>
+      <Form.Item name="name" label="Нэр">
+        {/* <label className="block text-[#9d32c2]">Нэр</label> */}
+        <Input
+          required
+          className=" py-2 px-3   "
+          type="text"
+          placeHolder="Johnny Depp"
+        />
+      </Form.Item>
+      <Form.Item name="phone" label="Утасны дугаар">
+        <div>
+          {/* <label className="block text-[#9d32c2]">Утасны дугаар</label> */}
+          <Input
+            required
+            className=" py-2    px-3   "
+            type="number"
+            placeHolder="99119911"
+          />
+        </div>
+      </Form.Item>
+      <Form.Item name="password" label="Нууц ү">
+        <div>
+          {/* <label className="block text-[#9d32c2]">Нууц үг</label> */}
+          <Input.Password
+            required
+            className=" py-2    px-3 "
+            placeholder="*****"
+          />
+        </div>
+      </Form.Item>
+
+      <Button
+        onClick={showModal}
+        htmlType="submit"
+        className="w-full pl-2 h-10  bg-gradient mb-1"
+      >
+        Бүртгүүлэх
+      </Button>
+      <Link href="/auth/login">
+        <a className="text-[#9d32c2]">Нэвртэх бол энд дарна уу?</a>
+      </Link>
+    </Form>
+  )
 }
