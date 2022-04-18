@@ -42,12 +42,12 @@ const LoginForm = () => {
   const onSubmit = async (values) => {
     try {
       await AuthAPI.login(values);
+      router.push("/");
     } catch (err) {
       console.log(err);
-      message.error("Таны дугаар эсвэл нууц үг буруу байна!");
+      message.error(err?.message);
       return;
     }
-    router.push("/");
   };
 
   return (
