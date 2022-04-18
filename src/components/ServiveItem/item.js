@@ -1,8 +1,24 @@
-import { Button } from "antd";
+import { Button, Skeleton } from "antd";
 import Link from "next/link";
 
 /* eslint-disable @next/next/no-img-element */
 export default function ServiceItem({ item, isComingSoon, longText }) {
+  if (item?.loading) {
+    return (
+      <div className="service-item md:w-56 md:h-[275px] w-36  h-48 bg-[#212121] md:p-4 p-2  md:rounded-3xl rounded-2xl hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] md:mx-3 md:my-3 xs:mx-4 xs:my-4  mx-1 my-2">
+        <Skeleton.Avatar
+          className="md:w-48 md:h-52  w-32 h-36"
+          shape="square"
+          style={{ width: "100% !important" }}
+          active
+        />
+        <div className="mt-2 px-2 w-full">
+          <Skeleton.Input active style={{ width: "100% !important" }} />
+        </div>
+      </div>
+    );
+  }
+
   if (longText) {
     return (
       <Link href="/service">

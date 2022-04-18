@@ -9,7 +9,6 @@ export default function AuthRegister() {
   const [checked, setChecked] = React.useState(false);
   const [phone, setPhone] = React.useState();
   const [state, setState] = React.useState(false);
-  const regex = /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/i;
   const showModal = (e) => {
     setIsModalVisible(true);
   };
@@ -79,7 +78,7 @@ export default function AuthRegister() {
                 />
               </div>
             </Form.Item>
-            <Form.Item name="password" label="Нууц ү">
+            <Form.Item name="password" label="Нууц үг">
               <div>
                 {/* <label className="block text-[#9d32c2]">Нууц үг</label> */}
                 <Input.Password
