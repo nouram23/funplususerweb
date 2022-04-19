@@ -65,7 +65,13 @@ const Sidebar = () => {
       >
         <i className="fa-solid fa-bars"></i>
       </Button>
-      <Drawer title="" placement="right" onClose={onClose} visible={visible}>
+      <Drawer
+        title=""
+        placement="right"
+        onClose={onClose}
+        visible={visible}
+        width={window.innerWidth > 1200 ? 800 : "auto"}
+      >
         <div className="sm:hidden mt-4 flex justify-center  focus:outline-none">
           <Link href="/">
             <a className="">
@@ -94,7 +100,7 @@ const Sidebar = () => {
 
           <ul className=" flex items-baseline flex-row sm:space-x-4 space-x-2 ">
             <li>
-              <Link className="hover:text-[#9d32c2]" href="/auth/login">
+              <Link className=" hover:text-[#9d32c2]" href="/auth/login">
                 Нэвтрэх
               </Link>
             </li>

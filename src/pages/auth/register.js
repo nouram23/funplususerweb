@@ -15,7 +15,6 @@ export default function AuthRegister() {
   const [checked, setChecked] = React.useState(false);
   const [phone, setPhone] = React.useState();
   const [state, setState] = React.useState(false);
-  const regex = /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/i;
   const showModal = (e) => {
     setIsModalVisible(true);
   };
@@ -45,7 +44,6 @@ export default function AuthRegister() {
       </div>
       <div className="col-span-4  h-screen flex justify-center items-center">
         <div className="w-80  ">
-
           <div className="">
             <SubmitForm />
             {" "}
