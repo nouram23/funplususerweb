@@ -6,7 +6,7 @@ import Link from "next/link";
 import * as yup from "yup";
 import { mn_mobile_regex } from "utils";
 import { Formik } from "formik";
-import { Form, Input, InputNumber, } from "formik-antd"
+import { Form, Input, InputNumber } from "formik-antd";
 import { useRouter } from "next/router";
 import { AuthAPI } from "apis";
 export default function AuthLogin() {
@@ -29,26 +29,26 @@ export default function AuthLogin() {
 }
 
 const schema = yup.object({
-  username: yup.string().required("Заавал бөглөнө үү").matches(mn_mobile_regex, "Та утасны дугаараа зөв хийнэ үү"),
-  password: yup.string().required("Заавал бөглөнө үү")
-})
+  username: yup
+    .string()
+    .required("Заавал бөглөнө үү")
+    .matches(mn_mobile_regex, "Та утасны дугаараа зөв хийнэ үү"),
+  password: yup.string().required("Заавал бөглөнө үү"),
+});
 
 const LoginForm = () => {
-
   const router = useRouter();
 
   const onSubmit = async (values) => {
-
     try {
-
-      await AuthAPI.login(values)
-      router.push("/")
+      await AuthAPI.login(values);
+      router.push("/");
     } catch (err) {
       console.log(err);
-      message.error(err?.message)
+      message.error(err?.message);
       return;
     }
-  }
+  };
 
   return (
     <Formik
@@ -105,7 +105,7 @@ const LoginForm = () => {
             </Form.Item>
             <div className="flex justify-end  py-2">
               <Link href="/auth/passwordForget">
-                <p >Нууц үгээ мартсан уу?</p>
+                <p>Нууц үгээ мартсан уу?</p>
               </Link>
             </div>
 
@@ -127,8 +127,7 @@ const LoginForm = () => {
             <a className="text-gradient  text-sm"> Бүртгүүлэх</a>
           </Link> */}
           </Form>
-        )
-      }
+        )}
     </Formik>
-  )
-}
+  );
+};
