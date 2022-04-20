@@ -7,6 +7,7 @@ import AppLoading from "components/Loading/AppLoading";
 import { ConfigProvider } from "antd";
 
 import dynamic from "next/dynamic";
+import { AuthContainer } from "hooks/useAuth";
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = React.useState("dark");
@@ -32,9 +33,11 @@ function MyApp({ Component, pageProps }) {
     return <AppLoading />;
   }
   return (
-    <ConfigProvider>
-      <Component {...pageProps} />
-    </ConfigProvider>
+    <AuthContainer>
+      <ConfigProvider>
+        <Component {...pageProps} />
+      </ConfigProvider>
+    </AuthContainer>
   );
 }
 

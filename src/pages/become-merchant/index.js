@@ -1,13 +1,14 @@
 import { Button, Form, Input, Select } from "antd";
 import Header from "components/Header";
 import Footer from "components/Footer";
+import { useRouter } from "next/router";
 const { TextArea } = Input;
 
 const { Option } = Select;
 
 export default function BecomeMerchant() {
+  const router = useRouter();
   const onFinish = async (values) => {
-    console.log(JSON.stringify(values));
     const response = await fetch("/api/becomeMerchant", {
       method: "POST",
       body: JSON.stringify({ values }),
@@ -15,9 +16,10 @@ export default function BecomeMerchant() {
         "Content-Type": "application/json",
       },
     });
-
     const data = await response.json();
     console.log(data);
+    alert("Таны мэдээллийг хүлээж авлаа!");
+    router.push("/");
   };
 
   function handleChange(value) {
@@ -30,17 +32,14 @@ export default function BecomeMerchant() {
         <div className=" max-w-7xl mx-auto flex flex-col min-h-screen md:py-56 sm:py-40 py-10">
           <div className="flex flex-col items-center  md:space-y-12 space-y-8 text-center">
             {" "}
-            <h1 className="md:text-5xl text-3xl ">
-              Funplus-тай хамтран ажиллах
-            </h1>
+            <h1 className="md:text-5xl text-3xl ">Funplus</h1>
             <p
               className="md:text-xl sm:text-lg text-base
                max-w-4xl px-10 md:leading-9 leading-8"
             >
-              Бид өөрсдийн IT багт суурьлан уламжлалт хэрэглээг халж
-              үйлчлүүлэгчдэд амар хялбар, хурдан шуурхай, цаг алдалгүй нэг
-              дороос өөрийн хүссэн үйлчилгээний цагийг цахимаар захиалгах
-              боломжийг бий болгохын төлөө хичээн ажиллаж байна.
+              Технологийн эрин зуунд Funplus-ын тусламжтайгаар хэрэглэгчдэд амар
+              хялбар, цаг хэмнэсэн, хэдийд ч, хаанаас ч, нэг дороос хүссэн
+              үйлчилгээнийхээ цагийг цахимаар захиалах боломжтой.
             </p>
           </div>
           <div className=" max-w-screen-2xl flex flex-col lg:px-20  md:mt-80 ss:mt-20 mt-10">
@@ -69,7 +68,6 @@ export default function BecomeMerchant() {
                   label="Үйл ажиллагааны чиглэл"
                 >
                   <Select
-                    defaultValue={"Гоо сайхан"}
                     size={"large"}
                     onChange={handleChange}
                     mode="multiple"
@@ -83,7 +81,7 @@ export default function BecomeMerchant() {
                 <h1 className="text-center font-medium ss:text-2xl text-xl mb-8">
                   Холбогдох ажилтан
                 </h1>
-                <Form.Item label="Ажилтаны нэр" name={"workerName"}>
+                <Form.Item label="Ажилтны нэр" name={"workerName"}>
                   <Input
                     className=" py-2  px-3   "
                     type="text"

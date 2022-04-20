@@ -44,7 +44,7 @@ const LoginForm = () => {
       await AuthAPI.login(values);
     } catch (err) {
       console.log(err);
-      message.error("Таны дугаар   эсвэл нууц үг буруу байна!");
+      message.error("Таны дугаар эсвэл нууц үг буруу байна!");
       return;
     }
     router.push("/");
@@ -104,7 +104,7 @@ const LoginForm = () => {
           </Form.Item>
           <div className="flex justify-end  py-2">
             <Link href="/auth/passwordForget">
-              <a>Нууц үгээ мартсан уу?</a>
+              <p>Нууц үг сэргээх</p>
             </Link>
           </div>
 

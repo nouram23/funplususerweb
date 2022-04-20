@@ -1,10 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { Modal, Button, Checkbox, message, Spin, } from "antd";
+import { Modal, Button, Checkbox, message, Spin } from "antd";
 import Link from "next/link";
 import OtpInput from "react-otp-input";
 import * as yup from "yup";
-import { Form, Input, InputNumber } from "antd"
+import { Form, Input, InputNumber } from "antd";
 import { mn_mobile_regex } from "utils";
 import { AuthAPI } from "apis";
 import { useRouter } from "next/router";
@@ -66,15 +66,14 @@ const schema = yup.object({
 });
 
 export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
-
   const router = useRouter();
 
-  const [checkServiceTerms, setCheckServiceTerms] = React.useState(false)
+  const [checkServiceTerms, setCheckServiceTerms] = React.useState(false);
 
-  const [viewModal, setViewModal] = React.useState(false)
-  const [viewOtp, setViewOtp] = React.useState(false)
-  const [otpValue, setOtpValue] = React.useState(false)
-  const [loadingModal, setLoadingModal] = React.useState(false)
+  const [viewModal, setViewModal] = React.useState(false);
+  const [viewOtp, setViewOtp] = React.useState(false);
+  const [otpValue, setOtpValue] = React.useState(false);
+  const [loadingModal, setLoadingModal] = React.useState(false);
   const [values, setValues] = React.useState({
     ...{ phone: "", name: "", password: "" },
     ..._values,
@@ -83,12 +82,10 @@ export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
   const onSub = () => {
     setViewModal(true);
     setViewOtp(false);
-  }
+  };
 
   const onSubmit = async (values) => {
-
     try {
-
       /**
 
        */
@@ -97,8 +94,7 @@ export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
         ...values,
       });
 
-      onSub()
-
+      onSub();
     } catch (err) {
       console.log(err);
     }
@@ -107,10 +103,10 @@ export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
   React.useEffect(() => {
     setValues({
       ...values,
-      ..._values
-    })
+      ..._values,
+    });
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [_values])
+  }, [_values]);
 
   const onNext = () => {
     if (!viewOtp) {
@@ -118,22 +114,20 @@ export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
         setLoadingModal(true);
 
         try {
-          await AuthAPI.signup(values)
+          await AuthAPI.signup(values);
         } catch (err) {
           console.log(err);
-          message.error(err?.message)
+          message.error(err?.message);
           setViewOtp(false);
         }
 
-
         setLoadingModal(false);
-      })()
+      })();
       setViewOtp(true);
       return;
     } else {
-
       if ((otpValue + "").length !== 4) {
-        message.error("OTP кодоо 4 тоо хийнэ үү")
+        message.error("OTP кодоо 4 тоо хийнэ үү");
         return;
       }
 
@@ -142,43 +136,42 @@ export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
         try {
           await AuthAPI.check_otp({
             phone: values?.phone,
-            activate_code: otpValue
-          })
+            activate_code: otpValue,
+          });
           setLoadingModal(true);
-          message.success("Таны мэдээлэлийг амжилттай бүртгэгдлээ таньд баярлалаа")
+          message.success(
+            "Таны мэдээлэлийг амжилттай бүртгэгдлээ таньд баярлалаа"
+          );
           setTimeout(() => {
             router.push("/auth/login");
-
-          }, 700)
+          }, 700);
         } catch (err) {
           console.log(err);
-          message.error(err?.message)
+          message.error(err?.message);
         }
         setLoadingModal(false);
-      })()
+      })();
       return;
     }
-  }
+  };
 
   const re_again_otp = () => {
     (async () => {
       setLoadingModal(true);
       try {
         await AuthAPI.re_again_otp({
-          phone: values?.phone
-        })
+          phone: values?.phone,
+        });
       } catch (err) {
         console.log(err);
-        message.error(err?.message)
+        message.error(err?.message);
       }
       setLoadingModal(false);
-    })()
-  }
-
+    })();
+  };
 
   return (
     <React.Fragment>
-
       {<RegisterForm onSubmit={onSubmit} values={values} />}
       <Modal
         className=""
@@ -213,12 +206,14 @@ export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
                   }}
                   className="my-otp"
                   value={otpValue}
-                  onChange={e => setOtpValue(e)}
+                  onChange={(e) => setOtpValue(e)}
                   numInputs={4}
                   separator={<span>-</span>}
                 />
                 <div className="flex justify-center mt-3">
-                  <Button onClick={re_again_otp} type="link">Дахин илгээх</Button>
+                  <Button onClick={re_again_otp} type="link">
+                    Дахин илгээх
+                  </Button>
                 </div>
               </div>
             ) : (
@@ -235,8 +230,8 @@ export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
                   <Checkbox
                     className="xs:text-sm text-xs"
                     checked={checkServiceTerms}
-                    onChange={e => setCheckServiceTerms(e.target.checked)}
-                  // onChange={onChange}
+                    onChange={(e) => setCheckServiceTerms(e.target.checked)}
+                    // onChange={onChange}
                   >
                     Би зөвшөөрч байна
                   </Checkbox>
@@ -253,10 +248,20 @@ export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
               </div>
             )}
             <div className="py-4 w-full flex flex-row">
-              <Button onClick={() => setViewModal(false)} className="flex-1 mr-2" size="large" disabled={viewOtp}>
+              <Button
+                onClick={() => setViewModal(false)}
+                className="flex-1 mr-2"
+                size="large"
+                disabled={viewOtp}
+              >
                 Болих
               </Button>
-              <Button onClick={onNext} className="flex-1  ml-2 bg-gradient" size="large" disabled={!viewOtp && !checkServiceTerms} >
+              <Button
+                onClick={onNext}
+                className="flex-1  ml-2 bg-gradient"
+                size="large"
+                disabled={!viewOtp && !checkServiceTerms}
+              >
                 Үргэлжлүүлэх
               </Button>
             </div>
@@ -264,16 +269,13 @@ export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
         </Spin>
       </Modal>
     </React.Fragment>
-
-  )
-}
+  );
+};
 
 const RegisterForm = ({ onSubmit: _onSubmit, values }) => {
-
   const onSubmit = (values) => {
-    _onSubmit(values)
-  }
-
+    _onSubmit(values);
+  };
 
   return (
     <Form
@@ -297,7 +299,11 @@ const RegisterForm = ({ onSubmit: _onSubmit, values }) => {
           Бүртгүүлэх
         </p>
       </div>
-      <Form.Item name="name" label="Нэр" rules={[{ required: "true", message: "Заавал бөглөнө үү " }]}>
+      <Form.Item
+        name="name"
+        label="Нэр"
+        rules={[{ required: "true", message: "Заавал бөглөнө үү " }]}
+      >
         {/* <label className="block text-[#9d32c2]">Нэр</label> */}
         <Input
           className=" py-2 px-3   "
@@ -306,17 +312,17 @@ const RegisterForm = ({ onSubmit: _onSubmit, values }) => {
           name="name"
         />
       </Form.Item>
-      <Form.Item name="phone" label="Утасны дугаар"
-        rules={
-          [
-            {
-              pattern: new RegExp(mn_mobile_regex),
-              message: "Утасны дугаараа зөв хийнэ үү",
-              min: 8,
-              max: 8,
-            },
-          ]
-        }
+      <Form.Item
+        name="phone"
+        label="Утасны дугаар"
+        rules={[
+          {
+            pattern: new RegExp(mn_mobile_regex),
+            message: "Утасны дугаараа зөв хийнэ үү",
+            min: 8,
+            max: 8,
+          },
+        ]}
       >
         <div>
           {/* <label className="block text-[#9d32c2]">Утасны дугаар</label> */}
@@ -350,8 +356,8 @@ const RegisterForm = ({ onSubmit: _onSubmit, values }) => {
         Бүртгүүлэх
       </Button>
       <Link href="/auth/login">
-        <a className="text-[#9d32c2]">Нэвртэх бол энд дарна уу?</a>
+        <a className="text-[#9d32c2]">Нэвтрэх бол энд дарна уу?</a>
       </Link>
-    </Form >
-  )
-}
+    </Form>
+  );
+};
