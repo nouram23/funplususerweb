@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import React from "react";
-import { Modal, Button, Checkbox, } from "antd";
+import { Modal, Button, Checkbox } from "antd";
 import Link from "next/link";
 import OtpInput from "react-otp-input";
 import * as yup from "yup";
-import { Form, Input, InputNumber } from "formik-antd"
-import { Formik } from "formik"
+import { Form, Input, InputNumber } from "formik-antd";
+import { Formik } from "formik";
 import { mn_mobile_regex } from "utils";
 import { AuthAPI } from "apis";
 
@@ -45,9 +45,7 @@ export default function AuthRegister() {
       <div className="col-span-4  h-screen flex justify-center items-center">
         <div className="w-80  ">
           <div className="">
-            <SubmitForm />
-            {" "}
-
+            <SubmitForm />{" "}
           </div>
         </div>
       </div>
@@ -56,45 +54,44 @@ export default function AuthRegister() {
 }
 
 const schema = yup.object({
-  phone: yup.string().required("Заавал бөглөнө үү").matches(mn_mobile_regex, "Та утасны дугаараа зөв хийнэ үү"),
-  password: yup.string().required("Заавал бөглөнө үү").min(8, "Хамгийн багадаа 8-ын урт хийнэ үү"),
-  name: yup.string().required("Заавал бөглөнө үү")
-})
+  phone: yup
+    .string()
+    .required("Заавал бөглөнө үү")
+    .matches(mn_mobile_regex, "Та утасны дугаараа зөв хийнэ үү"),
+  password: yup
+    .string()
+    .required("Заавал бөглөнө үү")
+    .min(8, "Хамгийн багадаа 8-ын урт хийнэ үү"),
+  name: yup.string().required("Заавал бөглөнө үү"),
+});
 
 export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
-
-  const [viewModal, setViewModal] = React.useState(false)
-  const [viewOtp, setViewOtp] = React.useState(false)
+  const [viewModal, setViewModal] = React.useState(false);
+  const [viewOtp, setViewOtp] = React.useState(false);
   const [values, setValues] = React.useState({
     ...{ phone: "", name: "", password: "" },
-    ..._values
-  })
+    ..._values,
+  });
 
   const onSubmit = async (values, formik) => {
-
     try {
-
       setValues({
-        ...values
+        ...values,
       });
 
       setViewModal(true);
       setViewOtp(true);
-
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-
-  }
+  };
 
   React.useEffect(() => {
     setValues({
       ...values,
-      ..._values
-    })
-  }, [_values])
-
-
+      ..._values,
+    });
+  }, [_values]);
 
   return (
     <>
@@ -104,18 +101,18 @@ export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
         width={500}
         visible={viewModal}
         style={{ top: "30%" }}
-        onCancel={() => { }}
-      // footer={[
-      //   <Button
-      //     type="primary"
-      //     key="sign up"
-      //     className="w-full  bg-gradient h-10"
-      //     onClick={handleSignUp}
-      //     disabled={!checked}
-      //   >
-      //     Илгээх
-      //   </Button>,
-      // ]}
+        onCancel={() => {}}
+        // footer={[
+        //   <Button
+        //     type="primary"
+        //     key="sign up"
+        //     className="w-full  bg-gradient h-10"
+        //     onClick={handleSignUp}
+        //     disabled={!checked}
+        //   >
+        //     Илгээх
+        //   </Button>,
+        // ]}
       >
         <div className="space-y-4 flex- flex-col justify-center items-center">
           {viewOtp ? (
@@ -155,7 +152,7 @@ export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
               <div className="flex justify-between  mt-3">
                 <Checkbox
                   className="xs:text-sm text-xs"
-                // onChange={onChange}
+                  // onChange={onChange}
                 >
                   Би зөвшөөрч байна
                 </Checkbox>
@@ -173,80 +170,81 @@ export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
           )}
         </div>
       </Modal>
-      <Formik onSubmit={onSubmit} validationSchema={schema} initialValues={values} enableReinitialize>
-        {
-          ({ isSubmitt }) => {
-
-            return (
-              <Form
-                // onFinish={onFinish}
-                className="w-full  ss:px-0 px-4"
-                layout="vertical"
-              >
-                <Link href="/">
-                  <a>
-                    <img
-                      className="ss:h-20 h-14"
-                      alt="logo"
-                      src="/assets/images/logo/logo.svg"
-                    />
-                  </a>
-                </Link>
-                <div className="flex justify-start w-full py-2">
-                  <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] ss:text-4xl text-3xl  ">
-                    Бүртгүүлэх
-                  </p>
-                </div>
-                <Form.Item name="name" label="Нэр">
-                  {/* <label className="block text-[#9d32c2]">Нэр</label> */}
-                  <Input
-                    className=" py-2 px-3   "
-                    type="text"
-                    placeHolder="Johnny Depp"
-                    name="name"
+      <Formik
+        onSubmit={onSubmit}
+        validationSchema={schema}
+        initialValues={values}
+        enableReinitialize
+      >
+        {({ isSubmitt }) => {
+          return (
+            <Form
+              // onFinish={onFinish}
+              className="w-full  ss:px-0 px-4"
+              layout="vertical"
+            >
+              <Link href="/">
+                <a>
+                  <img
+                    className="ss:h-20 h-14"
+                    alt="logo"
+                    src="/assets/images/logo/logo.svg"
                   />
-                </Form.Item>
-                <Form.Item name="phone" label="Утасны дугаар">
-                  <div>
-                    {/* <label className="block text-[#9d32c2]">Утасны дугаар</label> */}
-                    <InputNumber
-                      name="phone"
-                      size="large"
-                      placeHolder="00000000"
-                      allowClear
-                      defaultValue={" "}
-                      className="w-full"
-                    />
-                  </div>
-                </Form.Item>
-                <Form.Item name="password" label="Нууц үг">
-                  <div>
-                    {/* <label className="block text-[#9d32c2]">Нууц үг</label> */}
-                    <Input.Password
-                      required
-                      className=" py-2    px-3 "
-                      placeholder="*****"
-                      name="password"
-                    />
-                  </div>
-                </Form.Item>
-
-                <Button
-                  // onClick={showModal}
-                  htmlType="submit"
-                  className="w-full pl-2 h-10  bg-gradient mb-1"
-                >
+                </a>
+              </Link>
+              <div className="flex justify-start w-full py-2">
+                <p className="text-transparent bg-clip-text bg-gradient-to-r from-[#9d32c2] to-[#e97a34] ss:text-4xl text-3xl  ">
                   Бүртгүүлэх
-                </Button>
-                <Link href="/auth/login">
-                  <a className="text-[#9d32c2]">Нэвртэх бол энд дарна уу?</a>
-                </Link>
-              </Form>
-            )
-          }
-        }
+                </p>
+              </div>
+              <Form.Item name="name" label="Нэр">
+                {/* <label className="block text-[#9d32c2]">Нэр</label> */}
+                <Input
+                  className=" py-2 px-3   "
+                  type="text"
+                  placeHolder="Johnny Depp"
+                  name="name"
+                />
+              </Form.Item>
+              <Form.Item name="phone" label="Утасны дугаар">
+                <div>
+                  {/* <label className="block text-[#9d32c2]">Утасны дугаар</label> */}
+                  <InputNumber
+                    name="phone"
+                    size="large"
+                    placeHolder="00000000"
+                    allowClear
+                    defaultValue={" "}
+                    className="w-full"
+                  />
+                </div>
+              </Form.Item>
+              <Form.Item name="password" label="Нууц үг">
+                <div>
+                  {/* <label className="block text-[#9d32c2]">Нууц үг</label> */}
+                  <Input.Password
+                    required
+                    className=" py-2    px-3 "
+                    placeholder="*****"
+                    name="password"
+                  />
+                </div>
+              </Form.Item>
+
+              <Button
+                // onClick={showModal}
+                htmlType="submit"
+                className="w-full pl-2 h-10  bg-gradient mb-1"
+              >
+                Бүртгүүлэх
+              </Button>
+              <Link href="/auth/login">
+                <a className="text-[#9d32c2]">Нэвртэх бол энд дарна уу?</a>
+              </Link>
+            </Form>
+          );
+        }}
       </Formik>
     </>
-
-  )
-}
+  );
+};
