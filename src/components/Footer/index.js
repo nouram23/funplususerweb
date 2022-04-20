@@ -115,9 +115,9 @@ export default function Footer() {
             <h3 className="font-medium sm:text-lg lg:mb-6 mb-3">Тусламж</h3>
             <ul className="leading-7 lg:text-base text-sm space-y-2">
               <li>
-                <a className="hover:text-[#9d32c2]" href="#">
-                  Түгээмэл асуулт
-                </a>
+                <Link href="/CommonQuestion">
+                  <a className="hover:text-[#9d32c2]">Түгээмэл асуулт</a>
+                </Link>
               </li>
               <li>
                 <a className="hover:text-[#9d32c2]" href="#">

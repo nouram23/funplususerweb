@@ -1,13 +1,11 @@
 import React from "react";
-import { Button, Form, Input, Tabs } from "antd";
+import { Button, Form, Input, InputNumber, Tabs } from "antd";
 import Link from "next/link";
 
 export default function AuthRegister() {
+  const [selectActiveKey, setSelectActiveKey] = React.useState("get_code");
 
-
-  const [selectActiveKey, setSelectActiveKey] = React.useState("password_forget");
-
-  const [phone, setPhone] = React.useState("")
+  const [phone, setPhone] = React.useState("");
 
   return (
     <div className="w-full h-full lg:grid grid-cols-10">
@@ -30,21 +28,19 @@ export default function AuthRegister() {
             </a>
           </Link>
           <Tabs activeKey={selectActiveKey} onChange={setSelectActiveKey}>
-            <Tabs.TabPane
-              tab="Нууц үг сэргээх"
-              key="password_forget"
-              tabKey="password_forget"
-            >
+            <Tabs.TabPane tab="Код авах" key="get_code" tabKey="get_code">
               {" "}
-              <PasswordForgetForm phone={phone} onSubmit={e => console.log(e)} />
+              <GetCode phone={phone} onSubmit={(e) => console.log(e)} />
             </Tabs.TabPane>
             <Tabs.TabPane
-              tab="Нууц үг солих"
+              tab="Нууц үг сэргээх"
               key="change_password"
               tabKey="change_password"
-
             >
-              <PasswordChangeForm phone={phone} onSubmit={e => console.log(e)} />
+              <PasswordChangeForm
+                phone={phone}
+                onSubmit={(e) => console.log(e)}
+              />
             </Tabs.TabPane>
           </Tabs>
         </div>
@@ -53,41 +49,28 @@ export default function AuthRegister() {
   );
 }
 
-const PasswordForgetForm = ({ phone, onSubmit }) => {
+const GetCode = ({ phone, onSubmit }) => {
   return (
     <Form className="w-full" layout="vertical">
-      <Form.Item className="">
-        <div>
-          <label className="block text-[#9d32c2]">Утасны дугаар</label>
-          <Input
-            className=" py-2  px-3  "
-            type="number"
-            placeHolder="99119911"
-          />
-        </div>
+      <Form.Item label="Утасны дугаар" className="">
+        <InputNumber
+          className="w-full "
+          name="phone"
+          size="large"
+          placeholder="00000000"
+        />
       </Form.Item>
-      <Form.Item className="">
-        <div>
-          <label className="block text-[#9d32c2]">Баталгаажуулах код</label>
-          <Input className=" py-2 px-3 " placeHolder="1234" />
-        </div>
-      </Form.Item>
-      <Form.Item className="">
-        <div>
-          <label className="block text-[#9d32c2]">Нууц үг</label>
-          <Input.Password
-            className=" py-2  px-3    "
-            type="number"
-            placeHolder="password"
-          />
-        </div>
-      </Form.Item>
-      <Button className="pl-2 w-full font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] mb-1">
-        Сэргээх
+
+      <Button
+        size="large"
+        className="pl-2 w-full font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] mb-1"
+      >
+        Код авах
       </Button>
-      <Link href="login">
-        <a className="text-[#9d32c2] text-sm"> Нэвртэх бол энд дарна уу?</a>
-      </Link>
+      <Button type="link" href="login" className="text-[#9d32c2] text-sm">
+        {" "}
+        Нэвртэх бол энд дарна уу?
+      </Button>
     </Form>
   );
 };
@@ -95,44 +78,40 @@ const PasswordForgetForm = ({ phone, onSubmit }) => {
 const PasswordChangeForm = ({ phone, onSubmit }) => {
   return (
     <Form className="w-full" action="" layout="vertical">
-      <Form.Item className="">
-        <div>
-          <label className="block text-[#9d32c2]">Нууц үг</label>
-          <Input.Password
-            className=" px-3  py-2 "
-            type="number"
-            placeHolder="Password"
-          />
-        </div>
+      <Form.Item label="Утасны дугаар" className="">
+        {/* <label className="block text-[#9d32c2]">Утасны дугаар</label> */}
+        <InputNumber
+          className="w-full "
+          name="phone"
+          size="large"
+          placeholder="00000000"
+        />
       </Form.Item>
-      <Form.Item className="">
-        <div>
-          <label className="block text-[#9d32c2]">Шинэ нууц үг</label>
-          <Input.Password
-            className="px-3 py-2 "
-            type="number"
-            placeHolder="New password"
-          />
-        </div>
+
+      <Form.Item className="" label="Баталгаажуулах код">
+        <InputNumber className=" w-full " size="large" placeholder="1234" />
       </Form.Item>
-      <Form.Item className="">
-        <div>
-          <label className="block text-[#9d32c2]">
-            Шинэ нууц үг давтан оруулах
-          </label>
-          <Input.Password
-            className="py-2 px-3 "
-            type="number"
-            placeHolder="Confirm password"
-          />
-        </div>
+      <Form.Item className="" label="Шинэ нууц үг">
+        <Input.Password size="large" type="number" placeholder="New password" />
       </Form.Item>
-      <Button className="w-full  pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] mb-1">
-        Солих
+      <Form.Item className="" label="  Шинэ нууц үг давтан оруулах">
+        <Input.Password
+          size="large"
+          className=" "
+          type="number"
+          placeholder="Confirm password"
+        />
+      </Form.Item>
+      <Button
+        size="large"
+        className="w-full  pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] mb-1"
+      >
+        Сэргээх
       </Button>
-      <Link href="login">
-        <a className="text-[#9d32c2] text-sm "> Нэвртэх бол энд дарна уу?</a>
-      </Link>
+      <Button href="login" type="link" className="text-[#9d32c2] text-sm ">
+        {" "}
+        Нэвртэх бол энд дарна уу?
+      </Button>
     </Form>
   );
 };
