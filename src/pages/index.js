@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ServiceItem from "components/ServiveItem/item";
+import Recommendation from "components/Recommendation";
 import Layout from "../components/Layout";
 import { Skeleton } from "antd";
 import { data } from "autoprefixer";
@@ -46,119 +47,40 @@ export default function Home() {
                 );
               }
             })}
-            {/* <ServiceItem
-              item={{
-                loading: loading,
-                icon: "assets/images/product/medium-size/1-2.svg",
-                count: 10,
-                name: "Үсчин",
-              }}
-            />
-            <ServiceItem
-              item={{
-                loading: loading,
-                icon: "assets/images/product/medium-size/1-3.svg",
-                count: 10,
-                name: "Заал",
-              }}
-            />
-            <ServiceItem
-              longText={{
-                loading: loading,
-                icon: "assets/images/product/medium-size/1-4.svg",
-                count: 10,
-                name: "Усан бассейн",
-              }}
-            />
-            <ServiceItem
-              item={{
-                loading: loading,
-                icon: "assets/images/product/medium-size/1-5.svg",
-                count: 10,
-                name: "Гоо сайхан",
-              }}
-            />
-            <ServiceItem
-              item={{
-                loading: loading,
-                icon: "assets/images/product/medium-size/1-6.svg",
-                count: 10,
-                name: "Боулинг",
-              }}
-            />
-            <ServiceItem
-              longText={{
-                loading: loading,
-                icon: "assets/images/product/medium-size/1-7.svg",
-                count: 10,
-                name: "Сэтгэл судлаач",
-              }}
-            />
-            <ServiceItem
-              longText={{
-                loading: loading,
-                icon: "assets/images/product/medium-size/1-8.svg",
-                count: 10,
-                name: "Экстрем спорт",
-              }}
-            />
-            <ServiceItem
-              item={{
-                loading: loading,
-                icon: "assets/images/product/medium-size/1-9.svg",
-                count: 10,
-                name: "Кароеке",
-              }}
-            />
-            <ServiceItem
-              item={{
-                loading: loading,
-                icon: "assets/images/product/medium-size/1-10.svg",
-                count: 10,
-                name: "Маникюр",
-              }}
-            />
-            <ServiceItem
-              longText={{
-                loading: loading,
-                icon: "assets/images/product/medium-size/1-11.svg",
-                count: 10,
-                name: "Энтертаймент төв",
-              }}
-            />
-            <ServiceItem
-              item={{
-                loading: loading,
-                icon: "assets/images/product/medium-size/1-12.svg",
-                count: 10,
-                name: "Пейнтбол",
-              }}
-            />
-            <ServiceItem
-              longText={{
-                loading: loading,
-                icon: "assets/images/product/medium-size/1-13.svg",
-                count: 10,
-                name: "Зургийн студи",
-              }}
-            />
-            <ServiceItem
-              item={{
-                loading: loading,
-                icon: "assets/images/product/medium-size/1-14.svg",
-                count: 10,
-                name: "Теннис",
-              }}
-            />
-            <ServiceItem
-              item={{
-                loading: loading,
-                icon: "assets/images/product/medium-size/1-15.svg",
-                count: 10,
-                name: "Ресторан",
-              }}
-            /> */}
+
             <ServiceItem isComingSoon={true} />
+          </div>
+          <h1 className="text-center text-4xl font-semibold mt-4">
+            Яагаад манайхыг <span className="block">ашиглах вэ?</span>
+          </h1>
+          <div className="flex justify-center space-x-8 mt-8">
+            <Recommendation
+              item={{
+                icon: "assets/images/slider/slide-img/1.svg",
+                name: "Бүгд нэг дор",
+                desc: "Цаг алдалгүй хэзээ ч, хаанаас ч цаг захиалах боломжтой",
+                gr1: "#4a56bd",
+                gr2: "#b14b56",
+              }}
+            />
+            <Recommendation
+              item={{
+                icon: "assets/images/slider/slide-img/2.svg",
+                name: "Хурдан шуурхай",
+                desc: "Хурдан шуурхай, аппликэйшн ашиглах бүрдээ бэлэгтэй, хөнгөлөлттэй",
+                gr1: "#4465ca",
+                gr2: "#cf4681",
+              }}
+            />
+            <Recommendation
+              item={{
+                icon: "assets/images/slider/slide-img/3.png",
+                name: "Цаг алдахгүй",
+                desc: "Цаг алдалгүй хэзээ ч, хаанаас ч цаг захиалах боломжтой",
+                gr1: "#ad4242",
+                gr2: "#9198e5",
+              }}
+            />
           </div>
         </div>
       </div>
