@@ -7,9 +7,18 @@ import LoggedInHeader from "components/LoggedInHeader";
 export default function Layout({ children }) {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   React.useEffect(async () => {
-    const response = await fetch("/api/me");
+    try {
+      const response = await fetch("/api/me");
 
-    if (response.name) setIsLoggedIn(true);
+      // if (!response.body.locked) {
+      //   return;
+      // }
+
+      const data = await response.json();
+
+      console.log(data);
+      if (data.name) setIsLoggedIn(true);
+    } catch (err) {}
   }, []);
   return (
     <div className="main-wrapper font-Nunito">
