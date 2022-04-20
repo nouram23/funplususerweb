@@ -1,6 +1,4 @@
-import Layout from "components/Layout";
-import { Button, Card, Form, Input, Select } from "antd";
-import Link from "next/link";
+import { Button, Form, Input, Select } from "antd";
 import Header from "components/Header";
 import Footer from "components/Footer";
 const { TextArea } = Input;
@@ -8,9 +6,20 @@ const { TextArea } = Input;
 const { Option } = Select;
 
 export default function BecomeMerchant() {
-  const onFinish = (values) => {
-    console.log(values);
+  const onFinish = async (values) => {
+    console.log(JSON.stringify(values));
+    const response = await fetch("/api/becomeMerchant", {
+      method: "POST",
+      body: JSON.stringify({ values }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await response.json();
+    console.log(data);
   };
+
   function handleChange(value) {
     console.log(`selected ${value}`);
   }
@@ -36,11 +45,11 @@ export default function BecomeMerchant() {
           </div>
           <div className=" max-w-screen-2xl flex flex-col lg:px-20  md:mt-80 ss:mt-20 mt-10">
             <div className=" border w-full max-w-md  border-white/10  lg:p-20 ss:p-10 p-4 mx-auto rounded-2xl ">
-              <Form className=" " action="" layout="vertical">
+              <Form onFinish={onFinish} layout="vertical">
                 <h1 className="text-center font-medium ss:text-2xl text-xl mb-8">
                   Байгууллагын мэдээлэл
                 </h1>
-                <Form.Item label="Байгууллагын нэр">
+                <Form.Item label="Байгууллагын нэр" name={"companyName"}>
                   <Input
                     className=" py-2 px-3   "
                     type="text"
@@ -56,36 +65,39 @@ export default function BecomeMerchant() {
                 </Form.Item> */}
                 <Form.Item
                   className=" "
-                  name="Үйл ажиллагааны чиглэл"
+                  name="serviceTypes"
                   label="Үйл ажиллагааны чиглэл"
                 >
                   <Select
                     defaultValue={"Гоо сайхан"}
                     size={"large"}
                     onChange={handleChange}
+                    mode="multiple"
                   >
                     <Option value="Гоо сайхан">Гоо сайхан</Option>
                     <Option value="Спорт">Спорт</Option>
+                    <Option value="Боловсрол">Боловсрол</Option>
+                    <Option value="Энтертаймент">Энтертаймент</Option>
                   </Select>
                 </Form.Item>
                 <h1 className="text-center font-medium ss:text-2xl text-xl mb-8">
                   Холбогдох ажилтан
                 </h1>
-                <Form.Item label="Ажилтаны нэр">
+                <Form.Item label="Ажилтаны нэр" name={"workerName"}>
                   <Input
                     className=" py-2  px-3   "
                     type="text"
                     placeHolder="Ажилтаны нэр"
                   />
                 </Form.Item>
-                <Form.Item label="Утасны дугаар">
+                <Form.Item label="Утасны дугаар" name={"phone"}>
                   <Input
                     className=" py-2  px-3   "
                     type="number"
                     placeHolder="Утасны дугаар"
                   />
                 </Form.Item>
-                <Form.Item label="Имэйл хаяг">
+                <Form.Item label="Имэйл хаяг" name={"email"}>
                   <Input
                     className=" py-2  px-3   "
                     type="email"
@@ -93,9 +105,14 @@ export default function BecomeMerchant() {
                   />
                 </Form.Item>
 
-                <Button className="w-full h-10 pl-2 font-light bg-gradient ">
-                  Илгээх
-                </Button>
+                <Form.Item>
+                  <Button
+                    htmlType="submit"
+                    className="w-full h-10 pl-2 font-light bg-gradient "
+                  >
+                    Илгээх
+                  </Button>
+                </Form.Item>
               </Form>
             </div>
           </div>

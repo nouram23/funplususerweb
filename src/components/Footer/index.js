@@ -1,6 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import React from "react";
+
 export default function Footer() {
+  const [data, setData] = React.useState({});
+
+  React.useEffect(async () => {
+    const response = await fetch("/api/footerInfo");
+    const info = await response.json();
+    setData(info);
+  }, []);
+
   return (
     <>
       <div className="text-white bg-[#242424]">
@@ -85,9 +95,9 @@ export default function Footer() {
               Холбоо барих
             </h3>
             <ul className="leading-7 lg:text-base text-sm space-y-2">
-              <li>Хаяг: Mongolia, Ulaanbaatar</li>
-              <li>Утас: +(976) 7600-2001</li>
-              <li>И-мэйл: contact@funplus.mn</li>
+              <li>Хаяг: {data.location}</li>
+              <li>Утас: {data.phone}</li>
+              <li>И-мэйл: {data.email}</li>
             </ul>
           </div>
 
