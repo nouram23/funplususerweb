@@ -21,17 +21,30 @@ export default function Home() {
         <div className="md:max-w-7xl  max-w-xl mx-auto py-10">
           <div className="flex justify-center flex-wrap mx-auto ">
             {data.map((e, i) => {
-              return (
-                <ServiceItem
-                  key={i}
-                  item={{
-                    loading: loading,
-                    icon: e.icon,
-                    count: e.count,
-                    name: e.name,
-                  }}
-                />
-              );
+              if (e.type === "simple") {
+                return (
+                  <ServiceItem
+                    key={i}
+                    item={{
+                      loading: loading,
+                      icon: e.icon,
+                      count: e.count,
+                      name: e.name,
+                    }}
+                  />
+                );
+              } else {
+                return (
+                  <ServiceItem
+                    longText={{
+                      loading: loading,
+                      icon: e.icon,
+                      count: e.count,
+                      name: e.name,
+                    }}
+                  />
+                );
+              }
             })}
             {/* <ServiceItem
               item={{

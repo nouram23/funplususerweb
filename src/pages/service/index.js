@@ -4,6 +4,18 @@ import Item from "components/Item";
 import Link from "next/link";
 
 export default function Service() {
+  const [detailed, setDetailed] = React.useState([]);
+  const [allServiceType, setTypes] = React.useState([]);
+
+  React.useEffect(async () => {
+    const result = await fetch("/api/serviceDetail");
+    const names = await fetch("/api/allServiceType");
+    const data = await result.json();
+    const serviceNames = await names.json();
+    setDetailed(data);
+    setTypes(serviceNames);
+  }, []);
+
   return (
     <Layout>
       <div>
@@ -11,12 +23,14 @@ export default function Service() {
           <div className="mx-auto max-w-screen-2xl">
             <div className=" flex  sm:p-10 p-4">
               <ul className="max-w-screen-xl md:text-base text-sm font-light flex mx-auto justify-center flex-wrap sm:pt-0 pt-4">
-                <List
-                  list={{
-                    name: "Үсчин",
-                  }}
-                />
-                <List
+                {allServiceType.map((el, i) => (
+                  <List
+                    list={{
+                      name: el.name,
+                    }}
+                  />
+                ))}
+                {/* <List
                   list={{
                     name: "Заал",
                   }}
@@ -80,18 +94,21 @@ export default function Service() {
                   list={{
                     name: "Ресторан",
                   }}
-                />
+                /> */}
               </ul>
             </div>
             <div className="bg-[#1a1a1a]  flex justify-center mx-auto items-center">
               <div className="flex justify-center flex-wrap pb-10  sm:px-10 px-2 mx-auto">
-                <Item
-                  item={{
-                    icon: "assets/images/billiard-photo/1.png",
-                    name: "Monjoy Billiard Club",
-                  }}
-                />
-                <Item
+                {detailed.map((el, i) => (
+                  <Item
+                    key={i}
+                    item={{
+                      icon: el.icon,
+                      name: el.name,
+                    }}
+                  />
+                ))}
+                {/* <Item
                   item={{
                     icon: "assets/images/billiard-photo/2.png",
                     name: "Monjoy Billiard Club",
@@ -132,7 +149,7 @@ export default function Service() {
                     icon: "assets/images/billiard-photo/1.png",
                     name: "Monjoy Billiard Club",
                   }}
-                />
+                /> */}
               </div>
             </div>
           </div>

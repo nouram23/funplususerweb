@@ -5,6 +5,15 @@ import { FileAddOutlined } from "@ant-design/icons";
 const { Dragger } = Upload;
 
 export default function JobApplication() {
+  const [jobs, setJobs] = React.useState([]);
+
+  React.useEffect(async () => {
+    const result = await fetch("/api/jobApplication");
+    const data = await result.json();
+
+    setJobs(data);
+  }, []);
+
   const props = {
     name: "file",
     multiple: true,
@@ -30,14 +39,23 @@ export default function JobApplication() {
   const showModal = () => {
     setIsModalVisible(true);
   };
-  const handleSent = () => {
-    setIsModalVisible(false);
-  };
+
   const handleCancel = () => {
     setIsModalVisible(false);
   };
-  const onFinish = (values) => {
-    console.log(values);
+  const onFinish = async (values) => {
+    console.log(JSON.stringify({ values }));
+    const response = await fetch("/api/applicantInfo", {
+      method: "POST",
+      body: JSON.stringify({ values }),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+
+    const data = await response.json();
+    console.log(data);
+    setIsModalVisible(false);
   };
   return (
     <>
@@ -48,8 +66,17 @@ export default function JobApplication() {
               {" "}
               <h1 className="md:text-6xl text-3xl ">Нээлттэй ажлын байрууд</h1>
             </div>
-            <div className=" border border-white/10  lg:p-20 ss:p-10 p-4 mx-auto rounded-2xl  mt-28 space-y-8 ">
-              <Card onClick={showModal} className="rounded-xl">
+            <div className=" border border-white/10  lg:p-20 ss:p-10 p-4 mx-auto rounded-2xl text-center  mt-28 space-y-8 ">
+              {jobs.map((el, i) => (
+                <Card
+                  key={i}
+                  onClick={showModal}
+                  className="rounded-xl cursor-pointer"
+                >
+                  <h1>{el.name}</h1>
+                </Card>
+              ))}
+              {/* <Card onClick={showModal} className="rounded-xl">
                 <h1>Designer</h1>
               </Card>
               <Card onClick={showModal} className="rounded-xl">
@@ -57,10 +84,7 @@ export default function JobApplication() {
               </Card>
               <Card onClick={showModal} className="rounded-xl">
                 <h1>Designer</h1>
-              </Card>
-              <Card onClick={showModal} className="rounded-xl">
-                <h1>Designer</h1>
-              </Card>
+              </Card> */}
             </div>
           </div>
         </div>
@@ -72,55 +96,58 @@ export default function JobApplication() {
             width={400}
             visible={isModalVisible}
             style={{ top: "30%" }}
-            onOk={handleSent}
             onCancel={handleCancel}
-            footer={[
-              <Button
-                type="primary"
-                key="sent"
-                className="w-full rounded-lg bg-gradient h-10"
-                onClick={handleSent}
-              >
-                Илгээх
-              </Button>,
-            ]}
+            footer={null}
           >
             <Form
-              className="  flex flex-col items-center"
+              className="flex flex-col items-center"
+              onFinish={onFinish}
               action=""
               layout="vertical"
             >
-              <Form.Item label="Таны нэр">
+              <Form.Item label="Таны нэр" name={"name"}>
                 <Input
                   className="sm:w-80 w-64 py-2 rounded-xl px-3   "
                   type="text"
                   placeHolder="Таны нэр"
                 />
               </Form.Item>
-              <Form.Item label="Утасны дугаар">
+              <Form.Item label="Утасны дугаар" name={"phone"}>
                 <Input
                   className="sm:w-80 w-64 py-2 rounded-xl px-3   "
                   type="number"
                   placeHolder="Утасны дугаар"
                 />
               </Form.Item>
-              <Form.Item label="Имэйл хаяг">
+              <Form.Item label="Имэйл хаяг" name={"email"}>
                 <Input
                   className="sm:w-80 w-64 py-2 rounded-xl px-3   "
                   type="email"
                   placeHolder="Имэйл хаяг"
                 />
               </Form.Item>
-              <Dragger {...props}>
-                <p className="ant-upload-drag-icon">
-                  <FileAddOutlined />
-                </p>
-                <p className="ant-upload-text">CV-гээ оруулна уу!</p>
-                <p className="ant-upload-hint">
-                  Файлын хэмжээ 10MB-аас хэтрэхгүй PDF, DOC, DOCX өргөтгөлтэй
-                  байна.
-                </p>
-              </Dragger>
+              <Form.Item>
+                <Dragger {...props}>
+                  <p className="ant-upload-drag-icon">
+                    <FileAddOutlined />
+                  </p>
+                  <p className="ant-upload-text">CV-гээ оруулна уу!</p>
+                  <p className="ant-upload-hint">
+                    Файлын хэмжээ 10MB-аас хэтрэхгүй PDF, DOC, DOCX өргөтгөлтэй
+                    байна.
+                  </p>
+                </Dragger>
+              </Form.Item>
+              <Form.Item>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  size="large"
+                  className="w-full rounded-lg bg-gradient h-10 "
+                >
+                  Илгээх
+                </Button>
+              </Form.Item>
             </Form>
           </Modal>
         </div>

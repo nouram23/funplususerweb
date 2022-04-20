@@ -45,9 +45,7 @@ export default function AuthRegister() {
       <div className="col-span-4  h-screen flex justify-center items-center">
         <div className="w-80  ">
           <div className="">
-            <SubmitForm />
-            {" "}
-
+            <SubmitForm />{" "}
           </div>
         </div>
       </div>
@@ -56,10 +54,16 @@ export default function AuthRegister() {
 }
 
 const schema = yup.object({
-  phone: yup.string().required("Заавал бөглөнө үү").matches(mn_mobile_regex, "Та утасны дугаараа зөв хийнэ үү"),
-  password: yup.string().required("Заавал бөглөнө үү").min(8, "Хамгийн багадаа 8-ын урт хийнэ үү"),
-  name: yup.string().required("Заавал бөглөнө үү")
-})
+  phone: yup
+    .string()
+    .required("Заавал бөглөнө үү")
+    .matches(mn_mobile_regex, "Та утасны дугаараа зөв хийнэ үү"),
+  password: yup
+    .string()
+    .required("Заавал бөглөнө үү")
+    .min(8, "Хамгийн багадаа 8-ын урт хийнэ үү"),
+  name: yup.string().required("Заавал бөглөнө үү"),
+});
 
 export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
 
@@ -73,8 +77,8 @@ export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
   const [loadingModal, setLoadingModal] = React.useState(false)
   const [values, setValues] = React.useState({
     ...{ phone: "", name: "", password: "" },
-    ..._values
-  })
+    ..._values,
+  });
 
   const onSub = () => {
     setViewModal(true);
@@ -90,16 +94,15 @@ export const SubmitForm = ({ onSubmit: _onSubmit, values: _values }) => {
        */
 
       setValues({
-        ...values
+        ...values,
       });
 
       onSub()
 
     } catch (err) {
-      console.log(err)
+      console.log(err);
     }
-
-  }
+  };
 
   React.useEffect(() => {
     setValues({
