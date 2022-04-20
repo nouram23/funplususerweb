@@ -59,74 +59,75 @@ const LoginForm = () => {
         password: "",
       }}
     >
-      {({ isSubmitting }) => (
-        <Form className="w-full  ss:px-0 px-3" action="" layout="vertical">
-          <Link href="/">
-            <a>
-              <img
-                className="ss:h-20 h-16"
-                alt="logo"
-                src="/assets/images/logo/logo.svg"
-              />
-            </a>
-          </Link>
-
-          <div className=" flex justify-start w-full py-2">
-            <p className="text-gradient ss:text-4xl text-3xl flex text-left">
-              Нэвтрэх
-            </p>
-          </div>
-          <Form.Item className="text-[#9d32c2]" name="username">
-            <div>
-              <label className="block">Утасны дугаар</label>
-              <InputNumber
-                name="username"
-                size="large"
-                type="number"
-                placeHolder="00000000"
-                allowClear
-                defaultValue={" "}
-                className="w-full"
-              />
-            </div>
-          </Form.Item>
-          <Form.Item className="text-[#9d32c2]" name="password">
-            <div>
-              <label className="block">Нууц үг</label>
-              <Input.Password
-                name="password"
-                allowClear
-                type="password"
-                placeholder="*****"
-                size="large"
-              />
-            </div>
-          </Form.Item>
-          <div className="flex justify-end  py-2">
-            <Link href="/auth/passwordForget">
-              <p>Нууц үгээ мартсан уу?</p>
+      {
+        ({ isSubmitting }) => (
+          <Form className="w-full  ss:px-0 px-3" layout="vertical">
+            <Link href="/">
+              <a>
+                <img
+                  className="ss:h-20 h-16"
+                  alt="logo"
+                  src="/assets/images/logo/logo.svg"
+                />
+              </a>
             </Link>
-          </div>
 
-          <Button
-            type="primary"
-            loading={isSubmitting}
-            htmlType="submit"
-            size="large"
-            className="hover:text-white w-full mb-1 font-light hover:from-[#e97a34] hover:to-[#9d32c2] bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none"
-          >
-            Нэвтрэх
-          </Button>
+            <div className=" flex justify-start w-full py-2">
+              <p className="text-gradient ss:text-4xl text-3xl flex text-left">
+                Нэвтрэх
+              </p>
+            </div>
+            <Form.Item className="text-[#9d32c2]" name="username">
+              <div>
+                <label className="block">Утасны дугаар</label>
+                <InputNumber
+                  name="username"
+                  size="large"
+                  type="number"
+                  placeHolder="00000000"
+                  allowClear
+                  defaultValue={" "}
+                  className="w-full"
+                />
+              </div>
+            </Form.Item>
+            <Form.Item className="text-[#9d32c2]" name="password">
+              <div>
+                <label className="block">Нууц үг</label>
+                <Input.Password
+                  name="password"
+                  allowClear
+                  type="password"
+                  placeholder="*****"
+                  size="large"
+                />
+              </div>
+            </Form.Item>
+            <div className="flex justify-end  py-2">
+              <Link href="/auth/passwordForget">
+                <p>Нууц үгээ мартсан уу?</p>
+              </Link>
+            </div>
 
-          <Divider />
-          <Button type="link" block href="/auth/register">
-            Бүртгүүлэх
-          </Button>
-          {/* <Link href="/auth/register">
+            <Button
+              type="primary"
+              loading={isSubmitting}
+              htmlType="submit"
+              size="large"
+              className="hover:text-white w-full mb-1 font-light hover:from-[#e97a34] hover:to-[#9d32c2] bg-gradient-to-r from-[#9d32c2] to-[#e97a34] text-white border-none"
+            >
+              Нэвтрэх
+            </Button>
+
+            <Divider />
+            <Button type="link" block href="/auth/register">
+              Бүртгүүлэх
+            </Button>
+            {/* <Link href="/auth/register">
             <a className="text-gradient  text-sm"> Бүртгүүлэх</a>
           </Link> */}
-        </Form>
-      )}
+          </Form>
+        )}
     </Formik>
   );
 };
