@@ -44,7 +44,6 @@ export default function JobApplication() {
     setIsModalVisible(false);
   };
   const onFinish = async (values) => {
-    console.log(JSON.stringify({ values }));
     const response = await fetch("/api/applicantInfo", {
       method: "POST",
       body: JSON.stringify({ values }),
@@ -55,6 +54,7 @@ export default function JobApplication() {
 
     const data = await response.json();
     console.log(data);
+    alert("Таны хүсэлт амжилттай илгээгдлээ!");
     setIsModalVisible(false);
   };
   return (

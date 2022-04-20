@@ -11,7 +11,7 @@ export default function Merchant() {
         />
         <div className="space-y-7 z-10">
           <h1 className="font-bold text-2xl ml-2">МЕРЧАНТ</h1>
-          <p className="text-center">And it's free.</p>
+          <p className="text-center">Уйдах завгүй</p>
           <div className="">
             <Link href="/become-merchant">
               <a className="rounded-full px-4 py-2 bg-gradient-to-r from-[#9d32c2] to-[#e97a34]">

@@ -1,20 +1,20 @@
 import feedback from "backend/middlewares/apis/feedback";
 
-const infos = feedback()();
+const feedbacks = feedback()();
 
 export default function handler(req, res) {
   if (req.method === "GET") {
-    res.status(200).json(infos);
+    res.status(200).json(feedbacks);
   } else if (req.method === "POST") {
     const info = req.body.values;
-    const newInfo = {
-      companyName: info.companyName,
+    const newFeedback = {
+      name: info.name,
       phone: info.phone,
       email: info.email,
-      workerName: info.workerName,
-      serviceTypes: info.serviceTypes,
+      about: info.about,
+      type: info.type,
     };
-    infos.push(newInfo);
-    res.status(201).json(newInfo);
+    feedbacks.push(newFeedback);
+    res.status(201).json(newFeedback);
   }
 }

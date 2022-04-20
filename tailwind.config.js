@@ -29,6 +29,7 @@ module.exports = {
       },
       fontFamily: {
         Roboto: "Roboto",
+        Nunito: "Nunito",
       },
     },
   },
