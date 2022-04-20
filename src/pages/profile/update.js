@@ -1,4 +1,4 @@
-import ProHeader from "components/ProHeader";
+import LoggedInHeader from "components/LoggedInHeader";
 import Merchant from "components/Merchant";
 import Footer from "components/Footer";
 import React from "react";
@@ -14,34 +14,34 @@ export default function Update() {
   };
   return (
     <>
-      <ProHeader />
+      <LoggedInHeader />
       <div className="bg-[#1a1a1a] h-screen mt-24 pt-16">
         <div className="rounded-lg  max-w-screen-sm flex flex-col items-center mx-auto bg-[#212121] py-12 ">
           <h1 className="font-bold text-xl ml-6 mb-3">Мэдээлэл засварлах</h1>
           <Form className="ml-6 w-96">
             <Form.Item name={"name"}>
               <label className="block mb-2">
-                Name<span className="text-red-400">*</span>
+                Нэр<span className="text-red-400">*</span>
               </label>
               <Input className="rounded-lg" />
             </Form.Item>
             <Form.Item name={"phone"}>
-              <label className="block mb-2">Phone</label>
+              <label className="block mb-2">Дугаар</label>
               <Input className="rounded-lg" />
             </Form.Item>
             <Form.Item name={"email"}>
-              <label className="block mb-2">E-Mail</label>
+              <label className="block mb-2">Мэйл</label>
               <Input className="rounded-lg" />
             </Form.Item>
             <Form.Item name={"address"}>
-              <label className="block mb-2">Address</label>
+              <label className="block mb-2">Хаяг</label>
               <Input className="rounded-lg" />
             </Form.Item>
             <Form.Item name={"gender"}>
-              <label className="block mb-2">Gender</label>
+              <label className="block mb-2">Хүйс</label>
               <Radio.Group onChange={onChange} value={value}>
-                <Radio value={1}>Male</Radio>
-                <Radio value={2}>Female</Radio>
+                <Radio value={1}>Эрэгтэй</Radio>
+                <Radio value={2}>Эмэгтэй</Radio>
               </Radio.Group>
             </Form.Item>
             <Link href={"/profile"}>

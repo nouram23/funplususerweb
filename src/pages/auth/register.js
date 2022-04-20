@@ -358,7 +358,7 @@ const RegisterForm = ({ onSubmit: _onSubmit, values }) => {
         Бүртгүүлэх
       </Button>
       <Link href="/auth/login">
-        <a className="text-[#9d32c2]">Нэвртэх бол энд дарна уу?</a>
+        <a className="text-[#9d32c2]">Нэвтрэх бол энд дарна уу?</a>
       </Link>
     </Form>
   );

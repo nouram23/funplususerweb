@@ -33,7 +33,7 @@ export default function ServiceItem({ item, isComingSoon, longText }) {
               {longText?.count} <i className="fa fa-university" />
             </div>
           </div>
-          <div className="  flex justify-between  mt-2 px-2">
+          <div className="  flex justify-between  mt-2 px-1">
             <h3 className="md:text-base text-xs font-medium">
               {longText?.name}
             </h3>
