@@ -10,7 +10,7 @@ export default function Home() {
   const [data, setData] = React.useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(async () => {
-    const response = await fetch("/api/allServiceType");
+    const response = await fetch("/api/v1/public/service_types");
     const types = await response.json();
     setData(types);
     console.log(types);

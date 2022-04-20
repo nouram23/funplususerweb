@@ -7,16 +7,18 @@ import { Table } from "antd";
 export default function Profile() {
   const dataSource = [
     {
-      key: "orderNum",
-      name: "Mike",
-      age: 32,
-      address: "10 Downing Street",
+      key: "1",
+      name: "Бат",
+      orderName: "Теннис",
+      orderNum: 1,
+      date: "2022-04-20",
     },
     {
       key: "2",
-      name: "John",
-      age: 42,
-      address: "10 Downing Street",
+      name: "Болд",
+      orderName: "Гольф",
+      orderNum: 2,
+      date: "2022-04-20",
     },
   ];
 
@@ -27,14 +29,19 @@ export default function Profile() {
       key: "orderNum",
     },
     {
+      title: "Захиалагийн нэр",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
       title: "Захиалгын нэр",
       dataIndex: "orderName",
       key: "orderName",
     },
     {
-      title: "Хаяг",
-      dataIndex: "address",
-      key: "address",
+      title: "Огноо",
+      dataIndex: "date",
+      key: "date",
     },
   ];
   return (
