@@ -3,6 +3,12 @@ import { Button, Form, Input, Tabs } from "antd";
 import Link from "next/link";
 
 export default function AuthRegister() {
+
+
+  const [selectActiveKey, setSelectActiveKey] = React.useState("password_forget");
+
+  const [phone, setPhone] = React.useState("")
+
   return (
     <div className="w-full h-full lg:grid grid-cols-10">
       <div className="col-span-6  h-screen  hidden lg:block">
@@ -23,21 +29,22 @@ export default function AuthRegister() {
               />
             </a>
           </Link>
-          <Tabs>
+          <Tabs activeKey={selectActiveKey} onChange={setSelectActiveKey}>
             <Tabs.TabPane
               tab="Нууц үг сэргээх"
               key="password_forget"
               tabKey="password_forget"
             >
               {" "}
-              <PasswordForgetForm />
+              <PasswordForgetForm phone={phone} onSubmit={e => console.log(e)} />
             </Tabs.TabPane>
             <Tabs.TabPane
               tab="Нууц үг солих"
               key="change_password"
               tabKey="change_password"
+
             >
-              <PasswordChangeForm />
+              <PasswordChangeForm phone={phone} onSubmit={e => console.log(e)} />
             </Tabs.TabPane>
           </Tabs>
         </div>
@@ -46,9 +53,9 @@ export default function AuthRegister() {
   );
 }
 
-const PasswordForgetForm = () => {
+const PasswordForgetForm = ({ phone, onSubmit }) => {
   return (
-    <Form className="w-full" action="" layout="vertical">
+    <Form className="w-full" layout="vertical">
       <Form.Item className="">
         <div>
           <label className="block text-[#9d32c2]">Утасны дугаар</label>
@@ -85,7 +92,7 @@ const PasswordForgetForm = () => {
   );
 };
 
-const PasswordChangeForm = () => {
+const PasswordChangeForm = ({ phone, onSubmit }) => {
   return (
     <Form className="w-full" action="" layout="vertical">
       <Form.Item className="">
