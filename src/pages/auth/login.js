@@ -104,7 +104,7 @@ const LoginForm = () => {
           </Form.Item>
           <div className="flex justify-end  py-2">
             <Link href="/auth/passwordForget">
-              <p>Нууц үг сэргээх</p>
+              <a>Нууц үг сэргээх</a>
             </Link>
           </div>
 
