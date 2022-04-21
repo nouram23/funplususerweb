@@ -102,7 +102,6 @@ export default function JobApplication() {
             <Form
               className="flex flex-col items-center"
               onFinish={onFinish}
-              action=""
               layout="vertical"
             >
               <Form.Item label="Таны нэр" name={"name"}>

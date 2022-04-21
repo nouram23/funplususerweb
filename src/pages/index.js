@@ -51,14 +51,14 @@ export default function Home() {
             <ServiceItem isComingSoon={true} />
           </div>
           <h1 className="text-center text-4xl font-semibold mt-4">
-            Яагаад манайхыг <span className="block">ашиглах вэ?</span>
+            Funplus-д нэгдсэнээр...
           </h1>
           <div className="flex justify-center space-x-8 mt-8">
             <Recommendation
               item={{
                 icon: "assets/images/slider/slide-img/1.svg",
                 name: "Бүгд нэг дор",
-                desc: "Цаг алдалгүй хэзээ ч, хаанаас ч цаг захиалах боломжтой",
+                desc: "Хаанаас ч, хэдийд ч хүссэн үйлчилгээнийхээ цагийг нэг дороос захиалах боломжтой",
                 gr1: "#4a56bd",
                 gr2: "#b14b56",
               }}
@@ -67,7 +67,7 @@ export default function Home() {
               item={{
                 icon: "assets/images/slider/slide-img/2.svg",
                 name: "Хурдан шуурхай",
-                desc: "Хурдан шуурхай, аппликэйшн ашиглах бүрдээ бэлэгтэй, хөнгөлөлттэй",
+                desc: "Аливаа үйлчилгээний цагийг олон газраас хайж цагаа бүү алд",
                 gr1: "#4465ca",
                 gr2: "#cf4681",
               }}
@@ -76,7 +76,7 @@ export default function Home() {
               item={{
                 icon: "assets/images/slider/slide-img/3.png",
                 name: "Цаг алдахгүй",
-                desc: "Цаг алдалгүй хэзээ ч, хаанаас ч цаг захиалах боломжтой",
+                desc: "Хэрэглэгч таны үнэт цаг болон туулах замыг бид товчилно ",
                 gr1: "#ad4242",
                 gr2: "#9198e5",
               }}

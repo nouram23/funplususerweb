@@ -1,5 +1,14 @@
 import React from "react";
-import { Carousel, Calendar, Select, Row, Col, Drawer, Button } from "antd";
+import {
+  Carousel,
+  Calendar,
+  Select,
+  Row,
+  Col,
+  Drawer,
+  Button,
+  Card,
+} from "antd";
 import Product from "components/Product";
 import Layout from "components/Layout";
 import TimeTable from "components/TimeTable";
@@ -114,7 +123,7 @@ export default function Booking() {
                 className="ss:hidden w-full h-10 bg-gradient-to-r from-[#9d32c2] to-[#e97a34] rounded-lg"
                 onClick={showDrawer}
               >
-                Захиалгах
+                Захиалах
               </Button>
               <Drawer
                 title="Захиалга"
@@ -260,8 +269,23 @@ export default function Booking() {
                   <VipTimeTable index={{ table: indexVip }} />
                 ) : null}
               </div>
+              <div></div>
             </div>
           </div>
+          <Card>
+            <div className="grid grid-cols-6   ">
+              <div className="col-span-4 grid grid-cols-3 ">
+                <p>2022-04-22</p>
+                <p>07:00 аас 09:00</p>
+                <p>2 цаг</p>
+              </div>
+
+              <div className=" col-span-2 grid grid-cols-2">
+                <p>150 000 </p>
+                <Button>zahialah</Button>
+              </div>
+            </div>
+          </Card>
         </div>
       </div>
     </Layout>
