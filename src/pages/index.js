@@ -28,10 +28,9 @@ export default function Home() {
                     key={i}
                     item={{
                       loading: loading,
-                      icon: e.icon,
-                      count: e.count,
-                      name: e.name,
+                      ...e,
                     }}
+                    id={e.id}
                   />
                 );
               } else {
@@ -43,6 +42,7 @@ export default function Home() {
                       count: e.count,
                       name: e.name,
                     }}
+                    id={e.id}
                   />
                 );
               }

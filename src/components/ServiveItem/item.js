@@ -2,7 +2,7 @@ import { Button, Skeleton } from "antd";
 import Link from "next/link";
 
 /* eslint-disable @next/next/no-img-element */
-export default function ServiceItem({ item, isComingSoon, longText }) {
+export default function ServiceItem({ id, item, isComingSoon, longText }) {
   if (item?.loading) {
     return (
       <div className="service-item md:w-56 md:h-[275px] w-36  h-48 bg-[#212121] md:p-4 p-2  md:rounded-3xl rounded-2xl hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] md:mx-3 md:my-3 xs:mx-4 xs:my-4  mx-1 my-2">
@@ -21,7 +21,7 @@ export default function ServiceItem({ item, isComingSoon, longText }) {
 
   if (longText) {
     return (
-      <Link href="/service">
+      <Link href={`/service?service_type=${id}`}>
         <div className=" md:w-56 md:h-[275px] w-36  h-48 bg-[#212121] md:p-4 p-2  md:rounded-3xl rounded-2xl hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] md:mx-3 md:my-3 xs:mx-4 xs:my-4  mx-1 my-2">
           <div className="md:w-48 md:h-52  w-32 h-36  bg-[#4A4A4A] flex items-center justify-center relative md:rounded-3xl rounded-2xl hover:bg-[#ffb9ea]">
             <img
@@ -61,7 +61,7 @@ export default function ServiceItem({ item, isComingSoon, longText }) {
   }
 
   return (
-    <Link href="/service">
+    <Link href={`/service?service_type=${id}`}>
       <div className=" md:w-56 md:h-[275px] w-36  h-48 bg-[#212121] md:p-4 p-2  md:rounded-3xl rounded-2xl hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] md:mx-3 md:my-3 xs:mx-4 xs:my-4 mx-1 my-2">
         <div className="md:w-48 md:h-52  w-32 h-36  bg-[#4A4A4A] flex items-center justify-center relative md:rounded-3xl rounded-2xl hover:bg-[#ffb9ea]">
           <img
