@@ -14,10 +14,50 @@ import Layout from "components/Layout";
 import TimeTable from "components/TimeTable";
 import TableMenu from "components/TableMenu";
 import VipTimeTable from "components/VipTimeTable";
+const tables = [
+  {
+    time1: "10:30-12:30",
+    time2: "12:30-14:30",
+    time3: "14:30-16:30",
+    time4: "16:30-18:30",
+    time5: "18:30-20:30",
+  },
+  {
+    time1: "10:30-12:30",
+    time2: "12:30-14:30",
+    time3: "14:30-16:30",
+    time4: "16:30-18:30",
+    time5: "18:30-20:30",
+  },
+  {
+    time1: "10:30-12:30",
+    time2: "12:30-14:30",
+    time3: "14:30-16:30",
+    time4: "16:30-18:30",
+    time5: "18:30-20:30",
+  },
+];
 
 export default function Booking() {
   const [visible, setVisible] = React.useState(false);
   const [index, setIndex] = React.useState(-1);
+  const [btnIndexes, setBtnIndexes] = React.useState({
+    btn1: false,
+    btn2: false,
+    btn3: false,
+    btn4: false,
+    btn5: false,
+  });
+  let times = [
+    btnIndexes.btn1 ? tables[index].time1 : "a",
+    btnIndexes.btn2 ? tables[index].time2 : "a",
+    btnIndexes.btn3 ? tables[index].time3 : "a",
+    btnIndexes.btn4 ? tables[index].time4 : "a",
+    btnIndexes.btn5 ? tables[index].time5 : "a",
+  ];
+  {
+    times.map((e) => console.log(e));
+  }
   const showDrawer = () => {
     setVisible(true);
   };
@@ -32,6 +72,7 @@ export default function Booking() {
   const onVipClick = (e) => {
     setIndexVip(e);
   };
+
   return (
     <Layout>
       <div className="md:mt-24 mt-14  bg-[#1a1a1a] ">
@@ -195,9 +236,25 @@ export default function Booking() {
                     />
                   </div>
                 </div>
-                {index != -1 ? <TimeTable index={{ table: index }} /> : null}
+                {index != -1 ? (
+                  <TimeTable
+                    index={{
+                      table: index,
+                      setBtnIndexes: setBtnIndexes,
+                      tables,
+                      btnIndexes: btnIndexes,
+                    }}
+                  />
+                ) : null}
                 {indexVip != -1 ? (
-                  <VipTimeTable index={{ table: indexVip }} />
+                  <VipTimeTable
+                    index={{
+                      table: indexVip,
+                      tables,
+                      setBtnIndexes: setBtnIndexes,
+                      btnIndexes: btnIndexes,
+                    }}
+                  />
                 ) : null}
               </Drawer>
               <div className="hidden ss:flex justify-between xl:flex-row lg:flex-col md:flex-row flex-col">
@@ -258,15 +315,32 @@ export default function Booking() {
                     action={{
                       optionClick: onClick,
                       optionClickVip: onVipClick,
+
                       title: "Цагаа сонгох",
                     }}
                   />
                 </div>
               </div>
               <div className="hidden ss:block">
-                {index != -1 ? <TimeTable index={{ table: index }} /> : null}
+                {index != -1 ? (
+                  <TimeTable
+                    index={{
+                      table: index,
+                      tables,
+                      setBtnIndexes: setBtnIndexes,
+                      btnIndexes: btnIndexes,
+                    }}
+                  />
+                ) : null}
                 {indexVip != -1 ? (
-                  <VipTimeTable index={{ table: indexVip }} />
+                  <VipTimeTable
+                    index={{
+                      table: indexVip,
+                      tables,
+                      setBtnIndexes: setBtnIndexes,
+                      btnIndexes: btnIndexes,
+                    }}
+                  />
                 ) : null}
               </div>
               <div></div>
@@ -276,7 +350,9 @@ export default function Booking() {
             <div className="grid grid-cols-6   ">
               <div className="col-span-4 grid grid-cols-3 ">
                 <p>2022-04-22</p>
-                <p>07:00 аас 09:00</p>
+                {times.map((e) => {
+                  <p>{e}</p>;
+                })}
                 <p>2 цаг</p>
               </div>
 
