@@ -24,7 +24,6 @@ export default function Service() {
     const response = await fetch("/api/v1/public/service_types");
     const types = await response.json();
     setData(types);
-    console.log(types);
   }, []);
 
   return (
@@ -58,6 +57,7 @@ export default function Service() {
                     item={{
                       ...el,
                     }}
+                    id={el.id}
                   />
                 ))}
               </div>

@@ -4,11 +4,8 @@ import { API_NOT_FOUND } from "../error";
 const cloudinary = require("cloudinary").v2;
 
 export default (_req, res) => {
-
   return async () => {
-
     if (_req.method === "POST") {
-
       // TODO: CHECK TO MAKE SURE AUTHENTICATED
 
       // Get the timestamp in seconds
@@ -21,8 +18,8 @@ export default (_req, res) => {
         },
         process.env.CLOUDINARY_SECRET
       );
-      return ({ signature, timestamp });
+      return { signature, timestamp };
     }
     throw API_NOT_FOUND;
-  }
+  };
 };

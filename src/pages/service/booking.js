@@ -26,10 +26,7 @@ export default function Booking() {
   return (
     <Layout>
       <div className="md:mt-24 mt-14  bg-[#1a1a1a] ">
-        <div className="max-w-screen-2xl  mx-auto lg:px-10 py-10 px-2">
-          <div className="pl-40 flex h-12 mx-auto font-bold items-center ">
-            Нүүр Хуудас-Бүтээгдэхүүн-Billiard
-          </div>
+        <div className="max-w-screen-2xl mx-auto lg:px-10 md:py-20 py-10 px-2">
           <div className="flex lg:flex-row flex-col lg:justify-center lg:items-start items-center">
             <div className="lg:w-3/5 md:w-4/5 w-11/12">
               <div>
@@ -152,6 +149,7 @@ export default function Booking() {
                         }
 
                         const month = value.month();
+                        console.log(current);
 
                         return (
                           <div className="flex justify-end p-2">

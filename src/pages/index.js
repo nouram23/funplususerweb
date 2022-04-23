@@ -13,7 +13,6 @@ export default function Home() {
     const response = await fetch("/api/v1/public/service_types");
     const types = await response.json();
     setData(types);
-    console.log(types);
     setLoading(false);
   }, []);
   return (

@@ -15,7 +15,7 @@ export default function Contact() {
 
   const onSubmit = async (values) => {
     values.type = type;
-    const response = await fetch("/api/feedback", {
+    const response = await fetch("/api/v1/public/feedback", {
       method: "POST",
       body: JSON.stringify({ values }),
       headers: {
