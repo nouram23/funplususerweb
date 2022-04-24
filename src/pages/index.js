@@ -21,7 +21,7 @@ export default function Home() {
       <div className="md:mt-24 mt-14  bg-[#1a1a1a] ">
         <div className="md:max-w-7xl  max-w-xl mx-auto py-10">
           <div className="flex justify-center flex-wrap mx-auto ">
-            {data.map((e, i) => {
+            {(data || []).map((e, i) => {
               if (e.type === "simple") {
                 return (
                   <ServiceItem
