@@ -9,7 +9,7 @@ const { Option } = Select;
 export default function BecomeMerchant() {
   const router = useRouter();
   const onFinish = async (values) => {
-    const response = await fetch("/api/becomeMerchant", {
+    const response = await fetch(`/api/v1/public/merchant_request`, {
       method: "POST",
       body: JSON.stringify({ values }),
       headers: {

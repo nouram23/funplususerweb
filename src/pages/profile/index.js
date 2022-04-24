@@ -2,8 +2,48 @@ import LoggedInHeader from "components/LoggedInHeader";
 import Merchant from "components/Merchant";
 import Footer from "components/Footer";
 import Link from "next/link";
+import { Table } from "antd";
 
 export default function Profile() {
+  const dataSource = [
+    {
+      key: "1",
+      name: "Бат",
+      orderName: "Теннис",
+      orderNum: 1,
+      date: "2022-04-20",
+    },
+    {
+      key: "2",
+      name: "Болд",
+      orderName: "Гольф",
+      orderNum: 2,
+      date: "2022-04-20",
+    },
+  ];
+
+  const columns = [
+    {
+      title: "Захиалгын дугаар",
+      dataIndex: "orderNum",
+      key: "orderNum",
+    },
+    {
+      title: "Захиалагийн нэр",
+      dataIndex: "name",
+      key: "name",
+    },
+    {
+      title: "Захиалгын нэр",
+      dataIndex: "orderName",
+      key: "orderName",
+    },
+    {
+      title: "Огноо",
+      dataIndex: "date",
+      key: "date",
+    },
+  ];
   return (
     <div>
       <LoggedInHeader />
@@ -49,6 +89,13 @@ export default function Profile() {
               </p>
             </Link>
           </div>
+        </div>
+        <div className="rounded-lg mt-7  max-w-screen-lg mx-auto  py-12 ">
+          <h1 className="font-bold text-xl text-center mb-4">
+            Захиалгын мэдээлэл
+          </h1>
+
+          <Table pagination={false} dataSource={dataSource} columns={columns} />
         </div>
       </div>
       <Merchant />

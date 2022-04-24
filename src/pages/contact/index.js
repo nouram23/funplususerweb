@@ -15,7 +15,7 @@ export default function Contact() {
 
   const onSubmit = async (values) => {
     values.type = type;
-    const response = await fetch("/api/feedback", {
+    const response = await fetch("/api/v1/public/feedback", {
       method: "POST",
       body: JSON.stringify({ values }),
       headers: {
@@ -53,6 +53,7 @@ export default function Contact() {
                     <Form onFinish={onSubmit} layout="vertical">
                       <Form.Item name={"name"}>
                         <Input
+                          required
                           className="   py-2     px-3   "
                           type="text"
                           placeHolder="Нэр"
@@ -60,6 +61,7 @@ export default function Contact() {
                       </Form.Item>
                       <Form.Item name={"phone"}>
                         <Input
+                          required
                           className="   py-2     px-3   "
                           type="number"
                           placeHolder="Утасны дугаар"
@@ -67,6 +69,7 @@ export default function Contact() {
                       </Form.Item>
                       <Form.Item name={"email"}>
                         <Input
+                          required
                           className="py-2 px-3x"
                           type="email"
                           placeHolder="Имэйл хаяг"
@@ -74,6 +77,7 @@ export default function Contact() {
                       </Form.Item>
                       <Form.Item name={"about"}>
                         <TextArea
+                          required
                           className="   py-2       "
                           maxLength={200}
                           autoSize={{ minRows: 10, maxRows: 15 }}
@@ -92,6 +96,7 @@ export default function Contact() {
                     <Form onFinish={onSubmit} layout="vertical">
                       <Form.Item name={"name"}>
                         <Input
+                          required
                           className="   py-2 px-3 "
                           type="text"
                           placeHolder="Нэр"
@@ -99,6 +104,7 @@ export default function Contact() {
                       </Form.Item>
                       <Form.Item name={"phone"}>
                         <Input
+                          required
                           className="   py-2     px-3   "
                           type="number"
                           placeHolder="Утасны дугаар"
@@ -106,6 +112,7 @@ export default function Contact() {
                       </Form.Item>
                       <Form.Item name={"email"}>
                         <Input
+                          required
                           className="   py-2     px-3   "
                           type="email"
                           placeHolder="Имэйл хаяг"
@@ -113,6 +120,7 @@ export default function Contact() {
                       </Form.Item>
                       <Form.Item name={"about"}>
                         <TextArea
+                          required
                           className=" py-2 "
                           maxLength={200}
                           autoSize={{ minRows: 10, maxRows: 15 }}

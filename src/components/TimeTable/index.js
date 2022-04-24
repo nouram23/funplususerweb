@@ -1,34 +1,15 @@
 import React from "react";
 import TableButton from "components/TimeTableButton";
-import { Select } from "antd";
+import { Select, Button } from "antd";
 
 const { Option } = Select;
 
 export default function TimeTable({ index }) {
+  // const [button, setButton] = React.useState(0);
+  // let tsag = tables[index?.table][`time${button}`];
+  // index?.setTime(tsag);
+
   let tableNum = parseInt(index?.table) + 1;
-  const tables = [
-    {
-      time1: "10:30-12:30",
-      time2: "10:30-12:30",
-      time3: "10:30-12:30",
-      time4: "10:30-12:30",
-      time5: "10:30-14:30",
-    },
-    {
-      time1: "4:30-12:30",
-      time2: "30:30-12:30",
-      time3: "50:30-12:30",
-      time4: "70:30-12:30",
-      time5: "13:30-18:30",
-    },
-    {
-      time1: "24:30-22:30",
-      time2: "50:30-82:30",
-      time3: "60:20-62:90",
-      time4: "20:30-12:30",
-      time5: "16:30-18:30",
-    },
-  ];
 
   return (
     <div>
@@ -36,31 +17,97 @@ export default function TimeTable({ index }) {
         Ширээ {`${tableNum}`}
       </div>
       <div className="flex flex-wrap  mx-auto   md:max-w-4xl ss:max-w-2xl max-w-sm">
-        <TableButton
+        {/* <TableButton
           time={{
             availableTime: tables[index?.table].time1,
+            setButton: setButton,
+            id: 1,
           }}
-        />
-        <TableButton
+        /> */}
+
+        <Button
+          onClick={() =>
+            index?.setBtnIndexes({
+              ...index?.btnIndexes,
+              btn5: !index?.btnIndexes.btn5,
+            })
+          }
+          className={`  focus:text-white border-none hover:text-white rounded-full text-black font-semibold bg-slate-50 ss:h-10 ss:w-32 h-7 w-24 mx-2 my-2 text-xs ss:text-base `}
+        >
+          {index?.tables[index?.table].time1}
+        </Button>
+        <Button
+          onClick={() =>
+            index?.setBtnIndexes({
+              ...index?.btnIndexes,
+              btn5: !index?.btnIndexes.btn5,
+            })
+          }
+          className={`  focus:text-white border-none hover:text-white rounded-full text-black font-semibold bg-slate-50 ss:h-10 ss:w-32 h-7 w-24 mx-2 my-2 text-xs ss:text-base `}
+        >
+          {index?.tables[index?.table].time2}
+        </Button>
+        <Button
+          onClick={() =>
+            index?.setBtnIndexes({
+              ...index?.btnIndexes,
+              btn5: !index?.btnIndexes.btn5,
+            })
+          }
+          className={`  focus:text-white border-none hover:text-white rounded-full text-black font-semibold bg-slate-50 ss:h-10 ss:w-32 h-7 w-24 mx-2 my-2 text-xs ss:text-base `}
+        >
+          {index?.tables[index?.table].time3}
+        </Button>
+        <Button
+          onClick={() =>
+            index?.setBtnIndexes({
+              ...index?.btnIndexes,
+              btn5: !index?.btnIndexes.btn5,
+            })
+          }
+          className={`  focus:text-white border-none hover:text-white rounded-full text-black font-semibold bg-slate-50 ss:h-10 ss:w-32 h-7 w-24 mx-2 my-2 text-xs ss:text-base `}
+        >
+          {index?.tables[index?.table].time4}
+        </Button>
+        <Button
+          onClick={() =>
+            index?.setBtnIndexes({
+              ...index?.btnIndexes,
+              btn5: !index?.btnIndexes.btn5,
+            })
+          }
+          className={` focus:text-white border-none hover:text-white rounded-full text-black font-semibold bg-slate-50 ss:h-10 ss:w-32 h-7 w-24 mx-2 my-2 text-xs ss:text-base `}
+        >
+          {index?.tables[index?.table].time5}
+        </Button>
+        {/* <TableButton
           time={{
             availableTime: tables[index?.table].time2,
+            setButton: setButton,
+            id: 2,
           }}
         />
         <TableButton
           time={{
             availableTime: tables[index?.table].time3,
+            setButton: setButton,
+            id: 3,
           }}
         />
         <TableButton
           time={{
             availableTime: tables[index?.table].time4,
+            setButton: setButton,
+            id: 4,
           }}
         />
         <TableButton
           time={{
             availableTime: tables[index?.table].time5,
+            setButton: setButton,
+            id: 5,
           }}
-        />
+        /> */}
       </div>
     </div>
   );

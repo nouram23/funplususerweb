@@ -306,8 +306,9 @@ const RegisterForm = ({ onSubmit: _onSubmit, values }) => {
       >
         {/* <label className="block text-[#9d32c2]">Нэр</label> */}
         <Input
-          className=" py-2 px-3   "
+          className=" rounded-lg"
           type="text"
+          size="large"
           placeHolder="Johnny Depp"
           name="name"
         />
@@ -351,7 +352,8 @@ const RegisterForm = ({ onSubmit: _onSubmit, values }) => {
       <Button
         // onClick={showModal}
         htmlType="submit"
-        className="w-full pl-2 h-10  bg-gradient mb-1"
+        size="large"
+        className="w-full pl-2  bg-gradient mb-1"
       >
         Бүртгүүлэх
       </Button>

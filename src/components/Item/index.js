@@ -1,8 +1,8 @@
 import Link from "next/link";
 
-export default function Item({ item }) {
+export default function Item({ id, item }) {
   return (
-    <Link href="/service/booking" passHref>
+    <Link href={`/service/booking?service=${id}`} passHref>
       <div className="xl:w-72 xl:h-80 lg:w-52 lg:h-60 md:w-48 md:h-56  w-36 h-40 rounded-2xl bg-[#212121] md:mx-3 md:my-3 xs:mx-4 xs:my-3 mx-1 my-2">
         <img
           className="rounded-t-2xl xl:h-64   lg:h-48 md:h-44  h-32"

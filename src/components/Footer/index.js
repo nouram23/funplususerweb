@@ -120,9 +120,9 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <a className="hover:text-[#9d32c2]" href="#">
-                  Хамтрагч байгууллагууд
-                </a>
+                <Link href="/partners">
+                  <a className="hover:text-[#9d32c2]">Хамтрагч байгууллагууд</a>
+                </Link>
               </li>
 
               <li>

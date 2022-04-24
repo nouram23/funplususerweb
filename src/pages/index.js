@@ -10,10 +10,9 @@ export default function Home() {
   const [data, setData] = React.useState([]);
   const [loading, setLoading] = useState(true);
   useEffect(async () => {
-    const response = await fetch("/api/allServiceType");
+    const response = await fetch("/api/v1/public/service_types");
     const types = await response.json();
     setData(types);
-    console.log(types);
     setLoading(false);
   }, []);
   return (
@@ -28,10 +27,9 @@ export default function Home() {
                     key={i}
                     item={{
                       loading: loading,
-                      icon: e.icon,
-                      count: e.count,
-                      name: e.name,
+                      ...e,
                     }}
+                    id={e.id}
                   />
                 );
               } else {
@@ -43,6 +41,7 @@ export default function Home() {
                       count: e.count,
                       name: e.name,
                     }}
+                    id={e.id}
                   />
                 );
               }
@@ -51,14 +50,14 @@ export default function Home() {
             <ServiceItem isComingSoon={true} />
           </div>
           <h1 className="text-center text-4xl font-semibold mt-4">
-            Яагаад манайхыг <span className="block">ашиглах вэ?</span>
+            Funplus-д нэгдсэнээр...
           </h1>
           <div className="flex justify-center space-x-8 mt-8">
             <Recommendation
               item={{
                 icon: "assets/images/slider/slide-img/1.svg",
                 name: "Бүгд нэг дор",
-                desc: "Цаг алдалгүй хэзээ ч, хаанаас ч цаг захиалах боломжтой",
+                desc: "Хаанаас ч, хэдийд ч хүссэн үйлчилгээнийхээ цагийг нэг дороос захиалах боломжтой",
                 gr1: "#4a56bd",
                 gr2: "#b14b56",
               }}
@@ -67,7 +66,7 @@ export default function Home() {
               item={{
                 icon: "assets/images/slider/slide-img/2.svg",
                 name: "Хурдан шуурхай",
-                desc: "Хурдан шуурхай, аппликэйшн ашиглах бүрдээ бэлэгтэй, хөнгөлөлттэй",
+                desc: "Аливаа үйлчилгээний цагийг олон газраас хайж цагаа бүү алд",
                 gr1: "#4465ca",
                 gr2: "#cf4681",
               }}
@@ -76,7 +75,7 @@ export default function Home() {
               item={{
                 icon: "assets/images/slider/slide-img/3.png",
                 name: "Цаг алдахгүй",
-                desc: "Цаг алдалгүй хэзээ ч, хаанаас ч цаг захиалах боломжтой",
+                desc: "Хэрэглэгч таны үнэт цаг болон туулах замыг бид товчилно ",
                 gr1: "#ad4242",
                 gr2: "#9198e5",
               }}
