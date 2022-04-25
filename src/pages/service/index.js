@@ -6,8 +6,15 @@ import { useRouter } from "next/router";
 import { query } from "apis/service_type";
 import { ServiceAPI } from "apis";
 import { Button, Skeleton } from "antd";
+import { Pagination } from "antd";
 
 export default function Service() {
+  const onShowSizeChange = (current, pageSize) => {
+    console.log(current, pageSize);
+  };
+  const onPageChange = (e) => {
+    console.log(e);
+  };
   const router = useRouter();
 
   // const [detailed, setDetailed] = React.useState([]);
@@ -127,6 +134,17 @@ export default function Service() {
           </div>
           <div>
             <Button />
+          </div>
+          <div className="flex justify-center mb-8">
+            <Pagination
+              responsive={true}
+              pageSize={1}
+              showSizeChanger
+              onChange={onPageChange}
+              onShowSizeChange={onShowSizeChange}
+              defaultCurrent={3}
+              total={50}
+            />
           </div>
         </div>
       </div>
