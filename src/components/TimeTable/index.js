@@ -1,8 +1,5 @@
 import React from "react";
-import TableButton from "components/TimeTableButton";
-import { Select, Button } from "antd";
-
-const { Option } = Select;
+import { Button } from "antd";
 
 export default function TimeTable({ index }) {
   // const [button, setButton] = React.useState(0);

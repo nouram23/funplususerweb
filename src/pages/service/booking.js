@@ -37,10 +37,34 @@ const tables = [
     time5: "18:30-20:30",
   },
 ];
+const vipTables = [
+  {
+    time1: "10:30-12:30",
+    time2: "12:30-14:30",
+    time3: "14:30-16:30",
+    time4: "16:30-18:30",
+    time5: "18:30-20:30",
+  },
+  {
+    time1: "10:30-12:30",
+    time2: "12:30-14:30",
+    time3: "14:30-16:30",
+    time4: "16:30-18:30",
+    time5: "18:30-20:30",
+  },
+  {
+    time1: "10:30-12:30",
+    time2: "12:30-14:30",
+    time3: "14:30-16:30",
+    time4: "16:30-18:30",
+    time5: "18:30-20:30",
+  },
+];
 let totalTime = 0;
 export default function Booking() {
   const [visible, setVisible] = React.useState(false);
   const [index, setIndex] = React.useState(-1);
+  const [indexVip, setIndexVip] = React.useState(-1);
   const [btnIndexes, setBtnIndexes] = React.useState({
     btn1: false,
     btn2: false,
@@ -65,12 +89,19 @@ export default function Booking() {
 
   const onClick = (e) => {
     setIndex(e);
+    totalTime = 0;
+    setBtnIndexes(false);
   };
-  const [indexVip, setIndexVip] = React.useState(-1);
+
   const onVipClick = (e) => {
     setIndexVip(e);
   };
-
+  React.useEffect(() => {
+    times.map((e) => {
+      if (e === null && totalTime > 0) totalTime--;
+      else totalTime++;
+    });
+  });
   return (
     <Layout>
       <div className="md:mt-24 mt-14  bg-[#1a1a1a] ">
@@ -246,7 +277,7 @@ export default function Booking() {
                   <VipTimeTable
                     index={{
                       table: indexVip,
-                      tables,
+                      vipTables,
                       setBtnIndexes: setBtnIndexes,
                       btnIndexes: btnIndexes,
                     }}
@@ -332,7 +363,7 @@ export default function Booking() {
                   <VipTimeTable
                     index={{
                       table: indexVip,
-                      tables,
+                      vipTables,
                       setBtnIndexes: setBtnIndexes,
                       btnIndexes: btnIndexes,
                     }}
