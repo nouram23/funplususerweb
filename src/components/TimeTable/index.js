@@ -29,7 +29,7 @@ export default function TimeTable({ index }) {
           onClick={() =>
             index?.setBtnIndexes({
               ...index?.btnIndexes,
-              btn5: !index?.btnIndexes.btn5,
+              btn1: !index?.btnIndexes.btn1,
             })
           }
           className={`  focus:text-white border-none hover:text-white rounded-full text-black font-semibold bg-slate-50 ss:h-10 ss:w-32 h-7 w-24 mx-2 my-2 text-xs ss:text-base `}
@@ -40,7 +40,7 @@ export default function TimeTable({ index }) {
           onClick={() =>
             index?.setBtnIndexes({
               ...index?.btnIndexes,
-              btn5: !index?.btnIndexes.btn5,
+              btn2: !index?.btnIndexes.btn2,
             })
           }
           className={`  focus:text-white border-none hover:text-white rounded-full text-black font-semibold bg-slate-50 ss:h-10 ss:w-32 h-7 w-24 mx-2 my-2 text-xs ss:text-base `}
@@ -51,7 +51,7 @@ export default function TimeTable({ index }) {
           onClick={() =>
             index?.setBtnIndexes({
               ...index?.btnIndexes,
-              btn5: !index?.btnIndexes.btn5,
+              btn3: !index?.btnIndexes.btn3,
             })
           }
           className={`  focus:text-white border-none hover:text-white rounded-full text-black font-semibold bg-slate-50 ss:h-10 ss:w-32 h-7 w-24 mx-2 my-2 text-xs ss:text-base `}
@@ -62,7 +62,7 @@ export default function TimeTable({ index }) {
           onClick={() =>
             index?.setBtnIndexes({
               ...index?.btnIndexes,
-              btn5: !index?.btnIndexes.btn5,
+              btn4: !index?.btnIndexes.btn4,
             })
           }
           className={`  focus:text-white border-none hover:text-white rounded-full text-black font-semibold bg-slate-50 ss:h-10 ss:w-32 h-7 w-24 mx-2 my-2 text-xs ss:text-base `}

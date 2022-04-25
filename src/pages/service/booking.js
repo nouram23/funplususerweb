@@ -37,7 +37,7 @@ const tables = [
     time5: "18:30-20:30",
   },
 ];
-
+let totalTime = 0;
 export default function Booking() {
   const [visible, setVisible] = React.useState(false);
   const [index, setIndex] = React.useState(-1);
@@ -49,15 +49,13 @@ export default function Booking() {
     btn5: false,
   });
   let times = [
-    btnIndexes.btn1 ? tables[index].time1 : "a",
-    btnIndexes.btn2 ? tables[index].time2 : "a",
-    btnIndexes.btn3 ? tables[index].time3 : "a",
-    btnIndexes.btn4 ? tables[index].time4 : "a",
-    btnIndexes.btn5 ? tables[index].time5 : "a",
+    btnIndexes.btn1 ? tables[index].time1 : null,
+    btnIndexes.btn2 ? tables[index].time2 : null,
+    btnIndexes.btn3 ? tables[index].time3 : null,
+    btnIndexes.btn4 ? tables[index].time4 : null,
+    btnIndexes.btn5 ? tables[index].time5 : null,
   ];
-  {
-    times.map((e) => console.log(e));
-  }
+
   const showDrawer = () => {
     setVisible(true);
   };
@@ -348,14 +346,20 @@ export default function Booking() {
             <div className="grid grid-cols-6   ">
               <div className="col-span-4 grid grid-cols-3 ">
                 <p>2022-04-22</p>
-                {times.map((e) => {
-                  <p>{e}</p>;
-                })}
-                <p>2 цаг</p>
+                <div>
+                  {times.map((e, i) => {
+                    return (
+                      <p className="" key={i}>
+                        {e !== null ? e : null}
+                      </p>
+                    );
+                  })}
+                </div>
+                <p>{totalTime}</p>
               </div>
 
               <div className=" col-span-2 grid grid-cols-2">
-                <p>150 000 </p>
+                <p>{totalTime * 1000}</p>
                 <Button>zahialah</Button>
               </div>
             </div>
