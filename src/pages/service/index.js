@@ -4,8 +4,12 @@ import Item from "components/Item";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { query } from "apis/service_type";
+import { ServiceAPI } from "apis";
+import { Button, Skeleton } from "antd";
 
 export default function Service() {
+  const router = useRouter();
+
   // const [detailed, setDetailed] = React.useState([]);
   // const [allServiceType, setTypes] = React.useState([]);
 
@@ -29,7 +33,7 @@ export default function Service() {
   });
 
   const [data, setData] = React.useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = React.useState(false);
 
   const reload = React.useCallback(
     async ({ filter, offset }) => {
@@ -37,18 +41,49 @@ export default function Service() {
         return;
       }
 
+      setLoading(true);
+
       try {
-      } catch (err) {}
+        const res = await ServiceAPI.list({
+          filter: filter ||
+            (_q && _q.filter) || {
+              query: "",
+            },
+          offset: offset ||
+            (_q && _q.offset) || {
+              query: "",
+            },
+        });
+
+        if (res?.count) {
+          setData(res.rows);
+        } else {
+          setData(res.rows);
+        }
+      } catch (err) {
+        console.log("service list items ", err);
+      }
+      setLoading(false);
     },
     [_q, loading, data]
   );
 
-  React.useEffect(async () => {
-    const response = await fetch("/api/v1/public/service_types");
-    const types = await response.json();
-    setData(types);
-    setLoading(false);
-  }, []);
+  React.useEffect(() => {
+    set_Q({
+      filter: {
+        query: "",
+        service_type: router.query.service_type,
+      },
+      offset: {
+        page: 1,
+        limit: 20,
+      },
+    });
+  }, [router?.query?.service_type]);
+
+  React.useEffect(() => {
+    reload(_q);
+  }, [_q]);
 
   return (
     <Layout>
@@ -89,6 +124,9 @@ export default function Service() {
                 ))}
               </div>
             </div>
+          </div>
+          <div>
+            <Button />
           </div>
         </div>
       </div>

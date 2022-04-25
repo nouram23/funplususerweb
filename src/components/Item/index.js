@@ -1,3 +1,4 @@
+import { Skeleton } from "antd";
 import Link from "next/link";
 
 export default function Item({ id, item }) {
@@ -17,11 +18,11 @@ export default function Item({ id, item }) {
     );
   }
   return (
-    <Link href={`/service/booking?service=${id}`} passHref>
+    <Link href={`/service/${id}`} passHref>
       <div className="xl:w-72 xl:h-80 lg:w-52 lg:h-60 md:w-48 md:h-56  w-36 h-40 rounded-2xl bg-[#212121] md:mx-3 md:my-3 xs:mx-4 xs:my-3 mx-1 my-2">
         <img
           className="rounded-t-2xl xl:h-64   lg:h-48 md:h-44  h-32"
-          src={item?.icon}
+          src={item?.main_image}
           alt={`Funplus ${item.name} `}
         />
         <div className="  flex justify-between  xl:mt-4 md:mt-3 sm:mt-2 mt-1 xl:px-4 md:px-2 px-1">
