@@ -4,8 +4,12 @@ import Item from "components/Item";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { query } from "apis/service_type";
+import { ServiceAPI } from "apis";
+import { Button, Skeleton } from "antd";
 
 export default function Service() {
+  const router = useRouter();
+
   // const [detailed, setDetailed] = React.useState([]);
   // const [allServiceType, setTypes] = React.useState([]);
 
@@ -18,13 +22,68 @@ export default function Service() {
   //   setTypes(serviceNames);
   // }, []);
 
-  const [data, setData] = React.useState([]);
+  const [_q, set_Q] = React.useState({
+    filter: {
+      query: "",
+    },
+    offset: {
+      page: 1,
+      limit: 20,
+    },
+  });
 
-  React.useEffect(async () => {
-    const response = await fetch("/api/v1/public/service_types");
-    const types = await response.json();
-    setData(types);
-  }, []);
+  const [data, setData] = React.useState([]);
+  const [loading, setLoading] = React.useState(false);
+
+  const reload = React.useCallback(
+    async ({ filter, offset }) => {
+      if (loading) {
+        return;
+      }
+
+      setLoading(true);
+
+      try {
+        const res = await ServiceAPI.list({
+          filter: filter ||
+            (_q && _q.filter) || {
+              query: "",
+            },
+          offset: offset ||
+            (_q && _q.offset) || {
+              query: "",
+            },
+        });
+
+        if (res?.count) {
+          setData(res.rows);
+        } else {
+          setData(res.rows);
+        }
+      } catch (err) {
+        console.log("service list items ", err);
+      }
+      setLoading(false);
+    },
+    [_q, loading, data]
+  );
+
+  React.useEffect(() => {
+    set_Q({
+      filter: {
+        query: "",
+        service_type: router.query.service_type,
+      },
+      offset: {
+        page: 1,
+        limit: 20,
+      },
+    });
+  }, [router?.query?.service_type]);
+
+  React.useEffect(() => {
+    reload(_q);
+  }, [_q]);
 
   return (
     <Layout>
@@ -35,6 +94,7 @@ export default function Service() {
               <ul className="max-w-screen-xl md:text-base text-sm font-light flex mx-auto justify-center flex-wrap sm:pt-0 pt-4">
                 <List
                   list={{
+                    loading: loading,
                     name: "All",
                     id: "",
                   }}
@@ -43,6 +103,7 @@ export default function Service() {
                   <List
                     key={i}
                     list={{
+                      loading: loading,
                       ...el,
                     }}
                   />
@@ -56,12 +117,16 @@ export default function Service() {
                     key={i}
                     item={{
                       ...el,
+                      loading: loading,
                     }}
                     id={el.id}
                   />
                 ))}
               </div>
             </div>
+          </div>
+          <div>
+            <Button />
           </div>
         </div>
       </div>
@@ -70,6 +135,21 @@ export default function Service() {
 }
 
 const List = ({ list }) => {
+  if (list?.loading) {
+    return (
+      <div className="service-item md:w-56 md:h-[275px] w-36  h-48 bg-[#212121] md:p-4 p-2  md:rounded-3xl rounded-2xl hover:bg-gradient-to-r from-[#9d32c2] to-[#e97a34] md:mx-3 md:my-3 xs:mx-4 xs:my-4  mx-1 my-2">
+        <Skeleton.Avatar
+          className="md:w-48 md:h-52  w-32 h-36"
+          shape="square"
+          style={{ width: "100% !important" }}
+          active
+        />
+        <div className="mt-2 px-2 w-full">
+          <Skeleton.Input active style={{ width: "100% !important" }} />
+        </div>
+      </div>
+    );
+  }
   const router = useRouter();
   return (
     <li className="mx-2 my-2">
