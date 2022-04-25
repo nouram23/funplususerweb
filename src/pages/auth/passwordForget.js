@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Form, Input, InputNumber, Tabs } from "antd";
 import Link from "next/link";
+import { AuthAPI } from "apis";
 
 export default function AuthRegister() {
   const [selectActiveKey, setSelectActiveKey] = React.useState("get_code");
@@ -76,9 +77,18 @@ const GetCode = ({ phone, onSubmit }) => {
 };
 
 const PasswordChangeForm = ({ phone, onSubmit }) => {
+  const onFinish = async (values) => {
+    console.log(values);
+    try {
+      await AuthAPI.passwordForget(values);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
-    <Form className="w-full" action="" layout="vertical">
-      <Form.Item label="Утасны дугаар" className="">
+    <Form className="w-full" action="" layout="vertical" onFinish={onFinish}>
+      <Form.Item label="Утасны дугаар" className="" name="phone">
         {/* <label className="block text-[#9d32c2]">Утасны дугаар</label> */}
         <InputNumber
           className="w-full "
@@ -88,13 +98,17 @@ const PasswordChangeForm = ({ phone, onSubmit }) => {
         />
       </Form.Item>
 
-      <Form.Item className="" label="Баталгаажуулах код">
+      <Form.Item className="" label="Баталгаажуулах код" name={"verifyCode"}>
         <InputNumber className=" w-full " size="large" placeholder="1234" />
       </Form.Item>
-      <Form.Item className="" label="Шинэ нууц үг">
+      <Form.Item className="" label="Шинэ нууц үг" name={"newPassword"}>
         <Input.Password size="large" type="number" placeholder="New password" />
       </Form.Item>
-      <Form.Item className="" label="  Шинэ нууц үг давтан оруулах">
+      <Form.Item
+        className=""
+        label="  Шинэ нууц үг давтан оруулах"
+        name={"newPasswordAgain"}
+      >
         <Input.Password
           size="large"
           className=" "
@@ -103,6 +117,7 @@ const PasswordChangeForm = ({ phone, onSubmit }) => {
         />
       </Form.Item>
       <Button
+        htmlType="submit"
         size="large"
         className="w-full  pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] mb-1"
       >
