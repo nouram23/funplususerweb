@@ -44,7 +44,7 @@ export default function Update() {
                 <Radio value={2}>Эмэгтэй</Radio>
               </Radio.Group>
             </Form.Item>
-            <Link href={"/profile"}>
+            <Link href={"/profile"} passHref>
               <Button className="ml-72 rounded-xl bg-gradient hover:bg-gradient-to-r from-[#e97a34] hover:to-[#9d32c2] hover:text-white">
                 Хадгалах
               </Button>

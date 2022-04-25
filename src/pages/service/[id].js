@@ -14,6 +14,10 @@ import Layout from "components/Layout";
 import TimeTable from "components/TimeTable";
 import TableMenu from "components/TableMenu";
 import VipTimeTable from "components/VipTimeTable";
+import { useRouter } from "next/router";
+import useFetch from "hooks/useFetch";
+import { ServiceAPI } from "apis";
+
 const tables = [
   {
     time1: "10:30-12:30",
@@ -62,6 +66,10 @@ const vipTables = [
 ];
 let totalTime = 0;
 export default function Booking() {
+  const router = useRouter();
+
+  const { result: data } = useFetch(ServiceAPI.detail, router.query.id)({});
+
   const [visible, setVisible] = React.useState(false);
   const [index, setIndex] = React.useState(-1);
   const [indexVip, setIndexVip] = React.useState(-1);
