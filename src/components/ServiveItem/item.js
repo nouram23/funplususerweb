@@ -1,7 +1,5 @@
-/* eslint-disable @next/next/link-passhref */
 import { Button, Skeleton } from "antd";
 import Link from "next/link";
-
 export default function ServiceItem({ id, item, isComingSoon, longText }) {
   if (item?.loading) {
     return (
