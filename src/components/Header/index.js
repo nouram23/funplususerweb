@@ -70,7 +70,7 @@ const Sidebar = () => {
         placement="right"
         onClose={onClose}
         visible={visible}
-        width={window.innerWidth > 1200 ? 800 : "auto"}
+        width={window && window.innerWidth > 1200 ? 800 : "auto"}
       >
         <div className="sm:hidden mt-4 flex justify-center  focus:outline-none">
           <Link href="/">
