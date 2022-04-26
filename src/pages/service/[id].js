@@ -17,6 +17,7 @@ import VipTimeTable from "components/VipTimeTable";
 import { useRouter } from "next/router";
 import useFetch from "hooks/useFetch";
 import { ServiceAPI } from "apis";
+const today = new Date();
 
 const tables = [
   {
@@ -66,7 +67,14 @@ const vipTables = [
 ];
 let totalTime = 0;
 export default function Booking() {
+  const [date, setDate] = React.useState(today);
+
   const router = useRouter();
+
+  const onSelect = (e) => {
+    setDate(e.toDate().toJSON());
+    console.log(date);
+  };
 
   const { result: data } = useFetch(ServiceAPI.detail, router.query.id)({});
 
@@ -211,6 +219,7 @@ export default function Booking() {
                   <div className="max-w-sm">
                     <Calendar
                       fullscreen={false}
+                      onSelect={onSelect}
                       headerRender={({ value, onChange }) => {
                         const start = 0;
                         const end = 12;
