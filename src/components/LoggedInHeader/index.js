@@ -12,7 +12,7 @@ export default function Header(props) {
     <div className="bg-[#242424] w-full md:h-24 h-14 fixed left-0 top-0 z-20 md:px-20 px-10">
       <div className="max-w-screen-xl h-full flex justify-between   items-center sm:text-lg text-sm mx-auto">
         <div className="focus:outline-none">
-          <Link href="/">
+          <Link href="/" passHref>
             <a className="">
               <img
                 className="md:h-14 ss:h-10 h-8"

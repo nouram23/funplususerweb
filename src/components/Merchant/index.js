@@ -10,11 +10,11 @@ export default function Merchant() {
           alt="FunPlus bg"
         />
         <div className="space-y-7 z-10">
-          <h1 className="font-bold text-2xl ml-2">МЕРЧАНТ</h1>
+          <h1 className="font-bold text-3xl ">МЕРЧАНТ</h1>
           <p className="text-center">Уйдах завгүй</p>
           <div className="">
             <Link href="/become-merchant">
-              <a className="rounded-full px-4 py-2 bg-gradient-to-r from-[#9d32c2] to-[#e97a34]">
+              <a className="ml-3 rounded-full px-4 py-2 bg-gradient-to-r from-[#9d32c2] to-[#e97a34]">
                 Мерчант болох
               </a>
             </Link>
