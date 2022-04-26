@@ -65,16 +65,15 @@ const vipTables = [
     time5: "18:30-20:30",
   },
 ];
-let totalTime = 0;
 export default function Booking() {
   const [date, setDate] = React.useState(today);
-
+  const [totalTime, setTotalTime] = React.useState(0);
   const router = useRouter();
 
   const onSelect = (e) => {
     setDate(e.toDate().toJSON());
-    console.log(date);
   };
+  console.log(date);
 
   const { result: data } = useFetch(ServiceAPI.detail, router.query.id)({});
 
@@ -105,19 +104,22 @@ export default function Booking() {
 
   const onClick = (e) => {
     setIndex(e);
-    totalTime = 0;
+    times = [];
     setBtnIndexes(false);
   };
 
   const onVipClick = (e) => {
     setIndexVip(e);
+    times = [];
   };
   React.useEffect(() => {
+    console.log(times);
     times.map((e) => {
-      if (e === null && totalTime > 0) totalTime--;
-      else totalTime++;
+      if (e === null && totalTime > 0) setTotalTime((pre) => pre--);
+      else setTotalTime((pre) => pre++);
     });
-  });
+  }, [times]);
+
   return (
     <Layout>
       <div className="md:mt-24 mt-14  bg-[#1a1a1a] ">
@@ -245,7 +247,6 @@ export default function Booking() {
                         }
 
                         const month = value.month();
-                        console.log(current);
 
                         return (
                           <div className="flex justify-end p-2">

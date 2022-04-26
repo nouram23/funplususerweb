@@ -91,7 +91,7 @@ export default function Service() {
   return (
     <Layout>
       <div>
-        <div className="md:mt-24 mt-14  bg-[#1a1a1a] pb-16">
+        <div className="md:mt-24 mt-14  bg-[#1a1a1a] h-screen">
           <div className="mx-auto max-w-screen-2xl">
             <div className=" flex  sm:p-10 p-4">
               <ul className="max-w-screen-xl md:text-base text-sm font-light flex mx-auto justify-center flex-wrap sm:pt-0 pt-4">

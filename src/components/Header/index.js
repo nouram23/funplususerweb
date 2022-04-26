@@ -2,9 +2,12 @@
 import ThemeSwitch from "components/ThemeSwitch";
 import Link from "next/link";
 import React, { useState } from "react";
-import { Drawer, Button } from "antd";
+import { Drawer, Button, Dropdown, Menu } from "antd";
+import { logout } from "apis/auth";
+import { useRouter } from "next/router";
 
-export default function Header() {
+export default function Header({ state }) {
+  const router = useRouter();
   return (
     <div className="bg-[#242424] w-full md:h-24 h-14 fixed left-0 top-0 z-20 md:px-20 px-10">
       <div className="max-w-screen-xl h-full flex justify-between   items-center sm:text-lg text-sm mx-auto">
@@ -21,12 +24,44 @@ export default function Header() {
         </div>
 
         <div className="md:flex hidden">
-          <ul className=" flex flex-row items-baseline space-x-4 ">
-            <li>
-              <Link className="hover:text-[#9d32c2]" href="/auth/login">
-                Нэвтрэх
-              </Link>
-            </li>
+          <ul className=" flex flex-row items-center space-x-4 ">
+            {!state?.isLoggedIn ? (
+              <li>
+                <Link className="hover:text-[#9d32c2]" href="/auth/login">
+                  Нэвтрэх
+                </Link>
+              </li>
+            ) : (
+              <li>
+                <Dropdown
+                  overlay={
+                    <Menu>
+                      <Menu.Item>
+                        <Link href="/profile">
+                          <div>Миний мэдээлэл</div>
+                        </Link>
+                      </Menu.Item>
+
+                      <Menu.Item>
+                        <div
+                          onClick={() => {
+                            state?.setState(false);
+                            console.log(state?.isLoggedIn);
+                            logout().then(() => router.push("/auth/login"));
+                          }}
+                        >
+                          <span className="mr-1">Гарах</span>
+                          <i className="fa-solid fa-right-from-bracket"></i>
+                        </div>
+                      </Menu.Item>
+                    </Menu>
+                  }
+                  trigger={["click"]}
+                >
+                  <i className="fa-solid fa-circle-user text-3xl"></i>
+                </Dropdown>
+              </li>
+            )}
             <li className="">
               <Link href="/contact">
                 <a>
