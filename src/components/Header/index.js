@@ -85,7 +85,7 @@ const Sidebar = () => {
         </div>
         <div className="sm:hidden mx-auto border-b-2 w-4/5  h-4 border-[#9d32c2]"></div>
         <div className="flex  flex-col space-y-5  sm:mx-10 mx-6 sm:my-20 my-6 sm:text-lg text-sm">
-          <ul className="flex-col space-y-5  ">
+          <ul className="flex-col space-y-7  ">
             <li>
               <a className="hover:text-[#9d32c2]" href="#">
                 Таньд санал болгох

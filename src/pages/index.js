@@ -18,41 +18,28 @@ export default function Home() {
   return (
     <Layout>
       <div className="md:mt-24 mt-14  bg-[#1a1a1a] ">
-        <div className="md:max-w-7xl  max-w-xl mx-auto py-10">
+        <div className="sm:max-w-7xl  max-w-md mx-auto py-10 px-1">
           <div className="flex justify-center flex-wrap mx-auto ">
             {(data || []).map((e, i) => {
-              if (e.type === "simple") {
-                return (
-                  <ServiceItem
-                    key={i}
-                    item={{
-                      loading: loading,
-                      ...e,
-                    }}
-                    id={e.id}
-                  />
-                );
-              } else {
-                return (
-                  <ServiceItem
-                    longText={{
-                      loading: loading,
-                      icon: e.icon,
-                      count: e.count,
-                      name: e.name,
-                    }}
-                    id={e.id}
-                  />
-                );
-              }
+              return (
+                <ServiceItem
+                  item={{
+                    loading: loading,
+                    icon: e.icon,
+                    count: e.count,
+                    name: e.name,
+                  }}
+                  id={e.id}
+                />
+              );
             })}
 
             <ServiceItem isComingSoon={true} />
           </div>
-          <h1 className="text-center text-4xl font-semibold mt-4">
+          <h1 className="text-center sm:text-4xl text-2xl font-semibold mt-4">
             Funplus-д нэгдсэнээр...
           </h1>
-          <div className="flex justify-center space-x-8 mt-8">
+          <div className="flex justify-center flex-wrap  mt-8">
             <Recommendation
               item={{
                 icon: "assets/images/slider/slide-img/1.svg",
