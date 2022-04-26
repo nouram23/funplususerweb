@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Form, Input, InputNumber, Tabs } from "antd";
+import { Button, Form, Input, InputNumber, Tabs, message } from "antd";
 import Link from "next/link";
 import { AuthAPI } from "apis";
 
@@ -7,7 +7,6 @@ export default function AuthRegister() {
   const [selectActiveKey, setSelectActiveKey] = React.useState("get_code");
 
   const [phone, setPhone] = React.useState("");
-
   return (
     <div className="w-full h-full lg:grid grid-cols-10">
       <div className="col-span-6  h-screen  hidden lg:block">
@@ -51,9 +50,28 @@ export default function AuthRegister() {
 }
 
 const GetCode = ({ phone, onSubmit }) => {
+  const [loading, setLoading] = React.useState(false);
+  const onFinish = async (values) => {
+    setLoading(true);
+    try {
+      await AuthAPI.passwordForget({
+        username: "" + values?.username,
+      });
+    } catch (err) {
+      console.log(err);
+      message.error("Таны дугаар буруу байна!");
+    }
+    setLoading(false);
+  };
+
   return (
-    <Form className="w-full" layout="vertical">
-      <Form.Item label="Утасны дугаар" className="">
+    <Form onFinish={onFinish} className="w-full" layout="vertical">
+      <Form.Item
+        rules={[{ required: "true", message: "Заавал бөглөнө үү " }]}
+        label="Утасны дугаар"
+        className=""
+        name="username"
+      >
         <InputNumber
           className="w-full "
           name="phone"
@@ -63,8 +81,11 @@ const GetCode = ({ phone, onSubmit }) => {
       </Form.Item>
 
       <Button
+        htmlType="submit"
         size="large"
         className="pl-2 w-full font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] mb-1"
+        loading={loading}
+        disabled={loading}
       >
         Код авах
       </Button>
@@ -77,19 +98,31 @@ const GetCode = ({ phone, onSubmit }) => {
 };
 
 const PasswordChangeForm = ({ phone, onSubmit }) => {
+  const [loading, setLoading] = React.useState(false);
   const onFinish = async (values) => {
-    console.log(values);
+    setLoading(true);
     try {
-      await AuthAPI.passwordForget(values);
+      await AuthAPI.password_change({
+        ...values,
+        username: "" + values.username,
+        activate_code: "" + values.activate_code,
+        password: "" + values.password,
+      });
     } catch (err) {
       console.log(err);
+      message.error("Баталгаажуулах код буруу байна!");
     }
+    setLoading(false);
   };
 
   return (
     <Form className="w-full" action="" layout="vertical" onFinish={onFinish}>
-      <Form.Item label="Утасны дугаар" className="" name="phone">
-        {/* <label className="block text-[#9d32c2]">Утасны дугаар</label> */}
+      <Form.Item
+        label="Утасны дугаар"
+        rules={[{ required: "true", message: "Утасны дугаараа оруулна уу" }]}
+        className=""
+        name="username"
+      >
         <InputNumber
           className="w-full "
           name="phone"
@@ -98,16 +131,32 @@ const PasswordChangeForm = ({ phone, onSubmit }) => {
         />
       </Form.Item>
 
-      <Form.Item className="" label="Баталгаажуулах код" name={"verifyCode"}>
+      <Form.Item
+        rules={[
+          { required: "true", message: "Баталгаажуулах кодоо оруулна уу" },
+        ]}
+        className=""
+        label="Баталгаажуулах код"
+        name={"activate_code"}
+      >
         <InputNumber className=" w-full " size="large" placeholder="1234" />
-      </Form.Item>
-      <Form.Item className="" label="Шинэ нууц үг" name={"newPassword"}>
-        <Input.Password size="large" type="number" placeholder="New password" />
       </Form.Item>
       <Form.Item
         className=""
+        rules={[{ required: "true", message: "Нууц үгээ оруулна уу " }]}
+        label="Шинэ нууц үг"
+        name={"password"}
+      >
+        <Input.Password
+          size="large"
+          type={"password"}
+          placeholder="New password"
+        />
+      </Form.Item>
+      {/* <Form.Item
+        className=""
         label="  Шинэ нууц үг давтан оруулах"
-        name={"newPasswordAgain"}
+        name={"password"}
       >
         <Input.Password
           size="large"
@@ -115,10 +164,11 @@ const PasswordChangeForm = ({ phone, onSubmit }) => {
           type="number"
           placeholder="Confirm password"
         />
-      </Form.Item>
+      </Form.Item> */}
       <Button
         htmlType="submit"
         size="large"
+        loading={loading}
         className="w-full  pl-2 font-light bg-gradient-to-r from-[#9d32c2] to-[#e97a34] mb-1"
       >
         Сэргээх
