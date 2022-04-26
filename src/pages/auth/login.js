@@ -76,31 +76,29 @@ const LoginForm = () => {
               Нэвтрэх
             </p>
           </div>
-          <Form.Item className="text-[#9d32c2]" name="username">
-            <div>
-              <label className="block">Утасны дугаар</label>
-              <InputNumber
-                name="username"
-                size="large"
-                type="number"
-                placeHolder="00000000"
-                allowClear
-                defaultValue={" "}
-                className="w-full"
-              />
-            </div>
+          <Form.Item
+            className="text-[#9d32c2]"
+            label="Утасны дугаар"
+            name="username"
+          >
+            <InputNumber
+              name="username"
+              size="large"
+              type="number"
+              placeHolder="00000000"
+              allowClear
+              defaultValue={" "}
+              className="w-full"
+            />
           </Form.Item>
-          <Form.Item className="text-[#9d32c2]" name="password">
-            <div>
-              <label className="block">Нууц үг</label>
-              <Input.Password
-                name="password"
-                allowClear
-                type="password"
-                placeholder="*****"
-                size="large"
-              />
-            </div>
+          <Form.Item className="text-[#9d32c2]" label="Нууц үг" name="password">
+            <Input.Password
+              name="password"
+              allowClear
+              type="password"
+              placeholder="*****"
+              size="large"
+            />
           </Form.Item>
           <div className="flex justify-end  py-2">
             <Link href="/auth/passwordForget">

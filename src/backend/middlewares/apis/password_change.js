@@ -1,10 +1,10 @@
 import { apiRequest } from "utils/request";
 
-export default function password_forgetAPI(req, res) {
+export default function password_changeAPI(req, res) {
   return async (data) => {
     if (req.method === "POST") {
       const json = await apiRequest.post(
-        `${req.api_urls.auth}/password_forget`,
+        `${req.api_urls.auth}/password_change`,
         data
       );
       return {};
