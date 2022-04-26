@@ -17,7 +17,7 @@ export default function Contact() {
     values.type = type;
     const response = await fetch("/api/v1/public/feedback", {
       method: "POST",
-      body: JSON.stringify({ values }),
+      body: JSON.stringify({ ...values }),
       headers: {
         "Content-Type": "application/json",
       },

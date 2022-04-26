@@ -11,7 +11,7 @@ export default function BecomeMerchant() {
   const onFinish = async (values) => {
     const response = await fetch(`/api/v1/public/merchant_request`, {
       method: "POST",
-      body: JSON.stringify({ values }),
+      body: JSON.stringify({ ...values }),
       headers: {
         "Content-Type": "application/json",
       },
