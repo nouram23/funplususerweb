@@ -26,7 +26,7 @@ export default function Item({ id, item }) {
           alt={`Funplus ${item.name} `}
         />
         <div className="  flex justify-between  xl:mt-4 md:mt-3 sm:mt-2 mt-1 xl:px-4 md:px-2 px-1">
-          <h3 className=" xl:font-medium md:text-sm text-xs">{item?.name}</h3>
+          <h3 className=" xl:font-medium md:text-lg text-xs">{item?.name}</h3>
 
           <div className="font-black md:text-lg text-xs md:px-3  px-2 leading-5 ring-1 ring-[#9d32c2] rounded-lg hover:bg-white hover:text-[#9d32c2]">
             <i className="fa fa-arrow-right" />

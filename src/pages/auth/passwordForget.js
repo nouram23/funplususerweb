@@ -7,6 +7,10 @@ export default function AuthRegister() {
   const [selectActiveKey, setSelectActiveKey] = React.useState("get_code");
 
   const [phone, setPhone] = React.useState("");
+  const onChange = (e) => {
+    setPhone(e);
+  };
+  console.log(phone);
   return (
     <div className="w-full h-full lg:grid grid-cols-10">
       <div className="col-span-6  h-screen  hidden lg:block">
@@ -21,7 +25,7 @@ export default function AuthRegister() {
           <Link href="/">
             <a>
               <img
-                className="h-20"
+                className="h-20 mb-7"
                 alt="logo"
                 src="/assets/images/logo/logo.svg"
               />
@@ -30,7 +34,11 @@ export default function AuthRegister() {
           <Tabs activeKey={selectActiveKey} onChange={setSelectActiveKey}>
             <Tabs.TabPane tab="Код авах" key="get_code" tabKey="get_code">
               {" "}
-              <GetCode phone={phone} onSubmit={(e) => console.log(e)} />
+              <GetCode
+                onChange={{ onChange }}
+                phone={{ phone }}
+                onSubmit={(e) => console.log(e)}
+              />
             </Tabs.TabPane>
             <Tabs.TabPane
               tab="Нууц үг сэргээх"
@@ -38,7 +46,7 @@ export default function AuthRegister() {
               tabKey="change_password"
             >
               <PasswordChangeForm
-                phone={phone}
+                phone={{ phone }}
                 onSubmit={(e) => console.log(e)}
               />
             </Tabs.TabPane>
@@ -49,7 +57,7 @@ export default function AuthRegister() {
   );
 }
 
-const GetCode = ({ phone, onSubmit }) => {
+const GetCode = ({ onChange, phone, onSubmit }) => {
   const [loading, setLoading] = React.useState(false);
   const onFinish = async (values) => {
     setLoading(true);
@@ -75,7 +83,9 @@ const GetCode = ({ phone, onSubmit }) => {
         <InputNumber
           className="w-full "
           name="phone"
+          type={"number"}
           size="large"
+          onChange={onChange?.onChange}
           placeholder="00000000"
         />
       </Form.Item>
@@ -127,7 +137,7 @@ const PasswordChangeForm = ({ phone, onSubmit }) => {
           className="w-full "
           name="phone"
           size="large"
-          placeholder="00000000"
+          value={phone?.phone}
         />
       </Form.Item>
 

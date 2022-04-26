@@ -9,12 +9,7 @@ import { Button, Skeleton } from "antd";
 import { Pagination } from "antd";
 
 export default function Service() {
-  const onShowSizeChange = (current, pageSize) => {
-    console.log(current, pageSize);
-  };
-  const onPageChange = (e) => {
-    console.log(e);
-  };
+  const [total, setTotal] = React.useState(0);
   const router = useRouter();
 
   // const [detailed, setDetailed] = React.useState([]);
@@ -35,7 +30,7 @@ export default function Service() {
     },
     offset: {
       page: 1,
-      limit: 20,
+      limit: 1,
     },
   });
 
@@ -61,8 +56,9 @@ export default function Service() {
               query: "",
             },
         });
-
+        console.log(res);
         if (res?.count) {
+          setTotal(res.count);
           setData(res.rows);
         } else {
           setData(res.rows);
@@ -83,7 +79,7 @@ export default function Service() {
       },
       offset: {
         page: 1,
-        limit: 20,
+        limit: 1,
       },
     });
   }, [router?.query?.service_type]);
@@ -95,7 +91,7 @@ export default function Service() {
   return (
     <Layout>
       <div>
-        <div className="md:mt-24 mt-14  bg-[#1a1a1a] ">
+        <div className="md:mt-24 mt-14  bg-[#1a1a1a] h-screen">
           <div className="mx-auto max-w-screen-2xl">
             <div className=" flex  sm:p-10 p-4">
               <ul className="max-w-screen-xl md:text-base text-sm font-light flex mx-auto justify-center flex-wrap sm:pt-0 pt-4">
@@ -132,20 +128,23 @@ export default function Service() {
               </div>
             </div>
           </div>
-          <div>
-            <Button />
-          </div>
-          <div className="flex justify-center mb-8">
+          <div className="flex justify-center mt-10">
             <Pagination
-              responsive={true}
-              pageSize={1}
-              showSizeChanger
-              onChange={onPageChange}
-              onShowSizeChange={onShowSizeChange}
-              defaultCurrent={3}
-              total={50}
+              pageSize={_q.offset.limit}
+              current={_q.offset.page}
+              total={total}
+              onChange={(e) => {
+                set_Q({
+                  ..._q,
+                  offset: {
+                    ..._q.offset,
+                    page: e,
+                  },
+                });
+              }}
             />
           </div>
+          <div className="flex justify-center mb-8"></div>
         </div>
       </div>
     </Layout>

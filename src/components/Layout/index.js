@@ -6,7 +6,6 @@ import dynamic from "next/dynamic";
 
 const Header = dynamic(() => import("../Header"), { ssr: false });
 
-
 export default function Layout({ children }) {
   const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   React.useEffect(async () => {
@@ -19,17 +18,15 @@ export default function Layout({ children }) {
 
       const data = await response.json();
 
-      console.log(data);
+      console.log(data.name);
       if (data.name) setIsLoggedIn(true);
-    } catch (err) { }
+      console.log(isLoggedIn);
+    } catch (err) {}
   }, []);
   return (
     <div className="main-wrapper font-Nunito">
-      {isLoggedIn ? (
-        <LoggedInHeader setIsLoggedIn={setIsLoggedIn} />
-      ) : (
-        <Header />
-      )}
+      <Header state={{ isLoggedIn: isLoggedIn, setState: setIsLoggedIn }} />
+
       {children}
       <Merchart />
       <Footer />
