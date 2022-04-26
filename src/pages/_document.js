@@ -45,22 +45,24 @@ class MyDocument extends Document {
             type="image/x-icon"
             href="/assets/images/Logo.ico"
           />
-
+          <link
+            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400&family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+            rel="stylesheet"
+          />
           <link rel="stylesheet" href="/assets/css/font-awesome.min.css" />
+          {/* 
           <link rel="stylesheet" href="/assets/css/Pe-icon-7-stroke.css" />
           <link rel="stylesheet" href="/assets/css/animate.min.css" />
           <link rel="stylesheet" href="/assets/css/swiper-bundle.min.css" />
           <link rel="stylesheet" href="/assets/css/nice-select.css" />
           <link rel="stylesheet" href="/assets/css/magnific-popup.min.css" />
           <link rel="stylesheet" href="/assets/css/ion.rangeSlider.min.css" />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
-            rel="stylesheet"
-          />
-          <link
-            href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400&family=Nunito:wght@200;300;400;500;600;700;800;900&display=swap"
-            rel="stylesheet"
-          />
+         
+         */}
           {this.props.styleTags}
         </Head>
         <body>
@@ -72,7 +74,7 @@ class MyDocument extends Document {
             src="https://kit.fontawesome.com/f9e2ab07a1.js"
             crossOrigin="anonymous"
           ></script>
-          <script
+          {/* <script
             async
             src="/assets/js/vendor/bootstrap.bundle.min.js"
           ></script>
@@ -102,7 +104,7 @@ class MyDocument extends Document {
           <script async src="/assets/js/plugins/mailchimp-ajax.js"></script>
           <script async src="/assets/js/plugins/jquery.counterup.js"></script>
 
-          <script async src="/assets/js/main.js"></script>
+          <script async src="/assets/js/main.js"></script> */}
         </body>
       </Html>
     );
