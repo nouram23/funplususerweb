@@ -39,7 +39,7 @@ export default function Home() {
           <h1 className="text-center sm:text-4xl text-2xl font-semibold mt-4">
             Funplus-д нэгдсэнээр...
           </h1>
-          <div className="flex justify-center flex-wrap  mt-8">
+          <div className="flex justify-start sm:justify-center flex-wrap sm:max-w-7xl  max-w-md mx-auto mt-8">
             <Recommendation
               item={{
                 icon: "assets/images/slider/slide-img/1.svg",
